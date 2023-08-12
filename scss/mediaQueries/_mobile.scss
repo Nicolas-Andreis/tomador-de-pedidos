@@ -1,0 +1,49 @@
+/*MOBILE*/
+@media (max-width: 768px) and (orientation: portrait) {
+   nav{
+    ul{
+        margin-right: -5rem;
+        li{
+            a{
+                display: none;
+            }
+        }
+    }
+    .buscador{
+        margin-left: 5rem;
+        
+    }
+   }
+    .containerTodo{
+    .menu{
+        margin-top: 70%;
+        margin-left: 40%;
+        .titleContainer{
+            display: none;
+        }
+        .card{
+            width: 95%;
+        }
+    }
+    .containerProducto {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-between; */
+        /* flex-wrap: wrap; */
+        flex-basis: 50%;
+    }
+    .miCarrito{
+        width: 58%;
+        background-color: white;
+        right: 1rem;
+    }
+    .ruta{
+        width: 30%;
+        left: 1rem;
+        li{
+            margin-top: 1rem;
+        }
+    }
+   }
+    
+}

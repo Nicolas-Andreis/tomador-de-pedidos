@@ -236,4 +236,47 @@ nav .buscador #buscar:focus {
   flex-wrap: wrap;
 }
 
+/*MOBILE*/
+@media (max-width: 768px) and (orientation: portrait) {
+  nav ul {
+    margin-right: -5rem;
+  }
+  nav ul li a {
+    display: none;
+  }
+  nav .buscador {
+    margin-left: 5rem;
+  }
+  .containerTodo .menu {
+    margin-top: 70%;
+    margin-left: 40%;
+  }
+  .containerTodo .menu .titleContainer {
+    display: none;
+  }
+  .containerTodo .menu .card {
+    width: 95%;
+  }
+  .containerTodo .containerProducto {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    /* flex-wrap: wrap; */
+    flex-basis: 50%;
+  }
+  .containerTodo .miCarrito {
+    width: 58%;
+    background-color: white;
+    right: 1rem;
+  }
+  .containerTodo .ruta {
+    width: 30%;
+    left: 1rem;
+  }
+  .containerTodo .ruta li {
+    margin-top: 1rem;
+  }
+}
+/*TABLET*/
+
 /*# sourceMappingURL=style.css.map */
