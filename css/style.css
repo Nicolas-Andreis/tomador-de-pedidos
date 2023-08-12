@@ -272,6 +272,7 @@ nav .buscador #buscar:focus {
   .containerTodo .ruta {
     width: 30%;
     left: 1rem;
+    padding: 0.5rem;
   }
   .containerTodo .ruta li {
     margin-top: 1rem;
