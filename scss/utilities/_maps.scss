@@ -1,0 +1,25 @@
+//MAP GET DE FONT-SIZE
+$titulos: (
+    desktop: 1.4rem,
+    tablet: 1.3rem,
+    mobile: 1.2rem
+);
+
+$subtitulos: (
+    desktop: 1.2rem,
+    tablet: 1.2rem,
+    mobile: 1.1rem
+);
+
+$texto: (
+    desktop: 1rem,
+    tablet: 1rem,
+    mobile: 0.9rem
+);
+
+
+
+$sombra: (
+    normal: (0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)),
+    densa: (0 3px 10px 0 rgba(0, 0, 0, 0.45), 0 2px 10px 0 rgba(0, 0, 0, 0.44))
+);
