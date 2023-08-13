@@ -248,6 +248,12 @@ nav .buscador #buscar:focus {
     margin-left: 4rem;
     margin-right: 1rem;
   }
+  nav .buscador button img {
+    left: 0rem;
+  }
+  nav .buscador #buscar {
+    margin-left: 1rem;
+  }
   .containerTodo .menu {
     margin-top: 7rem;
     margin-left: 1rem;
@@ -256,7 +262,7 @@ nav .buscador #buscar:focus {
     display: none;
   }
   .containerTodo .menu .card {
-    width: 18rem;
+    width: 90vw;
   }
   .containerTodo .containerProducto {
     display: flex;

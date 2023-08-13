@@ -14,7 +14,15 @@
         .buscador {
             margin-left: 4rem;
             margin-right: 1rem;
-
+            button{
+                img{
+                    left: 0rem;
+                }
+            }
+            
+            #buscar{
+                margin-left: 1rem;
+            }
         }
     }
 
@@ -29,7 +37,7 @@
             }
 
             .card {
-                width: 18rem;
+                width: 90vw;
             }
         }
 
