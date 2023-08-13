@@ -1,50 +1,93 @@
 /*MOBILE*/
 @media (max-width: 768px) and (orientation: portrait) {
-   nav{
-    ul{
-        margin-right: -5rem;
-        li{
-            a{
-                display: none;
+    nav {
+        ul {
+            margin-right: -5rem;
+
+            li {
+                a {
+                    display: none;
+                }
             }
         }
+
+        .buscador {
+            margin-left: 4rem;
+            margin-right: 1rem;
+
+        }
     }
-    .buscador{
-        margin-left: 5rem;
-        
-    }
-   }
-    .containerTodo{
-    .menu{
-        margin-top: 70%;
-        margin-left: 40%;
-        .titleContainer{
+
+    .containerTodo {
+        .menu {
+            margin-top: 7rem;
+            margin-left: 1rem;
+            ;
+
+            .titleContainer {
+                display: none;
+            }
+
+            .card {
+                width: 18rem;
+            }
+        }
+
+        .containerProducto {
+            display: flex;
+            flex-direction: column;
+            /* justify-content: space-between; */
+            /* flex-wrap: wrap; */
+            flex-basis: 50%;
+        }
+
+        .miCarrito {
+            width: 58%;
+            background-color: white;
+            right: 1rem;
             display: none;
         }
-        .card{
-            width: 95%;
+
+        .ruta {
+            width: 100%;
+            left: 1rem;
+            padding: 0.5rem;
+            background-color: white;
+            overflow-x: auto;
+
+            h3 {
+                display: none;
+            }
+
+
+            ul {
+                display: flex;
+
+
+                li {
+                    margin: 0.5rem;
+                    text-align: center;
+                }
+            }
+
         }
     }
-    .containerProducto {
+
+    .mobile-button {
+        position: fixed;
+        bottom: 1rem;
+        height: 3rem;
+        width: 100%;
+        border-radius: 0.5rem;
+        background-color: #f71a17;
+        color: white;
+        font-size: larger;
         display: flex;
-        flex-direction: column;
-        /* justify-content: space-between; */
-        /* flex-wrap: wrap; */
-        flex-basis: 50%;
-    }
-    .miCarrito{
-        width: 58%;
-        background-color: white;
-        right: 1rem;
-    }
-    .ruta{
-        width: 30%;
-        left: 1rem;
-        padding: 0.5rem;
-        li{
-            margin-top: 1rem;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        img{
+            width: 2rem;
         }
     }
-   }
-    
 }

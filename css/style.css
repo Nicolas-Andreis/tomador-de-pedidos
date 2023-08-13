@@ -245,17 +245,18 @@ nav .buscador #buscar:focus {
     display: none;
   }
   nav .buscador {
-    margin-left: 5rem;
+    margin-left: 4rem;
+    margin-right: 1rem;
   }
   .containerTodo .menu {
-    margin-top: 70%;
-    margin-left: 40%;
+    margin-top: 7rem;
+    margin-left: 1rem;
   }
   .containerTodo .menu .titleContainer {
     display: none;
   }
   .containerTodo .menu .card {
-    width: 95%;
+    width: 18rem;
   }
   .containerTodo .containerProducto {
     display: flex;
@@ -268,14 +269,41 @@ nav .buscador #buscar:focus {
     width: 58%;
     background-color: white;
     right: 1rem;
+    display: none;
   }
   .containerTodo .ruta {
-    width: 30%;
+    width: 100%;
     left: 1rem;
     padding: 0.5rem;
+    background-color: white;
+    overflow-x: auto;
   }
-  .containerTodo .ruta li {
-    margin-top: 1rem;
+  .containerTodo .ruta h3 {
+    display: none;
+  }
+  .containerTodo .ruta ul {
+    display: flex;
+  }
+  .containerTodo .ruta ul li {
+    margin: 0.5rem;
+    text-align: center;
+  }
+  .mobile-button {
+    position: fixed;
+    bottom: 1rem;
+    height: 3rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    background-color: #f71a17;
+    color: white;
+    font-size: larger;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .mobile-button img {
+    width: 2rem;
   }
 }
 /*TABLET*/
