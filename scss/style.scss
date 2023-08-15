@@ -1,5 +1,6 @@
 //UTILITIES
 @import "../scss/utilities/maps";
+@import "../scss/utilities/variables";
 
 // RESET
 @import "../scss/base/reset";
@@ -11,9 +12,10 @@
 // COMPONENTS
 
 @import "../scss/components/nav";
-@import "../scss/components/cardsProductos";
-@import "../scss/components/containerProductos";
+@import "../scss/components/card";
+@import "../scss/components/containerCard";
+@import "../scss/components/categorias";
+@import "../scss/components/delivery-retiro";
 
 // media queries
-@import "../scss/mediaQueries/mobile";
 @import "../scss/mediaQueries/tablet";

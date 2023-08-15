@@ -29,12 +29,10 @@
     <!--GOOGLE FONTS-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@500&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;900&family=Roboto:wght@300;500;900&display=swap"
         rel="stylesheet">
+
 
     <!--ANIMATE CSS CDN-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -46,252 +44,188 @@
 <body>
     <header>
         <nav>
-            <img src="./imagenes/logo/logo.png" alt="logo">
-            <ul>
-                <li>
-                    <a href="#" class="titulos">Il pirata</a>
-                </li>
-            </ul>
+            <div>
+                <img src="./imagenes/iconos/nav/menu.png" alt="menu" class="icon">
+                <div>
+                    <img src="./imagenes/logo/logo.png" alt="logo">
+                    <h1 class="titulos">Il Pirata</h1>
+                </div>
+                <img src="./imagenes/iconos/nav/setting.png" alt="configuracion" class="icon">
+            </div>
             <div class="buscador">
-                <button><img src="./imagenes/iconos/lupaBuscador.png" alt="lupa"></button>
-                <input type="text" name="nombre" id="buscar" placeholder="¿Qué desea buscar?">
+                <div><button><img src="./imagenes/iconos/lupa/lupaBuscador.png" alt="lupa"></button>
+                    <input type="text" name="nombre" id="buscar" placeholder="¿Qué desea pedir?">
+                </div>
+                <img src="./imagenes/iconos/nav/option.png" alt="settings" class="icon-setting">
             </div>
         </nav>
     </header>
     <main>
-        <div class="containerTodo">
-            <section class="ruta">
-                <h3 class="subtitulos">Categorias</h3>
-                <ul>
-                    <li><a href="#Promo de la semana" class="texto">Promo de la semana</a></li>
-                    <li><a href="#Promos" class="texto">Promos</a></li>
-                    <li><a href="#Pizzas" class="texto">Pizzas</a></li>
-                    <li><a href="#Media pizza" class="texto">Media pizza</a></li>
-                    <li><a href="#Combos" class="texto">Combos</a></li>
-                    <li><a href="#Burguers solas" class="texto">Burguers solas</a></li>
-                    <li><a href="#Empanadas" class="texto">Empanadas</a></li>
-                    <li><a href="#Papas" class="texto">Papas</a></li>
-                    <li><a href="#Ensaladas" class="texto">Ensaladas</a></li>
-                    <li><a href="#Postres" class="texto">Postres</a></li>
-                    <li><a href="#Bebidas" class="texto">Bebidas</a></li>
-                    <li><a href="#Helados" class="texto">Helados</a></li>
-                </ul>
-            </section>
-            <section class="menu">
-                <div class="titleContainer">
-                    <img src="/imagenes/fondo/fondo.jpg" alt="pizzas y cajas">
-                    <h1 class="titulos">Pizzeria Il Pirata</h1>
+        <div class="delivery-retiro">
+            <div class="rojo">
+                <p>Delivery</p>
+                <p>Retiro</p>
+            </div>
+            <div class="container-delivery">
+                <div class="delivery">
+                    <div>
+                        <img src="" alt="reloj">
+                        <p>40-60 min</p>
+                    </div>
+                    <div>
+                        <img src="" alt="moto">
+                        <p>Envio $200</p>
+                    </div>
+                    <div>
+                        <img src="" alt="carrito">
+                        <p>Minimo $2160</p>
+                    </div>
                 </div>
-                <section id="Promo de la semana">
-                    <h3 class="subtitulos">Promo de la semana</h3>
-                    <div class="card" >
-                        <img src="./imagenes/pizzas/muzzarella.jpg" id="producto" alt="muzzarella">
-                        <div class="card-texto">
-                            <p class="texto">Pizza muzzarella</p>
-                            <p>$2530</p>
-                        </div>
-                        <div class="card-iconos">
-                            <button><img src="./imagenes/iconos/heart.png" alt="corazon"></button>
-                            <button><img src="./imagenes/iconos/shoppingcart.png" alt="carrito"></button>                                
-                        </div>                       
+
+                <div class="retiro">
+                    <div>
+                        <img src="" alt="reloj">
+                        <p>20 min</p>
                     </div>
-                </section>
-                <section id="Promos">
-                    <h3 class="subtitulos">Promos</h3>
-                    <div class="containerProducto">
-                        <div class="card" >
-                            <img src="./imagenes/pizzas/muzzarella.jpg" id="producto" alt="muzzarella">
-                            <div class="card-texto">
-                                <p class="texto">Pizza muzzarella</p>
-                                <p>$2530</p>
-                            </div>
-                            <div class="card-iconos">
-                                <button><img src="./imagenes/iconos/heart.png" alt="corazon"></button>
-                                <button><img src="./imagenes/iconos/shoppingcart.png" alt="carrito"></button>                                
-                            </div>                       
-                        </div>
-                        <div class="card" >
-                            <img src="./imagenes/pizzas/muzzarella.jpg" id="producto" alt="muzzarella">
-                            <div class="card-texto">
-                                <p class="texto">Pizza muzzarella</p>
-                                <p>$2530</p>
-                            </div>
-                            <div class="card-iconos">
-                                <button><img src="./imagenes/iconos/heart.png" alt="corazon"></button>
-                                <button><img src="./imagenes/iconos/shoppingcart.png" alt="carrito"></button>                                
-                            </div>                       
-                        </div>
-                        <div class="card" >
-                            <img src="./imagenes/pizzas/muzzarella.jpg" id="producto" alt="muzzarella">
-                            <div class="card-texto">
-                                <p class="texto">Pizza muzzarella</p>
-                                <p>$2530</p>
-                            </div>
-                            <div class="card-iconos">
-                                <button><img src="./imagenes/iconos/heart.png" alt="corazon"></button>
-                                <button><img src="./imagenes/iconos/shoppingcart.png" alt="carrito"></button>                                
-                            </div>                       
-                        </div>
+                    <div>
+                        <img src="" alt="reloj">
+                        <p>retiro en el local</p>
+                        <p>10% off</p>
                     </div>
-                    
-                </section>
-                <section id="Pizzas">
-                    <h3 class="subtitulos">Pizzas</h3>
-                    <div class="containerProducto">
-                        <div class="card" >
-                            <img src="./imagenes/pizzas/muzzarella.jpg" id="producto" alt="muzzarella">
-                            <div class="card-texto">
-                                <p class="texto">Pizza muzzarella</p>
-                                <p>$2530</p>
-                            </div>
-                            <div class="card-iconos">
-                                <button><img src="./imagenes/iconos/heart.png" alt="corazon"></button>
-                                <button><img src="./imagenes/iconos/shoppingcart.png" alt="carrito"></button>                                
-                            </div>                       
-                        </div>
-                        <div class="card">
-                            <img src="./imagenes/pizzas/muzzarella.jpg" id="producto" alt="muzzarella">
-                            <div class="card-texto">
-                                <p class="texto">Pizza muzzarella</p>
-                                <p>$2530</p>
-                            </div>
-                            <div class="card-iconos">
-                                <button><img src="./imagenes/iconos/heart.png" alt="corazon"></button>
-                                <button><img src="./imagenes/iconos/shoppingcart.png" alt="carrito"></button>                                
-                            </div>                         
-                        </div>
-                        <div class="card">
-                            <img src="./imagenes/pizzas/muzzarella.jpg" id="producto" alt="muzzarella">
-                            <div class="card-texto">
-                                <p class="texto">Pizza muzzarella</p>
-                                <p>$2530</p>
-                            </div>
-                            <div class="card-iconos">
-                                <button><img src="./imagenes/iconos/heart.png" alt="corazon"></button>
-                                <button><img src="./imagenes/iconos/shoppingcart.png" alt="carrito"></button>                                
-                            </div>                        
-                        </div>
-                        <div class="card">
-                            <img src="./imagenes/pizzas/muzzarella.jpg" id="producto" alt="muzzarella">
-                            <div class="card-texto">
-                                <p class="texto">Pizza muzzarella</p>
-                                <p>$2530</p>
-                            </div>
-                            <div class="card-iconos">
-                                <button><img src="./imagenes/iconos/heart.png" alt="corazon"></button>
-                                <button><img src="./imagenes/iconos/shoppingcart.png" alt="carrito"></button>                                
-                            </div>                         
-                        </div>
-                        <div class="card">
-                            <img src="./imagenes/pizzas/muzzarella.jpg" id="producto" alt="muzzarella">
-                            <div class="card-texto">
-                                <p class="texto">Pizza muzzarella</p>
-                                <p>$2530</p>
-                            </div>
-                            <div class="card-iconos">
-                                <button><img src="./imagenes/iconos/heart.png" alt="corazon"></button>
-                                <button><img src="./imagenes/iconos/shoppingcart.png" alt="carrito"></button>                                
-                            </div>                         
-                        </div>
-                        <div class="card">
-                            <img src="./imagenes/pizzas/muzzarella.jpg" id="producto" alt="muzzarella">
-                            <div class="card-texto">
-                                <p class="texto">Pizza muzzarella</p>
-                                <p>$2530</p>
-                            </div>
-                            <div class="card-iconos">
-                                <button><img src="./imagenes/iconos/heart.png" alt="corazon"></button>
-                                <button><img src="./imagenes/iconos/shoppingcart.png" alt="carrito"></button>                                
-                            </div>                        
+                </div>
+            </div>
+        </div>
+        <div class="categorias">
+            <ul>
+                <li>
+                    <a href="#Promos">
+                        <div class="categoria-ovalo"><img src="" alt=""></div>
+                        <p>promos</p>
+                    </a>
+                </li>
+                <li><a href="#Pizzas">
+                        <div class="categoria-ovalo"><img src="" alt=""></div>
+                        <p>pizzas</p>
+                    </a></li>
+                <li><a href="#Media pizza">
+                        <div class="categoria-ovalo"><img src="" alt=""></div>
+                        <p>media pizza</p>
+                    </a></li>
+                <li><a href="#Combos">
+                        <div class="categoria-ovalo"><img src="" alt=""></div>
+                        <p>combos</p>
+                    </a></li>
+                <li><a href="#Burguers solas">
+                        <div class="categoria-ovalo"><img src="" alt=""></div>
+                        <p>burguer sola</p>
+                    </a></li>
+                <li><a href="#Empanadas">
+                        <div class="categoria-ovalo"><img src="" alt=""></div>
+                        <p>empanadas</p>
+                    </a></li>
+                <li><a href="#Calzones">
+                        <div class="categoria-ovalo"><img src="" alt=""></div>
+                        <p>calzones</p>
+                    </a></li>
+                <li><a href="#Papas">
+                        <div class="categoria-ovalo"><img src="" alt=""></div>
+                        <p>papas</p>
+                    </a></li>
+                <li><a href="#Ensaladas">
+                        <div class="categoria-ovalo"><img src="" alt=""></div>
+                        <p>ensladas</p>
+                    </a></li>
+                <li><a href="#Postres">
+                        <div class="categoria-ovalo"><img src="" alt=""></div>
+                        <p>postres</p>
+                    </a></li>
+                <li><a href="#Bebidas">
+                        <div class="categoria-ovalo"><img src="" alt=""></div>
+                        <p>bebidas</p>
+                    </a></li>
+                <li><a href="#Cervezas">
+                        <div class="categoria-ovalo"><img src="" alt=""></div>
+                        <p>cervezas</p>
+                    </a></li>
+                <li><a href="#Helados">
+                        <div class="categoria-ovalo"><img src="" alt=""></div>
+                        <p>helados</p>
+                    </a></li>
+            </ul>
+        </div>
+        <div class="menu">
+            <h3>Promos</h3>
+            <section class="promos">
+                <div class="card">
+                    <img src="./imagenes/pizzas/aceitunas.jpg" alt="">
+                    <div class="card-texto">
+                        <p>Producto</p>
+                        <p>$4860</p>
+                    </div>
+                    <div class="card-iconos">
+                        <img src="./imagenes/iconos/corazon/heart.png" alt="corazon">
+                        <div class="contador">
+                            <img src="./imagenes/iconos/basura/trash.png" alt="trash">
+                            <p>0</p>
+                            <img src="./imagenes/iconos/shopping cart/sum.png" alt="+">
                         </div>
                     </div>
-                    
-                </section>
-                <section id="Media pizza">
-                    <h3 class="subtitulos">Media pizza</h3>
-                </section>
-                <section id="Combos">
-                    <h3 class="subtitulos">Combos</h3>
-                </section>
-                <section id="Burguers solas">
-                    <h3 class="subtitulos">Burguers solas</h3>
-                </section>
-                <section id="Empanadas">
-                    <h3 class="subtitulos">Empanadas</h3>
-                </section>
-                <section id="Papas">
-                    <h3 class="subtitulos">Papas</h3>
-                </section>
-                <section id="Ensaladas">
-                    <h3 class="subtitulos">Ensaladas</h3>
-                </section>
-                <section id="Postres">
-                    <h3 class="subtitulos">Postres</h3>
-                    <div class="containerProducto">
-                        <div class="card" >
-                            <img src="./imagenes/postres/chocoreo.jpg" id="producto" alt="oreo">
-                            <div class="card-texto">
-                                <p class="texto">chocoreo</p>
-                                <p>$600</p>
-                            </div>
-                            <div class="card-iconos">
-                                <button><img src="./imagenes/iconos/heart.png" alt="corazon"></button>
-                                <button><img src="./imagenes/iconos/shoppingcart.png" alt="carrito"></button>                                
-                            </div>                       
-                        </div>
-                        <div class="card">
-                            <img src="./imagenes/postres/moussedechocolate.jpg" id="producto" alt="moussedechocolate">
-                            <div class="card-texto">
-                                <p class="texto">mousse de chocolate</p>
-                                <p>$600</p>
-                            </div>
-                            <div class="card-iconos">
-                                <button><img src="./imagenes/iconos/heart.png" alt="corazon"></button>
-                                <button><img src="./imagenes/iconos/shoppingcart.png" alt="carrito"></button>                                
-                            </div>                         
-                        </div>
-                        <div class="card">
-                            <img src="./imagenes/postres/tiramisu.jpg" id="producto" alt="tiramisu">
-                            <div class="card-texto">
-                                <p class="texto">tiramisu</p>
-                                <p>$600</p>
-                            </div>
-                            <div class="card-iconos">
-                                <button><img src="./imagenes/iconos/heart.png" alt="corazon"></button>
-                                <button><img src="./imagenes/iconos/shoppingcart.png" alt="carrito"></button>                                
-                            </div>                        
-                        </div>
-                        <div class="card">
-                            <img src="./imagenes/postres/franui.jpg" id="producto" alt="franui">
-                            <div class="card-texto">
-                                <p class="texto">Franui</p>
-                                <p>$1650</p>
-                            </div>
-                            <div class="card-iconos">
-                                <button><img src="./imagenes/iconos/heart.png" alt="corazon"></button>
-                                <button><img src="./imagenes/iconos/shoppingcart.png" alt="carrito"></button>                                
-                            </div>                         
-                        </div>
-                    </div>
-                </section>
-                <section id="Bebidas">
-                    <h3 class="subtitulos">Bebidas</h3>
-                </section>
-                <section id="Helados">
-                    <h3 class="subtitulos">Helados</h3>
-                </section>
-            </section>
-            <section class="miCarrito">
-                <h3 class="subtitulos">Mi pedido</h3>
-                <div>
-                    <img src="./imagenes/iconos/lupa.png" alt="lupa">
-                    <p class="texto">Tu pedido esta aqui</p>
                 </div>
             </section>
-            <button class="mobile-button">
-                <p>Ver mi pedido</p>
-                <img src="./imagenes/iconos/shoppingcart.png" alt="carrito">
-            </button>
+            <h3>Pizzas</h3>
+            <section class="container-cards">
+
+            </section>
+            <h3>Media pizza</h3>
+            <section class="container-cards">
+
+            </section>
+            <h3>Empanadas</h3>
+            <section class="container-cards">
+
+            </section>
+            <h3>Calzones</h3>
+            <section class="container-cards">
+
+            </section>
+            <h3>Combos</h3>
+            <section class="container-cards">
+
+            </section>
+            <h3>Burguer sola</h3>
+            <section class="container-cards">
+
+            </section>
+            <h3>Papas</h3>
+            <section class="container-cards">
+
+            </section>
+            <h3>Ensaladas</h3>
+            <section class="container-cards">
+
+            </section>
+            <h3>Bebidas</h3>
+            <section class="container-cards">
+
+            </section>
+            <h3>Cervezas</h3>
+            <section class="container-cards">
+
+            </section>
+            <h3>Postres</h3>
+            <section class="container-cards">
+
+            </section>
+            <h3>Helados</h3>
+            <section class="container-cards">
+
+            </section>
+        </div>
+        <button>
+            <p>Ver mi pedido</p>
+            <img src="" alt="carrito">
+        </button>
+        </div>
         </div>
     </main>
     <footer></footer>

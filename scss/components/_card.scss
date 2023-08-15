@@ -1,0 +1,52 @@
+.card {
+    width: 90%;
+    margin: 0 auto;
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.5rem;
+    box-shadow: map-get($sombra, normal);
+
+    img {
+        height: 4rem;
+        width: 5rem;
+        border-radius: 0.5rem;
+        object-fit: cover;
+        margin-left: 0.5rem;
+    }
+
+    .card-texto {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .card-iconos {
+        display: flex;
+        flex-direction: column;
+        margin-right: 0.5rem;
+
+        img {
+            width: 1.5rem;
+            height: 1.5rem;
+            align-self: center;
+            margin-bottom: 0.8rem;
+        }
+
+        .contador {
+            display: flex;
+            flex-direction: row;
+            background-color: $rojo;
+            border-radius: 1.5rem;
+            width: 4rem;
+            justify-content: center;
+            align-items: center;
+            height: 1.8rem;
+            img{
+                margin: 0;
+            }
+        }
+    }
+}

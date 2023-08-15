@@ -1,0 +1,38 @@
+.categorias {
+    width: 100%;
+    overflow-x: scroll;
+    /* Mostrará la barra de desplazamiento solo cuando sea necesario */
+    scrollbar-width: none;
+    /* Oculta la barra de desplazamiento de manera general (excepto en navegadores basados en WebKit) */
+    -ms-overflow-style: none; 
+    margin: 1rem 0;
+    &::-webkit-scrollbar {
+        display: none; /* Oculta la barra de desplazamiento en navegadores WebKit */
+      }
+    ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+
+        li {
+            text-decoration: none;
+
+            a {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                text-decoration: none;
+                color: inherit;
+
+                .categoria-ovalo {
+                    box-shadow: map-get($sombra, normal);
+                    background-color: $rojo;
+                    margin: 0 0.5rem;
+                    border-radius: 2rem;
+                    height: 5rem;
+                    width: 3.5rem;
+                }
+            }
+        }
+    }
+}

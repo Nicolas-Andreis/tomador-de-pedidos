@@ -1,24 +1,33 @@
 html { /*1 rem = 10px */
     font-size: 62,5%;
-    font-family: 'Roboto', sans-serif;
-    font-family: 'Fira Sans Extra Condensed', sans-serif; /*La use para home (HABEMUS PIZZAS)*/
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif; /*La use para home (HABEMUS PIZZAS)*/
 }
 body{
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;  
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif; 
+    font-weight: 200;
 }
 .titulos{
     font-size: map-get($titulos, desktop);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+
 }
 
 .subtitulos{
     font-size: map-get($subtitulos, desktop);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
 }
 
 .texto{
     font-size: map-get($texto, desktop);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
 }
 
 .sombra{
     box-shadow: map-get($sombra, densa);
+    font-family: 'Poppins', sans-serif;
 }
