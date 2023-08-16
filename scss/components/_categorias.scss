@@ -4,14 +4,18 @@
     /* Mostrará la barra de desplazamiento solo cuando sea necesario */
     scrollbar-width: none;
     /* Oculta la barra de desplazamiento de manera general (excepto en navegadores basados en WebKit) */
-    -ms-overflow-style: none; 
+    -ms-overflow-style: none;
     margin: 1rem auto;
+
     &::-webkit-scrollbar {
-        display: none; /* Oculta la barra de desplazamiento en navegadores WebKit */
-      }
-      h3{
+        display: none;
+        /* Oculta la barra de desplazamiento en navegadores WebKit */
+    }
+
+    h3 {
         margin-bottom: 1rem;
-      }
+    }
+
     ul {
         display: flex;
         flex-direction: row;
@@ -28,8 +32,8 @@
                 color: inherit;
 
                 .categoria-ovalo {
-                    background: rgb(247,189,214);
-background: linear-gradient(180deg, rgba(247,189,214,1) 0%, rgba(232,126,126,0.40948879551820727) 21%, rgba(236,152,152,0.6559873949579832) 62%, rgba(233,148,148,0.7596288515406162) 80%);
+                    background: rgb(247, 189, 214);
+                    background: linear-gradient(180deg, rgba(247, 189, 214, 1) 0%, rgba(232, 126, 126, 0.40948879551820727) 21%, rgba(236, 152, 152, 0.6559873949579832) 62%, rgba(233, 148, 148, 0.7596288515406162) 80%);
                     box-shadow: map-get($sombra, normal);
                     background-color: $rojo;
                     margin: 0 0.5rem;
@@ -39,7 +43,8 @@ background: linear-gradient(180deg, rgba(247,189,214,1) 0%, rgba(232,126,126,0.4
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    img{
+
+                    img {
                         width: 3rem;
                     }
                 }
