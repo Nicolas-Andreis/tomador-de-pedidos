@@ -38,13 +38,15 @@
         .contador {
             display: flex;
             flex-direction: row;
-            background-color: $rojo;
+            background: $background;
+            background: $gradient;
             border-radius: 1.5rem;
             width: 4rem;
             justify-content: center;
             align-items: center;
             height: 1.8rem;
-            img{
+
+            img {
                 margin: 0;
             }
         }

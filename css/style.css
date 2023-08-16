@@ -139,7 +139,8 @@ nav .buscador div {
 .card .card-iconos .contador {
   display: flex;
   flex-direction: row;
-  background-color: rgba(243, 95, 95, 0.43);
+  background: rgb(247, 189, 214);
+  background: linear-gradient(180deg, rgb(247, 189, 214) 0%, rgba(232, 126, 126, 0.4094887955) 21%, rgba(236, 152, 152, 0.655987395) 62%, rgba(233, 148, 148, 0.7596288515) 80%);
   border-radius: 1.5rem;
   width: 4rem;
   justify-content: center;
@@ -186,6 +187,8 @@ nav .buscador div {
   color: inherit;
 }
 .categorias ul li a .categoria-ovalo {
+  background: rgb(247, 189, 214);
+  background: linear-gradient(180deg, rgb(247, 189, 214) 0%, rgba(232, 126, 126, 0.4094887955) 21%, rgba(236, 152, 152, 0.655987395) 62%, rgba(233, 148, 148, 0.7596288515) 80%);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   background-color: rgba(243, 95, 95, 0.43);
   margin: 0 0.5rem;
@@ -219,7 +222,8 @@ h3 {
   flex-direction: row;
   width: 100%;
   justify-content: space-evenly;
-  background-color: rgba(243, 95, 95, 0.43);
+  background: rgb(247, 189, 214);
+  background: linear-gradient(180deg, rgb(247, 189, 214) 0%, rgba(232, 126, 126, 0.4094887955) 21%, rgba(236, 152, 152, 0.655987395) 62%, rgba(233, 148, 148, 0.7596288515) 80%);
   height: 2rem;
   border-radius: 0.5rem 0.5rem 0 0;
   margin-bottom: 0.5rem;
@@ -262,7 +266,8 @@ h3 {
   align-items: center;
 }
 .container-delivery .retiro div div p:nth-child(2) {
-  background-color: rgba(243, 95, 95, 0.43);
+  background: rgb(247, 189, 214);
+  background: linear-gradient(180deg, rgb(247, 189, 214) 0%, rgba(232, 126, 126, 0.4094887955) 21%, rgba(236, 152, 152, 0.655987395) 62%, rgba(233, 148, 148, 0.7596288515) 80%);
   border-radius: 1rem;
   width: 5rem;
   text-align: center;
