@@ -1,13 +1,16 @@
 .categorias {
-    width: 100%;
+    width: 90%;
     overflow-x: scroll;
     /* Mostrará la barra de desplazamiento solo cuando sea necesario */
     scrollbar-width: none;
     /* Oculta la barra de desplazamiento de manera general (excepto en navegadores basados en WebKit) */
     -ms-overflow-style: none; 
-    margin: 1rem 0;
+    margin: 1rem auto;
     &::-webkit-scrollbar {
         display: none; /* Oculta la barra de desplazamiento en navegadores WebKit */
+      }
+      h3{
+        margin-bottom: 1rem;
       }
     ul {
         display: flex;
@@ -31,6 +34,12 @@
                     border-radius: 2rem;
                     height: 5rem;
                     width: 3.5rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    img{
+                        width: 3rem;
+                    }
                 }
             }
         }
