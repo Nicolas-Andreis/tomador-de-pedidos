@@ -204,6 +204,7 @@ nav .buscador div {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   background-color: rgba(243, 95, 95, 0.43);
   margin: 0 0.5rem;
+  margin-bottom: 0.5rem;
   border-radius: 2rem;
   height: 5rem;
   width: 3.5rem;
@@ -312,7 +313,7 @@ h3 {
   justify-content: center;
   border-radius: 0.5rem;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  margin: 0 auto 1rem auto;
+  margin: 1rem auto 1rem auto;
   height: 3rem;
 }
 .container-horario .abierto {
