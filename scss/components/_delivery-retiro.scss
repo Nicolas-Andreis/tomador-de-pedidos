@@ -3,7 +3,8 @@ h3 {
     margin-top: 1rem;
     margin-bottom: 0.5rem;
 }
-#categorias-subtitle{
+
+#categorias-subtitle {
     margin-top: 3rem;
 }
 
@@ -58,6 +59,7 @@ h3 {
     padding: 0.5rem;
     position: relative;
     top: -4rem;
+
     img {
         width: 1.5rem;
         height: 1.5rem;
@@ -89,6 +91,9 @@ h3 {
                     width: 6rem;
                     text-align: center;
                     box-shadow: map-get($sombra, normal);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                 }
             }
         }

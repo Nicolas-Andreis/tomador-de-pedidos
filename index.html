@@ -66,16 +66,28 @@
                 <p>abierto</p>
             </div>
             <div class="redes">
-                <div>
+                <div class="ver-horarios">
                     <img src="./imagenes/iconos/abierto/reloj.png" alt="reloj">
-                    <p>Ver horarios</p>
+                    <p id="ver-horarios-button">Ver horarios</p>
+                </div>
+            </div>
+            <div class="modal" id="horariosModal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Horarios de apertura y cierre</h2>
+                    <p>Apertura: 12:00 pm - 2:15 pm</p>
+                    <p>Cierre: 7:30 pm - 11:15 pm</p>
                 </div>
             </div>
         </div>
         <div class="delivery-retiro">
             <div class="rojo">
-                <button class="active" id="delivery-button"><p class="subtitulos" >Delivery</p></button>
-                <button class="" id="retiro-button"><p class="subtitulos" >Retiro</p></button>
+                <button class="active" id="delivery-button">
+                    <p class="subtitulos">Delivery</p>
+                </button>
+                <button class="" id="retiro-button">
+                    <p class="subtitulos">Retiro</p>
+                </button>
             </div>
             <div class="container-delivery">
                 <div class="delivery contenido active" id="delivery-contenido">
@@ -191,6 +203,7 @@
                     </div>
                     <div class="card-iconos">
                         <img src="./imagenes/iconos/corazon/heart.png" alt="corazon" class="heart">
+                        
                         <div class="contador">
                             <img src="./imagenes/iconos/basura/trash.png" alt="trash">
                             <p>0</p>
@@ -207,6 +220,7 @@
                     </div>
                     <div class="card-iconos">
                         <img src="./imagenes/iconos/corazon/heart.png" alt="corazon" class="heart">
+                        
                         <div class="contador">
                             <img src="./imagenes/iconos/basura/trash.png" alt="trash">
                             <p>0</p>
@@ -223,6 +237,7 @@
                     </div>
                     <div class="card-iconos">
                         <img src="./imagenes/iconos/corazon/heart.png" alt="corazon" class="heart">
+                        
                         <div class="contador">
                             <img src="./imagenes/iconos/basura/trash.png" alt="trash">
                             <p>0</p>
@@ -230,6 +245,7 @@
                         </div>
                     </div>
                 </div>
+
             </section>
             <h3>Pizzas</h3>
             <section class="container-cards" id="Pizzas">
@@ -289,9 +305,9 @@
 
             </section>
         </div>
-        <button>
+        <button class="ver-pedido">
             <p>Ver mi pedido</p>
-            <img src="" alt="carrito">
+            <img src="./imagenes/iconos/shopping cart/shoppingcart.png" alt="carrito">
         </button>
         </div>
         </div>

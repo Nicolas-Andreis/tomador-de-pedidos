@@ -1,0 +1,23 @@
+.ver-pedido {
+    width: 90%;
+    margin: auto;
+    position: fixed;
+    top: 90vh;
+    border-radius: 2rem;
+    margin-left: 5%;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: rgb(247 189 214);
+    background: linear-gradient(180deg, rgb(247, 189, 214) 0%, rgb(232 126 126) 21%, rgb(236 152 152) 62%, rgb(233 148 148) 80%);
+    border: none;
+    p{
+        font-size: large;
+    }
+    img{
+        width: 1.7rem;
+
+    }
+}
