@@ -6,10 +6,10 @@
     border-radius: 0.5rem;
     box-shadow: map-get($sombra, normal);
     margin: 0 auto 1rem auto;
-    height: 6rem;
+    height: 3rem;
 
 
-    div:nth-child(1) {
+    .abierto {
         align-items: center;
         display: flex;
         justify-content: center;
@@ -31,33 +31,6 @@
         align-items: center;
         display: flex;
         flex-direction: column;
-
-        div:nth-child(1) {
-            width: 100%;
-            display: flex;
-            justify-content: space-around;
-
-        }
-        div:nth-child(2){
-            div{
-                a{
-                    div{
-                        width: 2rem;
-                        height: 2rem;
-                    }
-                }
-            }
-            
-        }
-        div:nth-child(3){
-            p {
-                background: rgb(255 249 0 / 24%);
-                border-radius: 1rem;
-                width: 6rem;
-                text-align: center;
-                box-shadow: map-get($sombra, normal);
-            }
-        }
 
         div {
             display: flex;
