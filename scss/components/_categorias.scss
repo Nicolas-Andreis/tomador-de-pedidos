@@ -1,11 +1,18 @@
 .categorias {
-    width: 90%;
+    width: 100%;
     overflow-x: scroll;
     /* Mostrará la barra de desplazamiento solo cuando sea necesario */
     scrollbar-width: none;
     /* Oculta la barra de desplazamiento de manera general (excepto en navegadores basados en WebKit) */
     -ms-overflow-style: none;
-    margin: 1rem auto;
+    position: -webkit-sticky;
+    /* Para navegadores basados en WebKit */
+    position: sticky;
+    top: 0;
+    /* Posición en la parte superior de la pantalla */
+    background-color: white;
+    /* Puedes personalizar el estilo */
+    padding: 10px;
 
     &::-webkit-scrollbar {
         display: none;
