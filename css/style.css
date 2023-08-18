@@ -466,5 +466,40 @@ h3 {
 }
 
 /*TABLET*/
+@media (min-width: 992px) {
+  .container-horario {
+    width: 80%;
+  }
+  .delivery .contenido .active {
+    align-items: center;
+  }
+  .delivery-retiro {
+    width: 80%;
+  }
+  .categorias {
+    display: flex;
+    justify-content: center;
+  }
+  .categorias ul li {
+    margin: auto 0.4rem;
+  }
+  #categorias-subtitle {
+    margin-left: 10%;
+  }
+  .menu {
+    width: 80%;
+  }
+  .menu .container-cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .menu .container-cards .card {
+    width: 32%;
+  }
+  .ver-pedido {
+    width: 50%;
+    margin-left: 25%;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

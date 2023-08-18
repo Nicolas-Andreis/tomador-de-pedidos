@@ -1,0 +1,48 @@
+/*TABLET*/
+@media (min-width: 992px) {
+    .container-horario {
+        width: 80%;
+    }
+    .delivery{
+        .contenido{
+            .active{
+                align-items: center;
+            }
+        }  
+    } 
+    .delivery-retiro {
+        width: 80%;
+    }
+
+    .categorias {
+        display: flex;
+        justify-content: center;
+        ul{
+            li{
+                margin: auto 0.4rem;
+            }
+        }
+    }
+
+    #categorias-subtitle {
+        margin-left: 10%;
+    }
+
+    .menu {
+        width: 80%;
+
+        .container-cards {
+            display: flex;
+            flex-wrap: wrap;
+
+            .card {
+                width: 32%;
+            }
+        }
+    }
+
+    .ver-pedido {
+        width: 50%;
+        margin-left: 25%;
+    }
+}

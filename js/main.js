@@ -74,3 +74,96 @@ window.addEventListener('click', (event) => {
 
 
 //corazon card
+
+
+
+
+//prentrega coderhouse  //////////////////////////////////////
+// Función para obtener el nombre del cliente
+function obtenerNombreCliente() {
+    let nombre = prompt(`Ingrese su nombre`);
+    return nombre;
+}
+
+// Función para mostrar el mensaje de despedida
+function mostrarDespedida(nombre) {
+    alert(`Gracias por visitarnos, ${nombre}. ¡Esperamos verte pronto nuevamente!`);
+}
+
+// Función para mostrar el total de la compra
+function mostrarTotalCompra(total) {
+    alert(`El total de su compra es: ${total}`);
+}
+
+// Función para realizar el proceso de compra de pizzas
+function realizarCompra(pizzas) {
+    let totalCompra = 0;
+    let detalleCompra = '';
+    let seguirComprando = true;
+
+    do {
+        let compra = parseInt(prompt(`Qué pizza quiere comprar?\nIndique un número 1, 2, 3, 4 (solo números)
+        \n1 Pizza Muzzarella $2530 \n2 Pizza Especial $3150 \n3 Pizza Napolitana $2870 \n4 Pizza Fuggazza $2810`));
+
+        // Recorremos el array de pizzas utilizando un bucle for...of
+        for (let pizza of pizzas) {
+            if (compra === pizza.id) { // Si la compra coincide con el id de la pizza
+                totalCompra += pizza.precio; // Sumamos el precio al total de la compra
+                detalleCompra += `Tu compra de ${pizza.nombre} valor: $${pizza.precio} ha sido exitosa!\n`; // Agregamos el detalle de la compra
+            }
+        }
+
+        // Validamos si el número de compra es inválido
+        if (compra < 1 || compra > pizzas.length) {
+            alert("No disponemos esa variedad o el número ingresado no es válido.");
+        }
+
+        // Preguntamos si el cliente desea seguir comprando
+        seguirComprando = confirm("¿Desea comprar otra pizza?");
+    } while (seguirComprando);
+
+    // Llamamos a la función para mostrar el total de la compra
+    mostrarTotalCompra("$" + totalCompra);
+
+    // Mostramos el detalle de la compra
+    alert(detalleCompra);
+}
+
+// Función para saludar al cliente y comenzar el flujo
+function saludar() {
+    let nombreCliente = obtenerNombreCliente(); // Obtener el nombre del cliente
+    alert(`Hola ${nombreCliente}, Bienvenido a nuestra pizzeria`);
+
+    let decision = prompt(`Indique 1 o 2 (solo números)\n1 Quiero hacer un pedido\n2 No quiero ver opciones`);
+
+    if (decision === "1") { // Si el cliente decide hacer un pedido
+        // Creamos un array de objetos que representan las pizzas disponibles
+        let pizzas = [
+            { id: 1, nombre: 'Pizza Muzzarella', precio: 2530 },
+            { id: 2, nombre: 'Pizza Especial', precio: 3150 },
+            { id: 3, nombre: 'Pizza Napolitana', precio: 2870 },
+            { id: 4, nombre: 'Pizza Fuggazza', precio: 2810 }
+        ];
+
+        alert("Estas son nuestras pizzas:\n");
+
+        // Mostramos las opciones de pizzas disponibles
+        for (let pizza of pizzas) {
+            alert(`${pizza.nombre}           $${pizza.precio}`);
+        }
+
+        // Llamamos a la función para que el cliente realice la compra
+        realizarCompra(pizzas);
+
+    } else if (decision === "2") { // Si el cliente no desea hacer un pedido
+        alert(`Esperamos verte pronto.`);
+    } else {
+        alert("Error, no indicó 1 o 2"); // Si la opción ingresada es inválida
+    }
+
+    // Llamamos a la función para mostrar el mensaje de despedida
+    mostrarDespedida(nombreCliente);
+}
+
+// Llamamos a la función para comenzar el flujo de interacción con el cliente
+saludar();
