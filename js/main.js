@@ -70,6 +70,195 @@ window.addEventListener('click', (event) => {
 //modal de horarios
 
 
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    let totalCompra = 0;
+    const contenedores = document.querySelectorAll('.card');
+    const productosEnPedido = {};
+
+    contenedores.forEach(contenedor => {
+        const cantidadElement = contenedor.querySelector('.contador p');
+        const imgTrash = contenedor.querySelector('.contador .trash-btn');
+        const imgSum = contenedor.querySelector('.contador .sum-btn');
+        const nombreProducto = contenedor.querySelector('.card-texto p:first-child').textContent;
+        const precioProducto = parseInt(contenedor.querySelector('.card-texto p:last-child').textContent.replace('$', ''));
+        const imagenProducto = contenedor.querySelector('img').getAttribute('src');
+
+        imgTrash.addEventListener('click', () => {
+            totalCompra -= parseInt(cantidadElement.textContent) * precioProducto;
+            cantidadElement.textContent = '0';
+            actualizarCantidadTotal();
+            eliminarProductoDePedido(nombreProducto);
+            actualizarModalPedido();
+        });
+
+        imgSum.addEventListener('click', () => {
+            let cantidad = parseInt(cantidadElement.textContent);
+            cantidad++;
+            totalCompra += precioProducto;
+            cantidadElement.textContent = cantidad.toString();
+            actualizarCantidadTotal();
+            agregarProductoAPedido(nombreProducto, cantidad, precioProducto, imagenProducto);
+            actualizarModalPedido();
+        });
+    });
+
+    function actualizarCantidadTotal() {
+        const cantidades = document.querySelectorAll('.card .contador p');
+        const cantidadTotalElement = document.getElementById('cantidad-total');
+
+        let cantidadTotal = 0;
+        cantidades.forEach(cantidadElement => {
+            cantidadTotal += parseInt(cantidadElement.textContent);
+        });
+
+        cantidadTotalElement.textContent = cantidadTotal.toString();
+    }
+
+    function agregarProductoAPedido(nombre, cantidad, precio, imagen) {
+        if (!productosEnPedido[nombre]) {
+            productosEnPedido[nombre] = {
+                cantidad: 0,
+                precio: precio,
+                imagen: imagen
+            };
+        }
+
+        productosEnPedido[nombre].cantidad += cantidad;
+    }
+
+    // Función para eliminar un producto del pedido
+    function eliminarProductoDePedido(nombre) {
+        if (productosEnPedido[nombre]) {
+            totalCompra -= productosEnPedido[nombre].cantidad * productosEnPedido[nombre].precio;
+            delete productosEnPedido[nombre];
+        }
+    }
+
+    // Función para actualizar el modal de pedido con los detalles de los productos
+// Función para actualizar el modal de pedido con los detalles de los productos
+function actualizarModalPedido() {
+    const pedidoDetalleElement = document.getElementById('pedido-detalle');
+    const cantidadTotalElement = document.getElementById('cantidad-total');
+    const totalCompraElement = document.getElementById('total-compra');
+
+    pedidoDetalleElement.innerHTML = '';
+    let cantidadTotal = 0;
+    for (const nombre in productosEnPedido) {
+        const producto = productosEnPedido[nombre];
+        const detalleProducto = `
+            <div class="detalle-producto">
+                <div class="producto-info">
+                    <img src="${producto.imagen}" alt="${nombre}" class="producto-imagen">
+                    <div class="producto-detalle">
+                        <p>${producto.cantidad}x ${nombre} - $${producto.cantidad * producto.precio}</p>
+                        <div class="cantidad-buttons">
+                            <button class="restar-cantidad" data-producto="${nombre}">-</button>
+                            <p>${producto.cantidad}</p>
+                            <button class="sumar-cantidad" data-producto="${nombre}">+</button>
+                        </div>
+                        <button class="eliminar-producto" data-producto="${nombre}">&times;</button>
+                    </div>
+                </div>
+            </div>
+        `;
+        pedidoDetalleElement.innerHTML += detalleProducto;
+        cantidadTotal += producto.cantidad;
+    }
+
+    cantidadTotalElement.textContent = cantidadTotal.toString();
+    totalCompraElement.textContent = `$${totalCompra}`;
+
+    // Agregar eventos a los botones de eliminar, sumar y restar cantidad
+    const eliminarBotones = document.querySelectorAll('.eliminar-producto');
+    const sumarBotones = document.querySelectorAll('.sumar-cantidad');
+    const restarBotones = document.querySelectorAll('.restar-cantidad');
+
+    eliminarBotones.forEach(btn => {
+        btn.addEventListener('click', (event) => {
+            const nombreProducto = event.target.getAttribute('data-producto');
+            eliminarProductoDePedido(nombreProducto);
+            actualizarModalPedido();
+            actualizarCantidadTotal();
+        });
+    });
+
+    sumarBotones.forEach(btn => {
+        btn.addEventListener('click', (event) => {
+            const nombreProducto = event.target.getAttribute('data-producto');
+            const producto = productosEnPedido[nombreProducto];
+            producto.cantidad++;
+            totalCompra += producto.precio;
+            actualizarModalPedido();
+            actualizarCantidadTotal();
+        });
+    });
+
+    restarBotones.forEach(btn => {
+        btn.addEventListener('click', (event) => {
+            const nombreProducto = event.target.getAttribute('data-producto');
+            const producto = productosEnPedido[nombreProducto];
+            if (producto.cantidad > 0) {
+                producto.cantidad--;
+                totalCompra -= producto.precio;
+                actualizarModalPedido();
+                actualizarCantidadTotal();
+            }
+        });
+    });
+}
+
+    const comprarBtn = document.getElementById('comprar-btn');
+
+    comprarBtn.addEventListener('click', () => {
+        // Lógica para procesar la compra
+        alert('¡Compra realizada con éxito!');
+        
+        // Limpia el detalle del pedido y el total de la compra
+        const pedidoDetalleElement = document.getElementById('pedido-detalle');
+        const totalCompraElement = document.getElementById('total-compra');
+        pedidoDetalleElement.innerHTML = '';
+        totalCompraElement.textContent = '$0';
+        totalCompra = 0;
+        productosEnPedido = {};
+    });
+
+    // Código para el modal "Ver pedido"
+    const verPedidoButton = document.querySelector('.ver-pedido');
+    const modalVerPedido = document.getElementById('modal-1');
+    const closeVerPedido = modalVerPedido.querySelector('.close');
+
+    verPedidoButton.addEventListener('click', () => {
+        actualizarModalPedido();
+        modalVerPedido.style.display = 'block';
+    });
+
+    closeVerPedido.addEventListener('click', () => {
+        modalVerPedido.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === modalVerPedido) {
+            modalVerPedido.style.display = 'none';
+        }
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //corazon card
 
 
@@ -165,7 +354,7 @@ function agregarTarjetas(container, productos) {
     for (const producto of productos) {
         let contenedor = document.createElement("div");
         contenedor.classList.add("card"); // Agregar la clase "card"
-
+    
         // Definir el contenido HTML de la tarjeta
         contenedor.innerHTML = `
             <img src="${producto.imagen}" alt="">
@@ -177,13 +366,13 @@ function agregarTarjetas(container, productos) {
                 <img src="./imagenes/iconos/corazon/heart.png" alt="corazon" class="heart">
                 
                 <div class="contador">
-                    <img src="./imagenes/iconos/basura/trash.png" alt="trash">
+                    <img src="./imagenes/iconos/basura/trash.png" alt="trash" class="trash-btn">
                     <p>0</p>
-                    <img src="./imagenes/iconos/shopping cart/sum.png" alt="+">
+                    <img src="./imagenes/iconos/shopping cart/sum.png" alt="+" class="sum-btn">
                 </div>
             </div>
         `;
-
+    
         container.appendChild(contenedor); // Agregar la tarjeta al contenedor
     }
 }

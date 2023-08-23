@@ -192,7 +192,7 @@
             </ul>
         </div>
         <div class="menu">
-            <h3>Promos</h3>
+            <h3 class="promos">Promos</h3>
             <section class="container-cards" id="Promos">
 
             </section>
@@ -254,10 +254,22 @@
 
             </section>
         </div>
-        <button class="ver-pedido">
+        <button class="ver-pedido" data-modal="modal-1">
             <p>Ver mi pedido</p>
             <img src="./imagenes/iconos/shopping cart/shoppingcart.png" alt="carrito">
         </button>
+
+        <!-- Modal de pedido -->
+        <div id="modal-1" class="modal">
+            <div class="modal-content">
+                <span class="close" data-modal="modal-1">&times;</span>
+                <div id="pedido-detalle"></div>
+                <p id="total-compra">$0</p>
+                <p id="cantidad-total">0</p> <!-- Agrega el elemento aquí -->
+                <button id="comprar-btn">Comprar</button>
+            </div>
+        </div>
+        </div>
         </div>
         </div>
     </main>
