@@ -153,12 +153,16 @@ function actualizarModalPedido() {
                 <div class="producto-info">
                     <img src="${producto.imagen}" alt="${nombre}" class="producto-imagen">
                     <div class="producto-detalle">
-                        <p>${producto.cantidad}x ${nombre} - $${producto.cantidad * producto.precio}</p>
+                        <p class="productoModal">${producto.cantidad}x ${nombre}</p>
+                        <div class="containerPrecioBotones">
+                        <p>$${producto.cantidad * producto.precio}</p>
                         <div class="cantidad-buttons">
                             <button class="restar-cantidad" data-producto="${nombre}">-</button>
                             <p>${producto.cantidad}</p>
                             <button class="sumar-cantidad" data-producto="${nombre}">+</button>
                         </div>
+                        </div>
+                        
                         <button class="eliminar-producto" data-producto="${nombre}">&times;</button>
                     </div>
                 </div>
