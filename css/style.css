@@ -506,13 +506,12 @@ h3 {
   z-index: 1000;
 }
 
-.modal-content {
+#modal-pedidos {
   background-color: #fff;
   padding: 20px;
   border-radius: 1rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  width: 80%;
+  width: 100%;
   text-align: center;
   position: relative;
 }
