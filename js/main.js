@@ -76,7 +76,7 @@ window.addEventListener('click', (event) => {
 document.addEventListener('DOMContentLoaded', () => {
     let totalCompra = 0;
     const contenedores = document.querySelectorAll('.card');
-    const productosEnPedido = {};
+    let productosEnPedido = {};
 
     contenedores.forEach(contenedor => {
         const cantidadElement = contenedor.querySelector('.contador p');
@@ -129,14 +129,12 @@ document.addEventListener('DOMContentLoaded', () => {
         productosEnPedido[nombre].cantidad += cantidad;
     }
 
-    // Función para eliminar un producto del pedido
     function eliminarProductoDePedido(nombre) {
         if (productosEnPedido[nombre]) {
             totalCompra -= productosEnPedido[nombre].cantidad * productosEnPedido[nombre].precio;
             delete productosEnPedido[nombre];
         }
     }
-
     // Función para actualizar el modal de pedido con los detalles de los productos
 // Función para actualizar el modal de pedido con los detalles de los productos
 function actualizarModalPedido() {
@@ -354,6 +352,55 @@ const productosBurguerSola = [
     { id: 4, nombre: "combo inmortal", precio: 3720, imagen: "./imagenes/burguers/burguerinmortal.jpg" },    
 ];
 
+const productosEmpanadas = [
+    { id: 1, nombre: "carne", precio: 410, imagen: "./imagenes/empanadas/clasicas/carne.jpg" },
+    { id: 2, nombre: "carne picante", precio: 410, imagen: "./imagenes/empanadas/clasicas/carnepicante.jpg" },
+    { id: 3, nombre: "carne cuchillo", precio: 410, imagen: "./imagenes/empanadas/clasicas/carnecuchillo.jpg" },
+    { id: 4, nombre: "pollo", precio: 410, imagen: "./imagenes/empanadas/clasicas/pollo.jpg" },
+    { id: 5, nombre: "pastora", precio: 410, imagen: "./imagenes/empanadas/clasicas/pastora.jpg" },
+    { id: 6, nombre: "cerdo barbacoa", precio: 410, imagen: "./imagenes/empanadas/clasicas/cerdoybarbacoa.jpg" },
+    { id: 7, nombre: "chesseburguer", precio: 410, imagen: "./imagenes/empanadas/clasicas/chesseburguer.jpg" },
+    { id: 8, nombre: "calabaza y queso", precio: 410, imagen: "./imagenes/empanadas/clasicas/calabazayqueso.jpg" },
+    { id: 9, nombre: "jamon y queso", precio: 410, imagen: "./imagenes/empanadas/canastitas/jamonyqueso.jpg" },
+    { id: 10, nombre: "cebolla y queso", precio: 410, imagen: "./imagenes/empanadas/canastitas/cebollayqueso.jpg" },
+    { id: 11, nombre: "capresse", precio: 410, imagen: "./imagenes/empanadas/canastitas/capresse.jpg" },
+    { id: 12, nombre: "humita", precio: 410, imagen: "./imagenes/empanadas/canastitas/humita.jpg" },
+    { id: 13, nombre: "roque apio y nuez", precio: 410, imagen: "./imagenes/empanadas/canastitas/roqueapoynuez.jpg" },
+    { id: 14, nombre: "roquefort", precio: 410, imagen: "./imagenes/empanadas/canastitas/roquefort.jpg" },
+    { id: 15, nombre: "cantimpalo", precio: 410, imagen: "./imagenes/empanadas/canastitas/cantimpalo.jpg" },
+    { id: 16, nombre: "anana y jamon", precio: 410, imagen: "./imagenes/empanadas/canastitas/ananayjamon.jpg" },
+    { id: 17, nombre: "wok de verduras", precio: 410, imagen: "./imagenes/empanadas/canastitas/wokdeverduras.jpg" },
+    { id: 18, nombre: "panceta y ciruela", precio: 410, imagen: "./imagenes/empanadas/canastitas/pancetayciruela.jpg" },    
+];
+
+const productosCalzones = [
+    { id: 1, nombre: "alla calzone", precio: 3470, imagen: "./imagenes/calzones/allacalzone.jpg" },
+    { id: 2, nombre: "calzone especial", precio: 3900, imagen: "./imagenes/calzones/calzoneespecial.jpg" },
+    { id: 3, nombre: "calzone calabresa", precio: 3900, imagen: "./imagenes/calzones/calzonecalabresa.jpg" },
+    { id: 4, nombre: "calzone capresse", precio: 3900, imagen: "./imagenes/calzones/calzonecapresse.jpg" },
+    { id: 5, nombre: "calzone napolitano", precio: 3590, imagen: "./imagenes/calzones/calzonenapolitano.jpg" },  
+];
+
+const productosPapas = [
+    { id: 1, nombre: "papas fritas", precio: 1270, imagen: "./imagenes/papas/papasfritas.jpg" },
+    { id: 2, nombre: "papas pirata", precio: 1480, imagen: "./imagenes/papas/papaspirata.jpg" },  
+];
+
+const productosEnsaladas = [
+    { id: 1, nombre: "ensalada caesar", precio: 2010, imagen: "./imagenes/ensalada/caesar.jpg" },
+    { id: 2, nombre: "ensalada navegante", precio: 1900, imagen: "./imagenes/ensalada/navegante.jpg" },
+    { id: 3, nombre: "ensalada egeo", precio: 1770, imagen: "./imagenes/ensalada/egeo.jpg" },
+    { id: 4, nombre: "ensalada arcoiris", precio: 1630, imagen: "./imagenes/ensalada/arcoirirs.jpg" },  
+];
+
+const productosPostres = [
+    { id: 1, nombre: "franui", precio: 1900, imagen: "./imagenes/postres/franui.jpg" },
+    { id: 2, nombre: "tiramisu", precio: 650, imagen: "./imagenes/postres/tiramisu.jpg" },
+    { id: 3, nombre: "chocoreo", precio: 650, imagen: "./imagenes/postres/chocoreo.jpg" },
+    { id: 4, nombre: "chocotorta", precio: 650, imagen: "./imagenes/postres/chocoreo.jpg" },
+    { id: 5, nombre: "muosse de chocolate", precio: 650, imagen: "./imagenes/postres/moussedechocolate.jpg" },  
+];
+
 function agregarTarjetas(container, productos) {
     for (const producto of productos) {
         let contenedor = document.createElement("div");
@@ -385,8 +432,18 @@ const containerPizzas = document.querySelector("#Pizzas");
 const containerMediasPizzas = document.querySelector("#MediasPizzas");
 const containerCombos = document.querySelector("#Combos");
 const containerBurguersSolas = document.querySelector("#BurguersSolas");
+const containerEmpanadas = document.querySelector("#Empanadas");
+const containerCalzones = document.querySelector("#Calzones");
+const containerPapas = document.querySelector("#Papas");
+const containerEnsaladas = document.querySelector("#Ensaladas");
+const containerPostres = document.querySelector("#Postres");
 
 agregarTarjetas(containerPizzas, productosPizzas);
 agregarTarjetas(containerMediasPizzas, productosMediasPizzas);
 agregarTarjetas(containerCombos, productosCombos);
 agregarTarjetas(containerBurguersSolas, productosBurguerSola);
+agregarTarjetas(containerEmpanadas, productosEmpanadas);
+agregarTarjetas(containerCalzones, productosCalzones);
+agregarTarjetas(containerPapas, productosPapas);
+agregarTarjetas(containerEnsaladas, productosEnsaladas);
+agregarTarjetas(containerPostres, productosPostres);
