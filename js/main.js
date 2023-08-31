@@ -407,6 +407,19 @@ const productosPostres = [
     { id: 5, nombre: "muosse de chocolate", precio: 650, imagen: "./imagenes/postres/moussedechocolate.jpg" },  
 ];
 
+const productosBebidas = [
+    { id: 1, nombre: "cocacola 1.5lts", precio: 900, imagen: "./imagenes/gaseosas/cocacola.jpg" },
+    { id: 2, nombre: "coca zero 1.5lts", precio: 900, imagen: "./imagenes/gaseosas/cocazero.jpg" },
+    { id: 3, nombre: "fanta 1.5lts", precio: 900, imagen: "./imagenes/gaseosas/fanta.jpg" },
+    { id: 4, nombre: "sprite 1.5lts", precio: 900, imagen: "./imagenes/gaseosas/sprite.jpg" },
+    { id: 5, nombre: "sprite zero 1.5lts", precio: 900, imagen: "./imagenes/gaseosas/spritezero.jpg" },
+    { id: 6, nombre: "schweppers 1.5lts", precio: 900, imagen: "./imagenes/gaseosas/schwepers.jpg" },
+    { id: 7, nombre: "coca cola 500cc", precio: 500, imagen: "./imagenes/gaseosas 500cc/coca.jpg" },
+    { id: 8, nombre: "coca zero 500cc", precio: 500, imagen: "./imagenes/gaseosas 500cc/cocazero.jpg" },
+    { id: 9, nombre: "fanta 500cc", precio: 500, imagen: "./imagenes/gaseosas 500cc/fanta.jpg" },
+    { id: 10, nombre: "schweppers 50cc", precio: 500, imagen: "./imagenes/gaseosas 500cc/schweppers.jpg" },  
+];
+
 function agregarTarjetas(container, productos) {
     for (const producto of productos) {
         let contenedor = document.createElement("div");
@@ -444,6 +457,7 @@ const containerCalzones = document.querySelector("#Calzones");
 const containerPapas = document.querySelector("#Papas");
 const containerEnsaladas = document.querySelector("#Ensaladas");
 const containerPostres = document.querySelector("#Postres");
+const containerBebidas = document.querySelector("#Bebidas");
 
 agregarTarjetas(containerPromos, productosPromos);
 agregarTarjetas(containerPizzas, productosPizzas);
@@ -455,3 +469,4 @@ agregarTarjetas(containerCalzones, productosCalzones);
 agregarTarjetas(containerPapas, productosPapas);
 agregarTarjetas(containerEnsaladas, productosEnsaladas);
 agregarTarjetas(containerPostres, productosPostres);
+agregarTarjetas(containerBebidas, productosBebidas);
