@@ -267,7 +267,13 @@ function actualizarModalPedido() {
 //corazon card
 
 
-//card
+const productosPromos = [
+    { id: 1, nombre: "promo para sillonear", precio: 4350, imagen: "./imagenes/promos/parasillonear.png" },
+    { id: 2, nombre: "promo hinchada", precio: 3430, imagen: "./imagenes/promos/promohinchada.png" },
+    { id: 3, nombre: "promo para compartir", precio: 5590, imagen: "./imagenes/promos/paracompartir.png" },
+];
+
+
 const productosPizzas = [
     { id: 1, nombre: "muzzarella", precio: 2910, imagen: "./imagenes/pizzas/muzzarella.jpg" },
     { id: 2, nombre: "fugazza", precio: 3230, imagen: "./imagenes/pizzas/fuggazza.jpg" },
@@ -304,38 +310,38 @@ const productosPizzas = [
 ];
 
 const productosMediasPizzas = [
-    { id: 1, nombre: "muzzarella", precio: 1540, imagen: "./imagenes/pizzas/muzzarella.jpg" },
-    { id: 2, nombre: "fugazza", precio: 1700, imagen: "./imagenes/pizzas/fuggazza.jpg" },
-    { id: 3, nombre: "napolitana", precio: 1740, imagen: "./imagenes/pizzas/napolitana.jpg" },
-    { id: 4, nombre: "provolone", precio: 1830, imagen: "./imagenes/pizzas/provolone.jpg" },
-    { id: 5, nombre: "roquefort", precio: 1830, imagen: "./imagenes/pizzas/roquefort.jpg" },
-    { id: 6, nombre: "aceitunas", precio: 1710, imagen: "./imagenes/pizzas/aceitunas.jpg" },
-    { id: 7, nombre: "muzza y jamon", precio: 1740, imagen: "./imagenes/pizzas/muzzayjamon.jpg" },
-    { id: 8, nombre: "especial", precio: 1900, imagen: "./imagenes/pizzas/especial.jpg" },
-    { id: 9, nombre: "estacione", precio: 1900, imagen: "./imagenes/pizzas/estacione.jpg" },
-    { id: 10, nombre: "j. crudo y rucula", precio: 2150, imagen: "./imagenes/pizzas/jamoncrudoyrucula.jpg" },
-    { id: 11, nombre: "champinones", precio: 1950, imagen: "./imagenes/pizzas/champignones.jpg" },
-    { id: 12, nombre: "alla cardille", precio: 2100, imagen: "./imagenes/pizzas/allacardille.jpg" },
-    { id: 13, nombre: "alla matioli", precio: 2040, imagen: "./imagenes/pizzas/allamattioli.jpg" },
-    { id: 14, nombre: "huevo y cebolla", precio: 2040, imagen: "./imagenes/pizzas/huevoycebolla.jpg" },
-    { id: 15, nombre: "palmitos", precio: 2100, imagen: "./imagenes/pizzas/palmitos.jpg" },
-    { id: 16, nombre: "primavera", precio: 2010, imagen: "./imagenes/pizzas/primavera.jpg" },
-    { id: 17, nombre: "calabresa", precio: 2040, imagen: "./imagenes/pizzas/calabresa.jpg" },
-    { id: 18, nombre: "wok de verduras", precio: 2040, imagen: "./imagenes/pizzas/wokdeverduras.jpg" },
-    { id: 19, nombre: "giuseppe", precio: 1910, imagen: "./imagenes/pizzas/giussepe.jpg" },
-    { id: 20, nombre: "hawaiana", precio: 2100, imagen: "./imagenes/pizzas/hawaiana.jpg" },
-    { id: 21, nombre: "margarita", precio: 2040, imagen: "./imagenes/pizzas/margarita.jpg" },
-    { id: 22, nombre: "alla reina", precio: 2100, imagen: "./imagenes/pizzas/allareina.jpg" },
-    { id: 23, nombre: "cantimpalo", precio: 2040, imagen: "./imagenes/pizzas/cantimpalo.jpg" },
-    { id: 24, nombre: "del mar", precio: 2340, imagen: "./imagenes/pizzas/delmar.jpg" },
-    { id: 25, nombre: "apio y nuez", precio: 2040, imagen: "./imagenes/pizzas/apioynuez.jpg" },
-    { id: 26, nombre: "pollo", precio: 2370, imagen: "./imagenes/pizzas/pollo.jpg" },
-    { id: 27, nombre: "a tu gusto", precio: 2470, imagen: "./imagenes/pizzas/atugusto.jpg" },
-    { id: 28, nombre: "roque y panceta", precio: 2150, imagen: "./imagenes/pizzas/roquefortypanceta.jpg" },
-    { id: 29, nombre: "panceta y huevo", precio: 2340, imagen: "./imagenes/pizzas/pancetayhuevo.jpg" },
-    { id: 30, nombre: "americana", precio: 2470, imagen: "./imagenes/pizzas/americana.jpg" },
-    { id: 31, nombre: "cuatro quesos", precio: 2310, imagen: "./imagenes/pizzas/cuatroquesos.jpg" },
-    { id: 32, nombre: "alla pirata", precio: 2280, imagen: "./imagenes/pizzas/allapirata.jpg" },
+    { id: 1, nombre: "mitad muzzarella", precio: 1540, imagen: "./imagenes/pizzas/muzzarella.jpg" },
+    { id: 2, nombre: "mitad fugazza", precio: 1700, imagen: "./imagenes/pizzas/fuggazza.jpg" },
+    { id: 3, nombre: "mitad napolitana", precio: 1740, imagen: "./imagenes/pizzas/napolitana.jpg" },
+    { id: 4, nombre: "mitad provolone", precio: 1830, imagen: "./imagenes/pizzas/provolone.jpg" },
+    { id: 5, nombre: "mitad roquefort", precio: 1830, imagen: "./imagenes/pizzas/roquefort.jpg" },
+    { id: 6, nombre: "mitad aceitunas", precio: 1710, imagen: "./imagenes/pizzas/aceitunas.jpg" },
+    { id: 7, nombre: "mitad muzza y jamon", precio: 1740, imagen: "./imagenes/pizzas/muzzayjamon.jpg" },
+    { id: 8, nombre: "mitad especial", precio: 1900, imagen: "./imagenes/pizzas/especial.jpg" },
+    { id: 9, nombre: "mitad estacione", precio: 1900, imagen: "./imagenes/pizzas/estacione.jpg" },
+    { id: 10, nombre: "mitad j. crudo y rucula", precio: 2150, imagen: "./imagenes/pizzas/jamoncrudoyrucula.jpg" },
+    { id: 11, nombre: "mitad champinones", precio: 1950, imagen: "./imagenes/pizzas/champignones.jpg" },
+    { id: 12, nombre: "mitad alla cardille", precio: 2100, imagen: "./imagenes/pizzas/allacardille.jpg" },
+    { id: 13, nombre: "mitad alla matioli", precio: 2040, imagen: "./imagenes/pizzas/allamattioli.jpg" },
+    { id: 14, nombre: "mitad huevo y cebolla", precio: 2040, imagen: "./imagenes/pizzas/huevoycebolla.jpg" },
+    { id: 15, nombre: "mitad palmitos", precio: 2100, imagen: "./imagenes/pizzas/palmitos.jpg" },
+    { id: 16, nombre: "mitad primavera", precio: 2010, imagen: "./imagenes/pizzas/primavera.jpg" },
+    { id: 17, nombre: "mitad calabresa", precio: 2040, imagen: "./imagenes/pizzas/calabresa.jpg" },
+    { id: 18, nombre: "mitad wok de verduras", precio: 2040, imagen: "./imagenes/pizzas/wokdeverduras.jpg" },
+    { id: 19, nombre: "mitad giuseppe", precio: 1910, imagen: "./imagenes/pizzas/giussepe.jpg" },
+    { id: 20, nombre: "mitad hawaiana", precio: 2100, imagen: "./imagenes/pizzas/hawaiana.jpg" },
+    { id: 21, nombre: "mitad margarita", precio: 2040, imagen: "./imagenes/pizzas/margarita.jpg" },
+    { id: 22, nombre: "mitad alla reina", precio: 2100, imagen: "./imagenes/pizzas/allareina.jpg" },
+    { id: 23, nombre: "mitad cantimpalo", precio: 2040, imagen: "./imagenes/pizzas/cantimpalo.jpg" },
+    { id: 24, nombre: "mitad del mar", precio: 2340, imagen: "./imagenes/pizzas/delmar.jpg" },
+    { id: 25, nombre: "mitad apio y nuez", precio: 2040, imagen: "./imagenes/pizzas/apioynuez.jpg" },
+    { id: 26, nombre: "mitad pollo", precio: 2370, imagen: "./imagenes/pizzas/pollo.jpg" },
+    { id: 27, nombre: "mitad a tu gusto", precio: 2470, imagen: "./imagenes/pizzas/atugusto.jpg" },
+    { id: 28, nombre: "mitad roque y panceta", precio: 2150, imagen: "./imagenes/pizzas/roquefortypanceta.jpg" },
+    { id: 29, nombre: "mitad panceta y huevo", precio: 2340, imagen: "./imagenes/pizzas/pancetayhuevo.jpg" },
+    { id: 30, nombre: "mitad americana", precio: 2470, imagen: "./imagenes/pizzas/americana.jpg" },
+    { id: 31, nombre: "mitad cuatro quesos", precio: 2310, imagen: "./imagenes/pizzas/cuatroquesos.jpg" },
+    { id: 32, nombre: "mitad alla pirata", precio: 2280, imagen: "./imagenes/pizzas/allapirata.jpg" },
 ];
 
 const productosCombos = [
@@ -428,6 +434,7 @@ function agregarTarjetas(container, productos) {
     }
 }
 
+const containerPromos = document.querySelector("#Promos");
 const containerPizzas = document.querySelector("#Pizzas");
 const containerMediasPizzas = document.querySelector("#MediasPizzas");
 const containerCombos = document.querySelector("#Combos");
@@ -438,6 +445,7 @@ const containerPapas = document.querySelector("#Papas");
 const containerEnsaladas = document.querySelector("#Ensaladas");
 const containerPostres = document.querySelector("#Postres");
 
+agregarTarjetas(containerPromos, productosPromos);
 agregarTarjetas(containerPizzas, productosPizzas);
 agregarTarjetas(containerMediasPizzas, productosMediasPizzas);
 agregarTarjetas(containerCombos, productosCombos);
