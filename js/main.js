@@ -352,10 +352,10 @@ const productosCombos = [
 ];
 
 const productosBurguerSola = [
-    { id: 1, nombre: "combo pirata", precio: 2580, imagen: "./imagenes/burguers/burguerpirata.jpg" },
-    { id: 2, nombre: "combo barbacoa", precio: 2680, imagen: "./imagenes/burguers/burguerbbq.jpg" },
-    { id: 3, nombre: "combo corazon azul", precio: 2680, imagen: "./imagenes/burguers/burgurguercorazonazul.jpg" },
-    { id: 4, nombre: "combo inmortal", precio: 3720, imagen: "./imagenes/burguers/burguerinmortal.jpg" },    
+    { id: 1, nombre: "hamburguesa pirata", precio: 2580, imagen: "./imagenes/burguers/burguerpirata.jpg" },
+    { id: 2, nombre: "hamburguesa barbacoa", precio: 2680, imagen: "./imagenes/burguers/burguerbbq.jpg" },
+    { id: 3, nombre: "hamburguesa corazon azul", precio: 2680, imagen: "./imagenes/burguers/burgurguercorazonazul.jpg" },
+    { id: 4, nombre: "hamburguesa inmortal", precio: 3720, imagen: "./imagenes/burguers/burguerinmortal.jpg" },    
 ];
 
 const productosEmpanadas = [
