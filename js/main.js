@@ -420,6 +420,27 @@ const productosBebidas = [
     { id: 10, nombre: "schweppers 50cc", precio: 500, imagen: "./imagenes/gaseosas 500cc/schweppers.jpg" },  
 ];
 
+const productosCervezas = [
+    { id: 1, nombre: "heineken 710cc", precio: 1100, imagen: "./imagenes/cerveza 710/heineken.jpg" },
+    { id: 2, nombre: "imperial 710cc", precio: 900, imagen: "./imagenes/cerveza 710/imperial.jpg" },
+    { id: 3, nombre: "schneider 710cc", precio: 800, imagen: "./imagenes/cerveza 710/schneider.jpg" },
+    { id: 4, nombre: "heineken 473cc", precio: 660, imagen: "./imagenes/cervezas 473/heineken.jpg" },
+    { id: 5, nombre: "imperial 473cc", precio: 580, imagen: "./imagenes/cervezas 473/imperial.jpg" },
+    { id: 6, nombre: "imperial ipa 473cc", precio: 580, imagen: "./imagenes/cervezas 473/ipa.jpg" },
+    { id: 7, nombre: "imperial roja 473cc", precio: 580, imagen: "./imagenes/cervezas 473/roja.jpg" },
+    { id: 8, nombre: "schneider 473cc", precio: 500, imagen: "./imagenes/cervezas 473/schneider.jpg" }, 
+];
+
+const productosHelados = [
+    { id: 1, nombre: "banana split", precio: 1500, imagen: "./imagenes/helados/babanasplit.jpg" },
+    { id: 2, nombre: "chocolate suizo", precio: 1500, imagen: "./imagenes/helados/chocolatesuizo.jpg" },
+    { id: 3, nombre: "crema tramontana", precio: 1500, imagen: "./imagenes/helados/crematramontana.jpg" },
+    { id: 4, nombre: "dulce de leche granizado", precio: 1500, imagen: "./imagenes/helados/dulcedelechegranizado.jpg" },
+    { id: 5, nombre: "frutilla a la crema", precio: 1500, imagen: "./imagenes/helados/frutillaalacrema.jpg" },
+    { id: 6, nombre: "limon granizado", precio: 1500, imagen: "./imagenes/helados/limongranizado.jpg" },
+    { id: 7, nombre: "super dulce de leche", precio: 1500, imagen: "./imagenes/helados/superdulcedeleche.jpg" }, 
+];
+
 function agregarTarjetas(container, productos) {
     for (const producto of productos) {
         let contenedor = document.createElement("div");
@@ -458,6 +479,8 @@ const containerPapas = document.querySelector("#Papas");
 const containerEnsaladas = document.querySelector("#Ensaladas");
 const containerPostres = document.querySelector("#Postres");
 const containerBebidas = document.querySelector("#Bebidas");
+const containerCervezas = document.querySelector("#Cervezas");
+const containerHelados = document.querySelector("#Helados");
 
 agregarTarjetas(containerPromos, productosPromos);
 agregarTarjetas(containerPizzas, productosPizzas);
@@ -470,3 +493,5 @@ agregarTarjetas(containerPapas, productosPapas);
 agregarTarjetas(containerEnsaladas, productosEnsaladas);
 agregarTarjetas(containerPostres, productosPostres);
 agregarTarjetas(containerBebidas, productosBebidas);
+agregarTarjetas(containerCervezas, productosCervezas);
+agregarTarjetas(containerHelados, productosHelados);
