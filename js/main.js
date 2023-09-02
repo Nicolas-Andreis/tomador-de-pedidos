@@ -129,12 +129,33 @@ document.addEventListener('DOMContentLoaded', () => {
         productosEnPedido[nombre].cantidad += cantidad;
     }
 
-    function eliminarProductoDePedido(nombre) {
-        if (productosEnPedido[nombre]) {
-            totalCompra -= productosEnPedido[nombre].cantidad * productosEnPedido[nombre].precio;
-            delete productosEnPedido[nombre];
+    function actualizarCantidadEnTarjeta(nombre, cantidad) {
+        const contenedor = document.querySelector(`.card:has(.card-texto p:first-child:contains("${nombre}"))`);
+        if (contenedor) {
+            const cantidadElement = contenedor.querySelector('.contador p');
+            cantidadElement.textContent = cantidad.toString();
         }
     }
+
+
+ function eliminarProductoDePedido(nombre) {
+    if (productosEnPedido[nombre]) {
+        totalCompra -= productosEnPedido[nombre].cantidad * productosEnPedido[nombre].precio;
+        delete productosEnPedido[nombre];
+        actualizarModalPedido(); // Actualizar el modal después de eliminar
+        actualizarCantidadTotal(); // Actualizar la cantidad total en las tarjetas
+
+        // Reiniciar cantidad en la tarjeta específica
+        const contenedor = document.querySelector(`.card[data-producto="${nombre}"]`);
+        if (contenedor) {
+            const cantidadElement = contenedor.querySelector('.contador p');
+            cantidadElement.textContent = '0';
+        }
+    }
+}
+
+
+
     // Función para actualizar el modal de pedido con los detalles de los productos
 // Función para actualizar el modal de pedido con los detalles de los productos
 function actualizarModalPedido() {
@@ -495,3 +516,34 @@ agregarTarjetas(containerPostres, productosPostres);
 agregarTarjetas(containerBebidas, productosBebidas);
 agregarTarjetas(containerCervezas, productosCervezas);
 agregarTarjetas(containerHelados, productosHelados);
+
+
+
+
+//modales
+document.addEventListener('DOMContentLoaded', () => {
+    const enlacesDropdown = document.querySelectorAll('.dropdown-item');
+
+    enlacesDropdown.forEach(enlace => {
+        enlace.addEventListener('click', (event) => {
+            event.preventDefault();
+            const modalId = enlace.getAttribute('data-modal');
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'block';
+            }
+        });
+    });
+
+    const modales = document.querySelectorAll('.modal');
+
+    modales.forEach(modal => {
+        const modalCerrar = modal.querySelector('.cerrar-modal');
+
+        if (modalCerrar) {
+            modalCerrar.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+        }
+    });
+});

@@ -33,6 +33,12 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;900&family=Roboto:wght@300;500;900&display=swap"
         rel="stylesheet">
 
+    <!--BOOSTRAP CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
 
     <!--ANIMATE CSS CDN-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -45,12 +51,104 @@
     <header>
         <nav>
             <div>
-                <img src="./imagenes/iconos/nav/menu.png" alt="menu" class="icon">
-                <div>
-                    <img src="./imagenes/logo/logo.png" alt="logo">
+                <div class="dropdown">
+                    <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="./imagenes/iconos/nav/menu.png" alt="menu" class="icon">
+                    </button>
+                    <!-- Elementos de la lista desplegable -->
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" data-modal="modal-direccion">Direccion</a></li>
+                        <li><a class="dropdown-item" href="#" data-modal="modal-costo-envio">Costo de envio</a></li>
+                        <li><a class="dropdown-item" href="#" data-modal="modal-beneficios-retiro">Beneficios de
+                                retiro</a></li>
+                        <li><a class="dropdown-item" href="#" data-modal="modal-zona-repartos">Zona de repartos</a></li>
+                        <li><a class="dropdown-item" href="#" data-modal="modal-carta">Carta</a></li>
+                    </ul>
+
+                    <!-- Modal de Direccion -->
+                    <div id="modal-direccion" class="modal">
+                        <div class="modal-contenido">
+                            <!-- Encabezado del modal -->
+                            <div class="modal-header">
+                                <h2>Dirección</h2>
+                                <span class="cerrar-modal" id="cerrar-modal-direccion">&times;</span>
+                            </div>
+
+                            <!-- Contenido principal del modal -->
+                            <div class="modal-main">
+                                <p>Lamadrid 360 | Bahia Blanca</p>
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <div id="modal-costo-envio" class="modal">
+                        <div class="modal-contenido">
+                            <!-- Encabezado del modal -->
+                            <div class="modal-header">
+                                <h2>Costo de envio</h2>
+                                <span class="cerrar-modal" id="cerrar-modal-costo-envio">&times;</span>
+                            </div>
+
+                            <!-- Contenido principal del modal -->
+                            <div class="modal-main">
+                                <p>Valor del envio $230</p>
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <div id="modal-beneficios-retiro" class="modal">
+                        <div class="modal-contenido">
+                            <!-- Encabezado del modal -->
+                            <div class="modal-header">
+                                <h2>Beneficios de retirar</h2>
+                                <span class="cerrar-modal" id="cerrar-modal-beneficios-retiro">&times;</span>
+                            </div>
+
+                            <!-- Contenido principal del modal -->
+                            <div class="modal-main">
+                                <p>Por retirar en el local dispones de %10 off</p>
+                            
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="modal-zona-repartos" class="modal">
+                        <div class="modal-contenido">
+                            <!-- Encabezado del modal -->
+                            <div class="modal-header">
+                                <h2>Zona de repartos</h2>
+                                <span class="cerrar-modal" id="cerrar-modal-zona-repartos">&times;</span>
+                            </div>
+
+                            <!-- Contenido principal del modal -->
+                            <div class="modal-main">
+                                <iframe src="https://www.google.com/maps/d/embed?mid=1ELNktHZKKRrr_8_GQLPTy5XAY45ybrqT&ehbc=2E312F" width="100%" height="200"></iframe>
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <div id="modal-carta" class="modal">
+                        <div class="modal-contenido">
+                            <!-- Encabezado del modal -->
+                            <div class="modal-header">
+                                <h2>Nuestra carta</h2>
+                                <span class="cerrar-modal" id="cerrar-modal-carta">&times;</span>
+                            </div>
+
+                            <!-- Contenido principal del modal -->
+                            <div class="modal-main">
+                                <img src="./imagenes/carta/menu (1).jpg" alt="carta" class="carta">
+                            
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="logo">
+                    <img src="./imagenes/logo/logo.png" alt="logo" >
                     <h1 class="titulos">Il Pirata</h1>
                 </div>
-                <img src="./imagenes/iconos/nav/setting.png" alt="configuracion" class="icon">
             </div>
             <div class="buscador">
                 <div><button><img src="./imagenes/iconos/lupa/lupaBuscador.png" alt="lupa"></button>

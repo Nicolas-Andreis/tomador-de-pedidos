@@ -3,6 +3,17 @@ nav {
     flex-direction: column;
     padding-top: 1rem;
 
+    .dropdown {
+        position: absolute;
+    }
+
+    .logo {
+        position: relative;
+        margin: 0 auto;
+        width: 40%;
+        align-items: center;
+    }
+
     div {
         display: flex;
         flex-direction: row;
@@ -30,7 +41,8 @@ nav {
         margin-bottom: 1rem;
         align-items: baseline;
         display: none; // para ocultarlo
-        .icon-setting{
+
+        .icon-setting {
             width: 1.5rem;
             border-radius: 0;
         }

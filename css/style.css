@@ -5,6 +5,14 @@
   box-sizing: border-box;
 }
 
+p {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+}
+
 html { /*1 rem = 10px */
   font-size: 62, 5%;
   font-family: "Poppins", sans-serif;
@@ -44,6 +52,15 @@ nav {
   display: flex;
   flex-direction: column;
   padding-top: 1rem;
+}
+nav .dropdown {
+  position: absolute;
+}
+nav .logo {
+  position: relative;
+  margin: 0 auto;
+  width: 40%;
+  align-items: center;
 }
 nav div {
   display: flex;
@@ -179,6 +196,7 @@ nav .buscador div {
   background-color: white;
   /* Puedes personalizar el estilo */
   padding: 10px;
+  z-index: 1;
 }
 .categorias::-webkit-scrollbar {
   display: none;
@@ -659,6 +677,79 @@ h3 {
   height: 4rem;
   object-fit: cover;
   border-radius: 0.5rem;
+}
+
+/* Estilos para el modal y su fondo oscuro */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  padding: 10%;
+}
+
+/* Estilos para el contenido del modal */
+.modal-contenido {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 95%;
+  text-align: center;
+  display: block;
+  margin: auto;
+}
+
+/* Estilos para el encabezado del modal */
+.modal-header {
+  padding: 20px;
+  background-color: #fcfcfc;
+  color: #000000;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Estilos para la cruz de cierre */
+.cerrar-modal {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Estilos para el contenido principal del modal */
+.modal-main {
+  padding: 20px;
+  color: black;
+}
+
+/* Estilos para el botón de abrir el modal */
+#abrir-modal {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#abrir-modal:hover, #cerrar-modal-footer:hover {
+  background-color: #0056b3;
+}
+
+.carta {
+  width: 100%;
+  border-radius: 0;
+}
+.carta:focus {
+  transform: scale(1.5); /* Aumenta el tamaño del elemento al hacer clic o darle foco */
+  transition: transform 0.2s; /* Agrega una transición suave */
 }
 
 /*TABLET*/
