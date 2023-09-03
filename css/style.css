@@ -238,6 +238,13 @@ nav .buscador div {
   width: 3rem;
 }
 
+.categorias a.active {
+  /* Color de fondo más fuerte para la categoría activa */
+}
+.categorias a.active .categoria-ovalo {
+  background: linear-gradient(180deg, rgb(247, 189, 214) 0%, rgba(237, 0, 0, 0.74) 21%, rgba(215, 1, 1, 0.66) 62%, rgba(229, 39, 39, 0.76) 80%);
+}
+
 h3 {
   margin-left: 1rem;
   margin-top: 4rem;
