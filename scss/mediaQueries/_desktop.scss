@@ -1,7 +1,12 @@
 /*TABLET*/
 @media (min-width: 992px) {
+    nav{
+        .logo{
+            width: 11%;
+        }
+    }
     .container-horario {
-        width: 80%;
+        width: 60%;
     }
     .delivery{
         .contenido{
@@ -11,25 +16,31 @@
         }  
     } 
     .delivery-retiro {
-        width: 80%;
+        width: 60%;
     }
 
     .categorias {
         display: flex;
         justify-content: center;
+        width: 60%;
+        margin: 0 auto;
+        align-items: center;
         ul{
             li{
                 margin: auto 0.4rem;
+                height: 7rem;
             }
         }
     }
 
     #categorias-subtitle {
-        margin-left: 10%;
+        margin-left: 21%;
+        width: 50%;
+
     }
 
     .menu {
-        width: 80%;
+        width: 60%;
 
         .container-cards {
             display: flex;
