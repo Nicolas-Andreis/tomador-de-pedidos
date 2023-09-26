@@ -10,28 +10,34 @@
     <title>login</title>
 </head>
 
-<body>
+<body class="login">
     <div class="container-logo-login">
         <img src="/imagenes/logo/logo.png" alt="">
     </div>
-    <div>
+    <div class="container-bienvenido">
         <h2>¡Bienvenido!</h2>
     </div>
     <div>
-        <form id="loginForm">
-            <label for="username"></label>
-            <input type="text" id="username" name="username" required placeholder="Ingresa tu nombre de usuario"><br>
-            <label for="password"></label>
-            <input type="password" id="password" name="password" required placeholder="Ingresa tu contraseña"><br>
+        <form id="loginForm" class="container-form">
+            <div class="container-input">
+                <img src="../imagenes/login/user.png" alt="usuario">
+                <label for="username"></label>
+                <input type="text" id="username" name="username" required placeholder="usuario">
+            </div>
+            <div class="container-input">
+                <img src="../imagenes/login/candado.png" alt="contraseña">
+                <label for="password"></label>
+                <input type="password" id="password" name="password" required placeholder="contraseña">
+            </div>
             <button type="submit">Iniciar Sesión</button>
         </form>
     </div>
-    <div>
+    <div class="registro">
         <p>¿no tienes una cuenta?</p>
-        <p>Registrate</p>
+        <a href=""><p>Registrate</p></a>
     </div>
-    <div>
-        <a href="../index.html">
+    <div class="ingreso-directo">
+        <a href="../index.html" onclick="cambiarUsuarioHaIniciadoSesion(); return true;">
             <p>ingresar sin iniciar sesión</p>
         </a>
     </div>

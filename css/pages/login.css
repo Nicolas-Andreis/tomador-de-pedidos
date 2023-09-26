@@ -1,8 +1,17 @@
-.container-logo-login {
-  width: 100%;
-}
-.container-logo-login img {
-  width: 5rem;
-}
+/* Error: Undefined variable.
+ *    ,
+ * 42 |                 box-shadow: map-get($sombra, normal);
+ *    |                                     ^^^^^^^
+ *    '
+ *   scss\pages\login.scss 42:37  root stylesheet */
 
-/*# sourceMappingURL=login.css.map */
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a    \2577 \a 42 \2502                  box-shadow: map-get($sombra, normal);\d\a    \2502                                      ^^^^^^^\a    \2575 \a   scss\\pages\\login.scss 42:37  root stylesheet";
+}
