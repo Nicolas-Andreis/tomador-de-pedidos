@@ -93,8 +93,8 @@ body {
 }
 .login .login-desktop .container-form button {
   width: 10rem;
-  height: 2rem;
-  border-radius: 1rem;
+  height: 3rem;
+  border-radius: 2rem;
   margin: 2rem auto;
   color: white;
   background: rgb(247, 189, 214);
