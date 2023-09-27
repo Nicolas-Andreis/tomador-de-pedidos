@@ -4,7 +4,8 @@ nav {
     padding-top: 1rem;
 
     .dropdown {
-        position: absolute;
+        position: relative;
+        border-radius: 0.5rem;
     }
 
     .logo {
@@ -12,6 +13,26 @@ nav {
         margin: 0 auto;
         width: 40%;
         align-items: center;
+    }
+
+    .iniciar {
+        margin-right: 0.5rem;
+
+        a {
+            color: red;
+            text-decoration: none;
+            border: 1px solid red;
+            width: 7rem;
+            display: flex;
+            justify-content: center;
+            border-radius: 0.5rem;
+            box-shadow: map-get($sombra, normal);
+            &:hover{
+                color: white;
+                background-color: red;
+            }
+        }
+
     }
 
     div {

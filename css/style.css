@@ -125,13 +125,31 @@ nav {
   padding-top: 1rem;
 }
 nav .dropdown {
-  position: absolute;
+  position: relative;
+  border-radius: 0.5rem;
 }
 nav .logo {
   position: relative;
   margin: 0 auto;
   width: 40%;
   align-items: center;
+}
+nav .iniciar {
+  margin-right: 0.5rem;
+}
+nav .iniciar a {
+  color: red;
+  text-decoration: none;
+  border: 1px solid red;
+  width: 7rem;
+  display: flex;
+  justify-content: center;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+nav .iniciar a:hover {
+  color: white;
+  background-color: red;
 }
 nav div {
   display: flex;
