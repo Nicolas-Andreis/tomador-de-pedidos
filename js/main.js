@@ -1,20 +1,3 @@
-    //verificacion falsa 
-    // Variable ficticia para simular la autenticación del usuario
-    let usuarioHaIniciadoSesion = true;
-
-    // Verifica si el usuario ha iniciado sesión
-    if (!usuarioHaIniciadoSesion && !window.location.href.includes("login.html")) {
-        window.location.href = "../pages/login.html";
-    }
-     // Función para cambiar usuarioHaIniciadoSesion a true
-     function cambiarUsuarioHaIniciadoSesion() {
-        usuarioHaIniciadoSesion = true;
-        // Puedes agregar aquí cualquier otra lógica necesaria después de iniciar sesión.
-    }
-//verificacion falsa 
-
-
-
 
 // codigo para cambiar retiro a delivery
 const deliveryButton = document.getElementById('delivery-button');

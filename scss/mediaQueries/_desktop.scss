@@ -56,4 +56,12 @@
         width: 50%;
         margin-left: 25%;
     }
+
+
+.login-desktop{
+    width: 50%;
+    border-radius: 1rem;
+    margin: auto auto;
+    box-shadow: map-get($sombra, normal);
+}
 }
