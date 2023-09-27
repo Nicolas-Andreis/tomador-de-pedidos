@@ -89,7 +89,7 @@ footer {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 1.5rem auto;
+  margin: 1rem auto;
 }
 .login .login-desktop .container-form .container-input img {
   width: 1.7rem;
