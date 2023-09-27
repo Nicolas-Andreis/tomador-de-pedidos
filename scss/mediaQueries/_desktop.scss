@@ -57,11 +57,18 @@
         margin-left: 25%;
     }
 
-
-.login-desktop{
-    width: 50%;
-    border-radius: 1rem;
-    margin: auto auto;
-    box-shadow: map-get($sombra, normal);
+.login{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(139, 20, 20);
+    .login-desktop{
+        width: 50%;
+        background-color: white;
+        border-radius: 1rem;
+        margin: 10vh auto;
+        box-shadow: map-get($sombra, normal);
+    
+    }
 }
+
 }

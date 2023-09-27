@@ -1,7 +1,5 @@
 .login {
     .login-desktop{
-        box-shadow: none;
-        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -74,6 +72,7 @@
         }
     
         .ingreso-directo {
+            margin: 2rem auto;
             a {
                 text-decoration: none;
                 /* Quita el subrayado */
