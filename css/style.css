@@ -101,47 +101,6 @@ body {
   width: 2rem;
   border-radius: 0;
 }
-.nav-white .buscador {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
-  align-items: baseline;
-  display: none;
-}
-.nav-white .buscador .icon-setting {
-  width: 1.5rem;
-  border-radius: 0;
-}
-.nav-white .buscador button {
-  width: 2rem;
-  height: 1.9rem;
-  border-radius: 1.5rem 0 0 1.5rem;
-  background-color: rgba(243, 95, 95, 0.84);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-}
-.nav-white .buscador button img {
-  width: 1.5rem;
-}
-.nav-white .buscador input {
-  background-color: #d1d1d1;
-  border: none;
-  height: 1.9rem;
-  color: black;
-  border-radius: 0 1.5rem 1.5rem 0;
-  width: 70vw;
-  padding-left: 2rem;
-  width: 73vw;
-  font-size: large;
-}
-.nav-white .buscador div {
-  width: 90%;
-  justify-content: center;
-}
 
 .container {
   width: 100vw;
@@ -151,7 +110,11 @@ body {
 .container .conatiner-todo {
   width: inherit;
 }
+.container aside {
+  display: none;
+}
 .container .aside-visible {
+  display: block;
   transform: translateX(0);
   opacity: 1;
   visibility: visible;
@@ -162,18 +125,16 @@ body {
   background-color: rgba(255, 255, 255, 0);
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0);
-  margin-left: 77%;
 }
 .container .aside-visible .close-menu img {
   width: 3rem;
   height: 3rem;
-  margin-top: 1rem;
 }
 .container aside {
   background-color: red;
   width: 60vw;
   height: 100vh;
-  position: fixed;
+  position: absolute;
   z-index: 9;
   left: 0;
   top: 0;
@@ -182,6 +143,22 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: 0.4s;
+}
+.container aside .aside-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem auto;
+}
+.container aside .aside-logo img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 2rem;
+}
+.container aside .aside-logo p {
+  color: white;
+  margin: 1rem;
 }
 .container aside .nav-red {
   background-color: red;
@@ -940,7 +917,7 @@ body footer {
 }
 
 /*TABLET*/
-@media (min-width: 992px) {
+@media (min-width: 800px) {
   body {
     background-color: red;
   }
@@ -962,7 +939,7 @@ body footer {
     display: block;
     width: 60vw;
     height: 100vh;
-    position: static;
+    position: sticky;
     z-index: 9;
     left: 0;
     top: 0;
@@ -970,6 +947,9 @@ body footer {
     transform: translateX(0);
     opacity: 1;
     visibility: initial;
+  }
+  body .container aside .aside-logo {
+    display: none;
   }
   body .container aside .close-menu {
     display: none;
@@ -980,8 +960,8 @@ body footer {
   body .container aside .nav-red ul li {
     list-style: none;
     margin-bottom: 2rem;
-    margin-top: 1rem;
-    height: 3rem;
+    margin-top: 1.9rem;
+    height: 2rem;
     justify-content: flex-start;
     display: flex;
     align-items: center;
@@ -991,7 +971,7 @@ body footer {
   body .container aside .nav-red ul li:hover {
     background-color: white;
     border-radius: 2rem 0rem 0rem 2rem;
-    height: 3rem;
+    height: 2rem;
   }
   body .container aside .nav-red ul li:hover a {
     color: black;

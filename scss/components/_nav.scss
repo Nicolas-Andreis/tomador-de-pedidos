@@ -62,53 +62,7 @@
         }
     }
 
-    .buscador {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        margin-top: 0.5rem;
-        margin-bottom: 1rem;
-        align-items: baseline;
-        display: none; // para ocultarlo
-
-        .icon-setting {
-            width: 1.5rem;
-            border-radius: 0;
-        }
-
-        button {
-            width: 2rem;
-            height: 1.9rem;
-            border-radius: 1.5rem 0 0 1.5rem;
-            background-color: rgb(243 95 95 / 84%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: none;
-
-            img {
-                width: 1.5rem;
-            }
-        }
-
-        input {
-            background-color: #d1d1d1;
-            border: none;
-            height: 1.9rem;
-            color: black;
-            border-radius: 0 1.5rem 1.5rem 0;
-            width: 70vw;
-            padding-left: 2rem;
-            width: 73vw;
-            font-size: large;
-        }
-
-        div {
-            width: 90%;
-            justify-content: center;
-
-        }
-    }
+    
 }
 
 .container {
@@ -118,7 +72,11 @@
     .conatiner-todo{
         width: inherit;
     }
+    aside{
+        display: none;
+    }
     .aside-visible {
+        display: block;
         transform: translateX(0);
         opacity: 1;
         visibility: visible;
@@ -128,11 +86,9 @@
             background-color: rgba(255, 255, 255, 0);
             cursor: pointer;
             background-color: rgba(0, 0, 0, 0);
-            margin-left: 77%;
             img{
                 width: 3rem;
                 height: 3rem;
-                margin-top: 1rem;
             }
         }
     }
@@ -140,7 +96,7 @@
         background-color: red;
         width: 60vw;
         height: 100vh;
-        position: fixed;
+        position: absolute;
         z-index: 9;
         left: 0;
         top: 0;
@@ -149,7 +105,22 @@
         opacity: 0;
         visibility: hidden;
         transition: .4s;
-
+        .aside-logo{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem auto;
+            img{
+                width: 3rem;
+                height: 3rem;
+                border-radius: 2rem;
+            }
+            p{
+                color: white;
+                margin: 1rem;
+            }
+        }
         
 
         .nav-red {
