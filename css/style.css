@@ -118,6 +118,7 @@ body {
   transform: translateX(0);
   opacity: 1;
   visibility: visible;
+  position: fixed;
 }
 .container .aside-visible .close-menu {
   display: block;
@@ -132,7 +133,7 @@ body {
 }
 .container aside {
   background-color: red;
-  width: 60vw;
+  width: 70vw;
   height: 100vh;
   position: absolute;
   z-index: 9;
