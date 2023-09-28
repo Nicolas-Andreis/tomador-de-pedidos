@@ -49,99 +49,12 @@
 
 <body>
     <header>
-        <nav>
+        <nav class="nav-white">
             <div>
-                <div class="dropdown">
-                    <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="header-mobile">
+                    <button class="open-menu" id="open-menu" type="button">
                         <img src="./imagenes/iconos/nav/menu.png" alt="menu" class="icon">
                     </button>
-                    <!-- Elementos de la lista desplegable -->
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#" data-modal="modal-direccion">Direccion</a></li>
-                        <li><a class="dropdown-item" href="#" data-modal="modal-costo-envio">Costo de envio</a></li>
-                        <li><a class="dropdown-item" href="#" data-modal="modal-beneficios-retiro">Beneficios de
-                                retiro</a></li>
-                        <li><a class="dropdown-item" href="#" data-modal="modal-zona-repartos">Zona de repartos</a></li>
-                        <li><a class="dropdown-item" href="#" data-modal="modal-carta">Carta</a></li>
-                    </ul>
-
-                    <!-- Modal de Direccion -->
-                    <div id="modal-direccion" class="modal">
-                        <div class="modal-contenido">
-                            <!-- Encabezado del modal -->
-                            <div class="modal-header">
-                                <h2>Dirección</h2>
-                                <span class="cerrar-modal" id="cerrar-modal-direccion">&times;</span>
-                            </div>
-
-                            <!-- Contenido principal del modal -->
-                            <div class="modal-main">
-                                <p>Lamadrid 360 | Bahia Blanca</p>
-                            
-                            </div>
-                        </div>
-                    </div>
-                    <div id="modal-costo-envio" class="modal">
-                        <div class="modal-contenido">
-                            <!-- Encabezado del modal -->
-                            <div class="modal-header">
-                                <h2>Costo de envio</h2>
-                                <span class="cerrar-modal" id="cerrar-modal-costo-envio">&times;</span>
-                            </div>
-
-                            <!-- Contenido principal del modal -->
-                            <div class="modal-main">
-                                <p>Valor del envio $230</p>
-                            
-                            </div>
-                        </div>
-                    </div>
-                    <div id="modal-beneficios-retiro" class="modal">
-                        <div class="modal-contenido">
-                            <!-- Encabezado del modal -->
-                            <div class="modal-header">
-                                <h2>Beneficios de retirar</h2>
-                                <span class="cerrar-modal" id="cerrar-modal-beneficios-retiro">&times;</span>
-                            </div>
-
-                            <!-- Contenido principal del modal -->
-                            <div class="modal-main">
-                                <p>Por retirar en el local dispones de %10 off</p>
-                            
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="modal-zona-repartos" class="modal">
-                        <div class="modal-contenido">
-                            <!-- Encabezado del modal -->
-                            <div class="modal-header">
-                                <h2>Zona de repartos</h2>
-                                <span class="cerrar-modal" id="cerrar-modal-zona-repartos">&times;</span>
-                            </div>
-
-                            <!-- Contenido principal del modal -->
-                            <div class="modal-main">
-                                <iframe src="https://www.google.com/maps/d/embed?mid=1ELNktHZKKRrr_8_GQLPTy5XAY45ybrqT&ehbc=2E312F" width="100%" height="200"></iframe>
-                            
-                            </div>
-                        </div>
-                    </div>
-                    <div id="modal-carta" class="modal">
-                        <div class="modal-contenido">
-                            <!-- Encabezado del modal -->
-                            <div class="modal-header">
-                                <h2>Nuestra carta</h2>
-                                <span class="cerrar-modal" id="cerrar-modal-carta">&times;</span>
-                            </div>
-
-                            <!-- Contenido principal del modal -->
-                            <div class="modal-main">
-                                <img src="./imagenes/carta/menu (1).jpg" alt="carta" class="carta">
-                            
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
 
@@ -156,7 +69,24 @@
             
         </nav>
     </header>
-    <main>
+    <main class="container">
+        <aside>
+            <button class="close-menu" id="close-menu" type="button">
+                <img src="./imagenes/iconos/nav/back.png" alt="menu" class="icon">
+            </button>
+            <nav class="nav-red">
+                <ul class="">
+                    <li><a class="" href="#" data-modal="modal-direccion">Direccion</a></li>
+                    <li><a class="" href="#" data-modal="modal-costo-envio">Costo de envio</a></li>
+                    <li><a class="" href="#" data-modal="modal-beneficios-retiro">Beneficios de
+                            retiro</a></li>
+                    <li><a class="" href="#" data-modal="modal-zona-repartos">Zona de repartos</a></li>
+                    <li><a class="" href="#" data-modal="modal-carta">Carta</a></li>
+                    <li><a class="" href="#" data-modal="modal-carta">Mi carrito</a></li>
+                </ul> 
+            </nav>
+        </aside>
+        <div class="container-todo">
         <div class="container-horario">
             <div class="abierto">
                 <p>abierto</p>
@@ -368,6 +298,7 @@
         </div>
         </div>
         </div>
+    </div>
     </main>
     <footer>
         Derechos Reservados Nicolás Andreis &copy; 2023

@@ -48,109 +48,30 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-footer {
-  height: 4rem;
-  background-color: #f6c2d2;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 3rem;
-  align-items: end;
-}
-
-.login .login-desktop {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.login .login-desktop .container-bienvenido {
-  margin-bottom: 1rem;
-}
-.login .login-desktop .container-logo-login {
-  width: 100%;
-  height: 30vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-.login .login-desktop .container-logo-login img {
-  width: 8rem;
-  height: 8rem;
-  border-radius: 5rem;
-  margin: 0 auto;
-}
-.login .login-desktop .container-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.login .login-desktop .container-form .container-input {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: 1rem auto;
-}
-.login .login-desktop .container-form .container-input img {
-  width: 1.7rem;
-}
-.login .login-desktop .container-form .container-input input {
-  border-radius: 1rem;
-  height: 2.2rem;
-  border: 1px solid gray;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  padding-left: 0.5rem;
-}
-.login .login-desktop .container-form button {
-  width: 10rem;
-  height: 3rem;
-  border-radius: 2rem;
-  margin: 2rem auto;
-  color: white;
-  background: rgb(247, 189, 214);
-  background: linear-gradient(180deg, rgb(247, 189, 214) 0%, rgb(232, 126, 126) 21%, rgb(236, 152, 152) 62%, rgb(233, 148, 148) 80%);
-  border: none;
-}
-.login .login-desktop .registro {
-  display: flex;
-  margin-bottom: 1rem;
-}
-.login .login-desktop .registro a {
-  font-weight: bold;
-  color: red;
-  text-decoration: none;
-  /* Quita el subrayado */
-}
-.login .login-desktop .ingreso-directo {
-  margin: 2rem auto;
-}
-.login .login-desktop .ingreso-directo a {
-  text-decoration: none;
-  /* Quita el subrayado */
-  color: inherit;
-  /* Hereda el color del texto del elemento padre */
-  font-weight: bold;
-}
-
-nav {
+.nav-white {
   display: flex;
   flex-direction: column;
   padding-top: 1rem;
 }
-nav .dropdown {
-  position: relative;
-  border-radius: 0.5rem;
+.nav-white .header-mobile {
+  display: flex;
+  padding: 1rem;
 }
-nav .logo {
+.nav-white .header-mobile .open-menu {
+  border: 0;
+  background-color: rgba(255, 255, 255, 0);
+  cursor: pointer;
+}
+.nav-white .logo {
   position: relative;
   margin: 0 auto;
   width: 40%;
   align-items: center;
 }
-nav .iniciar {
+.nav-white .iniciar {
   margin-right: 0.5rem;
 }
-nav .iniciar a {
+.nav-white .iniciar a {
   color: red;
   text-decoration: none;
   border: 1px solid red;
@@ -160,11 +81,11 @@ nav .iniciar a {
   border-radius: 0.5rem;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
-nav .iniciar a:hover {
+.nav-white .iniciar a:hover {
   color: white;
   background-color: red;
 }
-nav div {
+.nav-white div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -172,15 +93,15 @@ nav div {
   color: rgba(243, 95, 95, 0.84);
   margin-bottom: 0.5rem;
 }
-nav div img {
+.nav-white div img {
   width: 2.2rem;
   border-radius: 5rem;
 }
-nav div .icon {
+.nav-white div .icon {
   width: 2rem;
   border-radius: 0;
 }
-nav .buscador {
+.nav-white .buscador {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -189,11 +110,11 @@ nav .buscador {
   align-items: baseline;
   display: none;
 }
-nav .buscador .icon-setting {
+.nav-white .buscador .icon-setting {
   width: 1.5rem;
   border-radius: 0;
 }
-nav .buscador button {
+.nav-white .buscador button {
   width: 2rem;
   height: 1.9rem;
   border-radius: 1.5rem 0 0 1.5rem;
@@ -203,10 +124,10 @@ nav .buscador button {
   align-items: center;
   border: none;
 }
-nav .buscador button img {
+.nav-white .buscador button img {
   width: 1.5rem;
 }
-nav .buscador input {
+.nav-white .buscador input {
   background-color: #d1d1d1;
   border: none;
   height: 1.9rem;
@@ -217,9 +138,78 @@ nav .buscador input {
   width: 73vw;
   font-size: large;
 }
-nav .buscador div {
+.nav-white .buscador div {
   width: 90%;
   justify-content: center;
+}
+
+.container {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+}
+.container .conatiner-todo {
+  width: inherit;
+}
+.container .aside-visible {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+}
+.container .aside-visible .close-menu {
+  display: block;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0);
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0);
+  margin-left: 77%;
+}
+.container .aside-visible .close-menu img {
+  width: 3rem;
+  height: 3rem;
+  margin-top: 1rem;
+}
+.container aside {
+  background-color: red;
+  width: 60vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 9;
+  left: 0;
+  top: 0;
+  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.75);
+  transform: translateX(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s;
+}
+.container aside .nav-red {
+  background-color: red;
+}
+.container aside .nav-red ul li {
+  list-style: none;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  height: 3rem;
+  justify-content: flex-start;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  cursor: pointer;
+}
+.container aside .nav-red ul li:hover {
+  background-color: white;
+  border-radius: 2rem 0rem 0rem 2rem;
+  height: 3rem;
+}
+.container aside .nav-red ul li:hover a {
+  color: black;
+}
+.container aside .nav-red ul li a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  color: white;
 }
 
 .card {
@@ -862,58 +852,216 @@ h3 {
   transition: transform 0.2s; /* Agrega una transición suave */
 }
 
+body .container .container-todo {
+  width: 100%;
+}
+body footer {
+  height: 4rem;
+  background-color: #f6c2d2;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 3rem;
+  align-items: end;
+}
+
+.login .login-desktop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login .login-desktop .container-bienvenido {
+  margin-bottom: 1rem;
+}
+.login .login-desktop .container-logo-login {
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.login .login-desktop .container-logo-login img {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 5rem;
+  margin: 0 auto;
+}
+.login .login-desktop .container-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login .login-desktop .container-form .container-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 1rem auto;
+}
+.login .login-desktop .container-form .container-input img {
+  width: 1.7rem;
+}
+.login .login-desktop .container-form .container-input input {
+  border-radius: 1rem;
+  height: 2.2rem;
+  border: 1px solid gray;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  padding-left: 0.5rem;
+}
+.login .login-desktop .container-form button {
+  width: 10rem;
+  height: 3rem;
+  border-radius: 2rem;
+  margin: 2rem auto;
+  color: white;
+  background: rgb(247, 189, 214);
+  background: linear-gradient(180deg, rgb(247, 189, 214) 0%, rgb(232, 126, 126) 21%, rgb(236, 152, 152) 62%, rgb(233, 148, 148) 80%);
+  border: none;
+}
+.login .login-desktop .registro {
+  display: flex;
+  margin-bottom: 1rem;
+}
+.login .login-desktop .registro a {
+  font-weight: bold;
+  color: red;
+  text-decoration: none;
+  /* Quita el subrayado */
+}
+.login .login-desktop .ingreso-directo {
+  margin: 2rem auto;
+}
+.login .login-desktop .ingreso-directo a {
+  text-decoration: none;
+  /* Quita el subrayado */
+  color: inherit;
+  /* Hereda el color del texto del elemento padre */
+  font-weight: bold;
+}
+
 /*TABLET*/
 @media (min-width: 992px) {
-  nav {
-    width: 60%;
-    margin: 0 auto;
+  body {
+    background-color: red;
   }
-  nav .logo {
+  body .header-mobile {
+    display: none;
+  }
+  body .header-mobile .open-menu {
+    display: none;
+  }
+  body .container {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    background-color: red;
+  }
+  body .container aside {
+    background-color: red;
+    width: 100%;
+    display: block;
+    width: 60vw;
+    height: 100vh;
+    position: static;
+    z-index: 9;
+    left: 0;
+    top: 0;
+    box-shadow: none;
+    transform: translateX(0);
+    opacity: 1;
+    visibility: initial;
+  }
+  body .container aside .close-menu {
+    display: none;
+  }
+  body .container aside .nav-red {
+    background-color: red;
+  }
+  body .container aside .nav-red ul li {
+    list-style: none;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    height: 3rem;
+    justify-content: flex-start;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    cursor: pointer;
+  }
+  body .container aside .nav-red ul li:hover {
+    background-color: white;
+    border-radius: 2rem 0rem 0rem 2rem;
+    height: 3rem;
+  }
+  body .container aside .nav-red ul li:hover a {
+    color: black;
+  }
+  body .container aside .nav-red ul li a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+    color: white;
+  }
+  body .container .container-todo {
+    background-color: white;
+    width: 80%;
+    border-radius: 1rem;
+    margin: 1rem auto;
+  }
+  body .container .container-todo nav {
+    width: 100%;
+    margin: 0 auto;
+    background-color: red;
+  }
+  body .container .container-todo nav .dropdown {
+    display: none;
+  }
+  body .container .container-todo nav .logo {
     width: 20%;
   }
-  .container-horario {
-    width: 60%;
+  body .container .container-todo .container-horario {
+    width: 90%;
   }
-  .delivery .contenido .active {
+  body .container .container-todo .delivery .contenido .active {
     align-items: center;
   }
-  .delivery-retiro {
-    width: 60%;
+  body .container .container-todo .delivery-retiro {
+    width: 90%;
   }
-  .categorias {
+  body .container .container-todo .categorias {
     display: flex;
     justify-content: center;
-    width: 60%;
+    width: 90%;
     margin: 0 auto;
     align-items: center;
   }
-  .categorias ul li {
+  body .container .container-todo .categorias ul li {
     margin: auto 0.4rem;
     height: 7rem;
   }
-  #categorias-subtitle {
-    margin-left: 21%;
-    width: 50%;
+  body .container .container-todo #categorias-subtitle {
+    margin-left: 6%;
+    width: 100%;
   }
-  .menu {
-    width: 60%;
+  body .container .container-todo .menu {
+    width: 90%;
   }
-  .menu .container-cards {
+  body .container .container-todo .menu .container-cards {
     display: flex;
     flex-wrap: wrap;
   }
-  .menu .container-cards .card {
+  body .container .container-todo .menu .container-cards .card {
     width: 32.5%;
     height: 6rem;
   }
-  .ver-pedido {
+  body .container .container-todo .ver-pedido {
     width: 50%;
     margin-left: 25%;
   }
-  .login {
+  body .container .container-todo .login {
     background-color: rgb(139, 20, 20);
   }
-  .login .login-desktop {
+  body .container .container-todo .login .login-desktop {
     width: 50%;
     background-color: white;
     border-radius: 1rem;
