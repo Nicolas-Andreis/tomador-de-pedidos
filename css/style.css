@@ -1017,6 +1017,7 @@ body footer {
   width: 80%;
   height: 80%;
   border-radius: 1rem;
+  margin: auto;
 }
 .zonaRepartos h3 {
   margin-top: 1rem;
@@ -1062,8 +1063,8 @@ body footer {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   }
   body .nav-white .iniciar a:hover {
-    color: white;
-    background-color: red;
+    color: red;
+    background-color: rgb(255, 255, 255);
   }
   body .nav-white .logo h1 {
     color: white;
@@ -1119,6 +1120,7 @@ body footer {
     background-color: white;
     border-radius: 2rem 0rem 0rem 2rem;
     height: 2rem;
+    transition: 0.3s;
   }
   body .container aside .nav-red ul li:hover a {
     color: black;

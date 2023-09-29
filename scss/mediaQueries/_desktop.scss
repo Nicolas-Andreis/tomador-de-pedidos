@@ -17,8 +17,8 @@
                     box-shadow: map-get($sombra, normal);
         
                     &:hover {
-                        color: white;
-                        background-color: red;
+                        color:red;
+                        background-color: rgb(255, 255, 255);
                     }
                 }
         
@@ -89,6 +89,7 @@
                                 background-color: white;
                                 border-radius: 2rem 0rem 0rem 2rem;
                                 height: 2rem;
+                                transition: 0.3s;
 
                                 a {
                                     color: black;
