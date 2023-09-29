@@ -185,12 +185,23 @@ body {
 }
 .container aside .nav-red ul li:hover a {
   color: black;
+  height: 2rem;
+}
+.container aside .nav-red ul li:hover a img {
+  background-color: red;
+  border-radius: 1rem;
+  width: 1.4rem;
+  object-fit: contain;
 }
 .container aside .nav-red ul li a {
   text-decoration: none;
   color: inherit;
   font-weight: 500;
   color: white;
+}
+.container aside .nav-red ul li a img {
+  width: 1.2rem;
+  margin: 0.3rem;
 }
 
 .card {
@@ -837,8 +848,8 @@ h3 {
 .modal-aside {
   display: none;
   position: absolute;
-  top: -3.7rem;
-  left: -3rem;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
