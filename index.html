@@ -59,257 +59,295 @@
                 </div>
 
                 <div class="logo">
-                    <img src="./imagenes/logo/logo.png" alt="logo" >
+                    <img src="./imagenes/logo/logo.png" alt="logo">
                     <h1 class="titulos">Il Pirata</h1>
                 </div>
                 <div class="iniciar">
                     <a href="./pages/login.html">Iniciar sesión</a>
                 </div>
             </div>
-            
+
         </nav>
     </header>
     <main class="container">
         <aside>
             <div class="aside-logo">
-                <img src="./imagenes/logo/logo.png" alt="logo" >
+                <img src="./imagenes/logo/logo.png" alt="logo">
                 <p class="titulos">Il Pirata</p>
-            
-            <button class="close-menu" id="close-menu" type="button">
-                <img src="./imagenes/iconos/nav/back.png" alt="menu" class="icon">
-            </button>
-        </div>
+
+                <button class="close-menu" id="close-menu" type="button">
+                    <img src="./imagenes/iconos/nav/back.png" alt="menu" class="icon">
+                </button>
+            </div>
             <nav class="nav-red">
                 <ul class="">
-                    <li><a class="" href="#" data-modal="modal-direccion">Direccion</a></li>
-                    <li><a class="" href="#" data-modal="modal-costo-envio">Costo de envio</a></li>
-                    <li><a class="" href="#" data-modal="modal-beneficios-retiro">Beneficios de
-                            retiro</a></li>
-                    <li><a class="" href="./pages/zonaRepartos.html" data-modal="modal-zona-repartos">Zona de repartos</a></li>
+                    <li><a class="abrir-modal" href="#" data-modal="direccionModal">Direccion</a></li>
+                    <li><a class="abrir-modal" href="#" data-modal="modal-costo-envio">Costo de envio</a></li>
+                    <li><a class="abrir-modal" href="#" data-modal="modal-beneficios-retiro">Beneficios de retiro</a>
+                    </li>
+                    <li><a class="" href="./pages/zonaRepartos.html" data-modal="modal-zona-repartos">Zona de
+                            repartos</a></li>
                     <li><a class="" href="./pages/carta.html" data-modal="modal-carta">Carta</a></li>
                     <li><a class="" href="./pages/carrito.html" data-modal="modal-carta">Mi carrito</a></li>
-                </ul> 
+                </ul>
             </nav>
-        </aside>
-        <div class="container-todo">
-        <div class="container-horario">
-            <div class="abierto">
-                <p>abierto</p>
-            </div>
-            <div class="redes">
-                <div class="ver-horarios">
-                    <img src="./imagenes/iconos/abierto/reloj.png" alt="reloj">
-                    <p id="ver-horarios-button">Ver horarios</p>
-                </div>
-            </div>
-            <div class="modal" id="horariosModal">
+            <!--Modal direccion-->
+            <div class="modal-aside" id="direccionModal">
                 <div class="modal-content">
                     <span class="close">&times;</span>
-                    <h2>Horarios de apertura y cierre</h2>
-                    <p>Apertura: 12:00 pm - 2:15 pm</p>
-                    <p>Cierre: 7:30 pm - 11:15 pm</p>
+                    <h2>Dirección</h2>
+                    <p>Lamadrid 360</p>
+                    <p>Bahía Blanca</p>
                 </div>
             </div>
-        </div>
-        <div class="delivery-retiro">
-            <div class="rojo">
-                <button class="active" id="delivery-button">
-                    <p class="subtitulos">Delivery</p>
-                </button>
-                <button class="" id="retiro-button">
-                    <p class="subtitulos">Retiro</p>
-                </button>
+            <!--Modal costo de envio-->
+            <div class="modal-aside" id="modal-costo-envio">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Costo de envio</h2>
+                    <p>El costo de envio es de $250</p>
+                </div>
             </div>
-            <div class="container-delivery">
-                <div class="delivery contenido active" id="delivery-contenido">
-                    <div>
-                        <img src="./imagenes/iconos/delivery/icons8-clock-24.png" alt="reloj">
-                        <p>40-60 min</p>
-                    </div>
-                    <div>
-                        <img src="./imagenes/iconos/delivery/icons8-motorcycle-64.png" alt="moto">
-                        <p>Envio $200</p>
-                    </div>
-                    <div>
-                        <img src="./imagenes/iconos/delivery/shoppingcart.png" alt="carrito">
-                        <p>Minimo $2160</p>
-                    </div>
-                    <div>
-                        <a
-                            href="https://www.google.com/maps/d/u/0/viewer?ll=-38.717498899999995%2C-62.28466870000001&z=18&mid=1ELNktHZKKRrr_8_GQLPTy5XAY45ybrqT">
-                            <img src="./imagenes/iconos/delivery/map.png" alt="carrito">
-                            <p>zona envios</p>
-                        </a>
+            <!--Modal beneficio de reitro-->
+            <div class="modal-aside" id="modal-beneficios-retiro">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Beneficios de retirar</h2>
+                    <p>Tu pedido estara listo en 20 minutos</p>
+                    <p>Tienes 10% off</p>
+                </div>
+            </div>
 
+        </aside>
+        <div class="container-todo">
+            <div class="container-horario">
+                <div class="abierto">
+                    <p>abierto</p>
+                </div>
+                <div class="redes">
+                    <div class="ver-horarios">
+                        <img src="./imagenes/iconos/abierto/reloj.png" alt="reloj">
+                        <p id="ver-horarios-button">Ver horarios</p>
                     </div>
                 </div>
-
-                <div class="retiro contenido" id="retiro-contenido">
-                    <div>
-                        <img src="./imagenes/iconos/delivery/icons8-clock-24.png" alt="reloj">
-                        <p>20 min</p>
+                <div class="modal" id="horariosModal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h2>Horarios de apertura y cierre</h2>
+                        <p>Apertura: 12:00 pm - 2:15 pm</p>
+                        <p>Cierre: 7:30 pm - 11:15 pm</p>
                     </div>
-                    <div>
-                        <img src="./imagenes/iconos/delivery/walking.png" alt="caminando">
+                </div>
+            </div>
+            <div class="delivery-retiro">
+                <div class="rojo">
+                    <button class="active" id="delivery-button">
+                        <p class="subtitulos">Delivery</p>
+                    </button>
+                    <button class="" id="retiro-button">
+                        <p class="subtitulos">Retiro</p>
+                    </button>
+                </div>
+                <div class="container-delivery">
+                    <div class="delivery contenido active" id="delivery-contenido">
                         <div>
-                            <p>retiro en el local</p>
-                            <p>10% off</p>
+                            <img src="./imagenes/iconos/delivery/icons8-clock-24.png" alt="reloj">
+                            <p>40-60 min</p>
                         </div>
+                        <div>
+                            <img src="./imagenes/iconos/delivery/icons8-motorcycle-64.png" alt="moto">
+                            <p>Envio $200</p>
+                        </div>
+                        <div>
+                            <img src="./imagenes/iconos/delivery/shoppingcart.png" alt="carrito">
+                            <p>Minimo $2160</p>
+                        </div>
+                        <div>
+                            <a
+                                href="https://www.google.com/maps/d/u/0/viewer?ll=-38.717498899999995%2C-62.28466870000001&z=18&mid=1ELNktHZKKRrr_8_GQLPTy5XAY45ybrqT">
+                                <img src="./imagenes/iconos/delivery/map.png" alt="carrito">
+                                <p>zona envios</p>
+                            </a>
 
+                        </div>
+                    </div>
+
+                    <div class="retiro contenido" id="retiro-contenido">
+                        <div>
+                            <img src="./imagenes/iconos/delivery/icons8-clock-24.png" alt="reloj">
+                            <p>20 min</p>
+                        </div>
+                        <div>
+                            <img src="./imagenes/iconos/delivery/walking.png" alt="caminando">
+                            <div>
+                                <p>retiro en el local</p>
+                                <p>10% off</p>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <h3 class="categoria-title" id="categorias-subtitle">Categorias</h3>
-        <div class="categorias">
-            <ul>
-                <li>
-                    <a href="#Promos">
-                        <div class="categoria-ovalo"><img src="./imagenes/iconos/categorias/promo.png" alt=""></div>
-                        <p>promos</p>
-                    </a>
-                </li>
-                <li><a href="#Pizzas">
-                        <div class="categoria-ovalo"><img src="./imagenes/iconos/categorias/icons8-pizza-64.png" alt="">
-                        </div>
-                        <p>pizzas</p>
-                    </a></li>
-                <li><a href="#MediasPizzas">
-                        <div class="categoria-ovalo"><img src="./imagenes/iconos/categorias/media pizza.png" alt="">
-                        </div>
-                        <p>media pizza</p>
-                    </a></li>
-                <li><a href="#Combos">
-                        <div class="categoria-ovalo"><img src="./imagenes/iconos/categorias/combos.png" alt=""></div>
-                        <p>combos</p>
-                    </a></li>
-                <li><a href="#BurguersSolas">
-                        <div class="categoria-ovalo"><img src="./imagenes/iconos/categorias/burguer.png" alt=""></div>
-                        <p>burguer sola</p>
-                    </a></li>
-                <li><a href="#Empanadas">
-                        <div class="categoria-ovalo"><img src="./imagenes/iconos/categorias/empanada.png" alt=""></div>
-                        <p>empanadas</p>
-                    </a></li>
-                <li><a href="#Calzones">
-                        <div class="categoria-ovalo"><img src="./imagenes/iconos/categorias/calzone.png" alt=""></div>
-                        <p>calzones</p>
-                    </a></li>
-                <li><a href="#Papas">
-                        <div class="categoria-ovalo"><img src="./imagenes/iconos/categorias/papas.png" alt=""></div>
-                        <p>papas</p>
-                    </a></li>
-                <li><a href="#Ensaladas">
-                        <div class="categoria-ovalo"><img src="./imagenes/iconos/categorias/icons8-salad-64.png" alt="">
-                        </div>
-                        <p>ensladas</p>
-                    </a></li>
-                <li><a href="#Postres">
-                        <div class="categoria-ovalo"><img src="./imagenes/iconos/categorias/postre.png" alt=""></div>
-                        <p>postres</p>
-                    </a></li>
-                <li><a href="#Bebidas">
-                        <div class="categoria-ovalo"><img src="./imagenes/iconos/categorias/bebida.png" alt=""></div>
-                        <p>bebidas</p>
-                    </a></li>
-                <li><a href="#Cervezas">
-                        <div class="categoria-ovalo"><img src="./imagenes/iconos/categorias/cerveza.png" alt=""></div>
-                        <p>cervezas</p>
-                    </a></li>
-                <li><a href="#Helados">
-                        <div class="categoria-ovalo"><img src="./imagenes/iconos/categorias/helado.png" alt=""></div>
-                        <p>helados</p>
-                    </a></li>
-            </ul>
-        </div>
-        <div class="menu">
-            <h3 class="promos">Promos</h3>
-            <section class="container-cards" id="Promos">
+            <h3 class="categoria-title" id="categorias-subtitle">Categorias</h3>
+            <div class="categorias">
+                <ul>
+                    <li>
+                        <a href="#Promos">
+                            <div class="categoria-ovalo"><img src="./imagenes/iconos/categorias/promo.png" alt=""></div>
+                            <p>promos</p>
+                        </a>
+                    </li>
+                    <li><a href="#Pizzas">
+                            <div class="categoria-ovalo"><img src="./imagenes/iconos/categorias/icons8-pizza-64.png"
+                                    alt="">
+                            </div>
+                            <p>pizzas</p>
+                        </a></li>
+                    <li><a href="#MediasPizzas">
+                            <div class="categoria-ovalo"><img src="./imagenes/iconos/categorias/media pizza.png" alt="">
+                            </div>
+                            <p>media pizza</p>
+                        </a></li>
+                    <li><a href="#Combos">
+                            <div class="categoria-ovalo"><img src="./imagenes/iconos/categorias/combos.png" alt="">
+                            </div>
+                            <p>combos</p>
+                        </a></li>
+                    <li><a href="#BurguersSolas">
+                            <div class="categoria-ovalo"><img src="./imagenes/iconos/categorias/burguer.png" alt="">
+                            </div>
+                            <p>burguer sola</p>
+                        </a></li>
+                    <li><a href="#Empanadas">
+                            <div class="categoria-ovalo"><img src="./imagenes/iconos/categorias/empanada.png" alt="">
+                            </div>
+                            <p>empanadas</p>
+                        </a></li>
+                    <li><a href="#Calzones">
+                            <div class="categoria-ovalo"><img src="./imagenes/iconos/categorias/calzone.png" alt="">
+                            </div>
+                            <p>calzones</p>
+                        </a></li>
+                    <li><a href="#Papas">
+                            <div class="categoria-ovalo"><img src="./imagenes/iconos/categorias/papas.png" alt=""></div>
+                            <p>papas</p>
+                        </a></li>
+                    <li><a href="#Ensaladas">
+                            <div class="categoria-ovalo"><img src="./imagenes/iconos/categorias/icons8-salad-64.png"
+                                    alt="">
+                            </div>
+                            <p>ensladas</p>
+                        </a></li>
+                    <li><a href="#Postres">
+                            <div class="categoria-ovalo"><img src="./imagenes/iconos/categorias/postre.png" alt="">
+                            </div>
+                            <p>postres</p>
+                        </a></li>
+                    <li><a href="#Bebidas">
+                            <div class="categoria-ovalo"><img src="./imagenes/iconos/categorias/bebida.png" alt="">
+                            </div>
+                            <p>bebidas</p>
+                        </a></li>
+                    <li><a href="#Cervezas">
+                            <div class="categoria-ovalo"><img src="./imagenes/iconos/categorias/cerveza.png" alt="">
+                            </div>
+                            <p>cervezas</p>
+                        </a></li>
+                    <li><a href="#Helados">
+                            <div class="categoria-ovalo"><img src="./imagenes/iconos/categorias/helado.png" alt="">
+                            </div>
+                            <p>helados</p>
+                        </a></li>
+                </ul>
+            </div>
+            <div class="menu">
+                <h3 class="promos">Promos</h3>
+                <section class="container-cards" id="Promos">
 
-            </section>
-            <h3>Pizzas</h3>
-            <section class="container-cards" id="Pizzas">
+                </section>
+                <h3>Pizzas</h3>
+                <section class="container-cards" id="Pizzas">
 
-            </section>
-            <h3>Media pizza</h3>
-            <section class="container-cards" id="MediasPizzas">
+                </section>
+                <h3>Media pizza</h3>
+                <section class="container-cards" id="MediasPizzas">
 
-            </section>
+                </section>
 
-            <h3>Combos</h3>
-            <section class="container-cards" id="Combos">
+                <h3>Combos</h3>
+                <section class="container-cards" id="Combos">
 
-            </section>
-
-
-            <h3>Burguer sola</h3>
-            <section class="container-cards" id="BurguersSolas">
-
-            </section>
+                </section>
 
 
-            <h3>Empanadas</h3>
-            <section class="container-cards" id="Empanadas">
+                <h3>Burguer sola</h3>
+                <section class="container-cards" id="BurguersSolas">
 
-            </section>
-            <h3>Calzones</h3>
-            <section class="container-cards" id="Calzones">
+                </section>
 
-            </section>
 
-            <h3>Papas</h3>
-            <section class="container-cards" id="Papas">
+                <h3>Empanadas</h3>
+                <section class="container-cards" id="Empanadas">
 
-            </section>
-            <h3>Ensaladas</h3>
-            <section class="container-cards" id="Ensaladas">
+                </section>
+                <h3>Calzones</h3>
+                <section class="container-cards" id="Calzones">
 
-            </section>
+                </section>
 
-            <h3>Postres</h3>
-            <section class="container-cards" id="Postres">
+                <h3>Papas</h3>
+                <section class="container-cards" id="Papas">
 
-            </section>
+                </section>
+                <h3>Ensaladas</h3>
+                <section class="container-cards" id="Ensaladas">
 
-            <h3>Bebidas</h3>
-            <section class="container-cards" id="Bebidas">
+                </section>
 
-            </section>
-            <h3>Cervezas</h3>
-            <section class="container-cards" id="Cervezas">
+                <h3>Postres</h3>
+                <section class="container-cards" id="Postres">
 
-            </section>
+                </section>
 
-            <h3>Helados</h3>
-            <section class="container-cards" id="Helados">
+                <h3>Bebidas</h3>
+                <section class="container-cards" id="Bebidas">
 
-            </section>
-        </div>
-        <button class="ver-pedido" data-modal="modal-1">
-            <p>Ver mi pedido</p>
-            <img src="./imagenes/iconos/shopping cart/shoppingcart.png" alt="carrito">
-        </button>
+                </section>
+                <h3>Cervezas</h3>
+                <section class="container-cards" id="Cervezas">
 
-        <!-- Modal de pedido -->
-        <div id="modal-1" class="modal">
-            <div class="modal-content" id="modal-pedidos">
-                <span class="close" data-modal="modal-1">&times;</span>
-                <div id="pedido-detalle"></div>
-                <p id="total-compra">$0</p>
-                <p id="cantidad-total">0</p> <!-- Agrega el elemento aquí -->
-                <button id="comprar-btn">Comprar</button>
+                </section>
+
+                <h3>Helados</h3>
+                <section class="container-cards" id="Helados">
+
+                </section>
+            </div>
+            <button class="ver-pedido" data-modal="modal-1">
+                <p>Ver mi pedido</p>
+                <img src="./imagenes/iconos/shopping cart/shoppingcart.png" alt="carrito">
+            </button>
+
+            <!-- Modal de pedido -->
+            <div id="modal-1" class="modal">
+                <div class="modal-content" id="modal-pedidos">
+                    <span class="close" data-modal="modal-1">&times;</span>
+                    <div id="pedido-detalle"></div>
+                    <p id="total-compra">$0</p>
+                    <p id="cantidad-total">0</p> <!-- Agrega el elemento aquí -->
+                    <button id="comprar-btn">Comprar</button>
+                </div>
             </div>
         </div>
         </div>
         </div>
         </div>
-    </div>
     </main>
     <footer>
         Derechos Reservados Nicolás Andreis &copy; 2023
     </footer>
     <script src="./js/main.js"></script>
-    
+
 </body>
 
 </html>

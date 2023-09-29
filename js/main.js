@@ -620,3 +620,40 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+
+//modales de nav
+// Obtén todos los enlaces que abren los modales
+const modalLinks = document.querySelectorAll('.abrir-modal');
+
+// Obtén todos los elementos de modal
+const modals = document.querySelectorAll('.modal');
+
+// Agrega un evento de clic a cada enlace para abrir el modal correspondiente
+modalLinks.forEach(link => {
+    link.addEventListener('click', function (event) {
+        event.preventDefault(); // Previene el comportamiento predeterminado del enlace
+
+        // Obtiene el ID del modal desde el atributo data-modal
+        const modalId = this.getAttribute('data-modal');
+
+        // Encuentra el modal correspondiente por su ID
+        const modal = document.getElementById(modalId);
+
+        // Muestra el modal
+        modal.style.display = 'block';
+    });
+});
+
+// Agrega un evento de clic para cerrar todos los modales cuando se hace clic en el botón de cierre
+const closeButtons = document.querySelectorAll('.close');
+
+closeButtons.forEach(button => {
+    button.addEventListener('click', function () {
+        // Encuentra el modal que contiene el botón de cierre
+        const modal = this.parentElement.parentElement;
+
+        // Oculta el modal
+        modal.style.display = 'none';
+    });
+});
