@@ -227,6 +227,10 @@ body {
   display: flex;
   flex-direction: column;
   text-align: center;
+  font-size: 0.9rem;
+}
+.card .card-texto p:nth-child(2) {
+  font-weight: bold;
 }
 .card .card-iconos {
   display: flex;
@@ -234,8 +238,8 @@ body {
   margin-right: 0.5rem;
 }
 .card .card-iconos img {
-  width: 1.1rem;
-  height: 1.1rem;
+  width: 1.5rem;
+  height: 1rem;
   align-self: center;
   margin-bottom: 0.8rem;
   margin-left: 3rem;
@@ -247,6 +251,7 @@ body {
   display: none;
 }
 .card .contador {
+  margin-top: 2rem;
   display: flex;
   flex-direction: row;
   background: rgb(247, 189, 214);
@@ -522,8 +527,8 @@ h3 {
   margin: auto;
   position: fixed;
   top: 90vh;
+  margin: auto;
   border-radius: 2rem;
-  margin-left: 5%;
   height: 3rem;
   display: flex;
   justify-content: center;
@@ -585,8 +590,8 @@ h3 {
   margin: auto;
   position: fixed;
   top: 90vh;
+  margin: auto;
   border-radius: 2rem;
-  margin-left: 5%;
   height: 3rem;
   display: flex;
   justify-content: center;
@@ -1176,9 +1181,26 @@ body footer {
     width: 32.5%;
     height: 6rem;
   }
+  body .container .container-todo .menu .container-cards .card .contador {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: row;
+    background: rgb(247, 189, 214);
+    background: linear-gradient(180deg, rgb(247, 189, 214) 0%, rgba(232, 126, 126, 0.4094887955) 21%, rgba(236, 152, 152, 0.655987395) 62%, rgba(233, 148, 148, 0.7596288515) 80%);
+    border-radius: 1.5rem;
+    width: 3.5rem;
+    justify-content: space-around;
+    align-items: center;
+    height: 1.2rem;
+  }
+  body .container .container-todo .menu .container-cards .card .contador img {
+    width: 0.9rem;
+    height: 0.9rem;
+  }
   body .container .container-todo .ver-pedido {
     width: 50%;
     margin-left: 25%;
+    display: none;
   }
   body .container .container-todo .login {
     background-color: rgb(139, 20, 20);
@@ -1189,6 +1211,12 @@ body footer {
     border-radius: 1rem;
     margin: 10vh auto;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  }
+  .modal-aside {
+    top: -6vw;
+    left: -5vw;
+    height: 100vw;
+    width: 100vw;
   }
 }
 

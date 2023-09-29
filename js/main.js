@@ -46,6 +46,9 @@ retiroButton.addEventListener('click', () => {
 // codigo para cambiar retiro a delivery
 
 
+
+
+
 //horario de apertura 
 const abiertoDiv = document.querySelector('.abierto');
 const horaActual = new Date();
@@ -72,6 +75,10 @@ if (abierto) {
 }
 
 // horario de apertura
+
+
+
+
 
 
 //modal de horarios
@@ -182,98 +189,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    // Función para actualizar el modal de pedido con los detalles de los productos
-// Función para actualizar el modal de pedido con los detalles de los productos
-function actualizarModalPedido() {
-    const pedidoDetalleElement = document.getElementById('pedido-detalle');
-    const cantidadTotalElement = document.getElementById('cantidad-total');
-    const totalCompraElement = document.getElementById('total-compra');
-
-    pedidoDetalleElement.innerHTML = '';
-    let cantidadTotal = 0;
-    for (const nombre in productosEnPedido) {
-        const producto = productosEnPedido[nombre];
-        const detalleProducto = `
-            <div class="detalle-producto">
-                <div class="producto-info">
-                    <img src="${producto.imagen}" alt="${nombre}" class="producto-imagen">
-                    <div class="producto-detalle">
-                        <p class="productoModal">${producto.cantidad}x ${nombre}</p>
-                        <div class="containerPrecioBotones">
-                        <p>$${producto.cantidad * producto.precio}</p>
-                        <div class="cantidad-buttons">
-                            <button class="restar-cantidad" data-producto="${nombre}">-</button>
-                            <p>${producto.cantidad}</p>
-                            <button class="sumar-cantidad" data-producto="${nombre}">+</button>
-                        </div>
-                        </div>
-                        
-                        <button class="eliminar-producto" data-producto="${nombre}">&times;</button>
-                    </div>
-                </div>
-            </div>
-        `;
-        pedidoDetalleElement.innerHTML += detalleProducto;
-        cantidadTotal += producto.cantidad;
-    }
-
-    cantidadTotalElement.textContent = cantidadTotal.toString();
-    totalCompraElement.textContent = `$${totalCompra}`;
-
-    // Agregar eventos a los botones de eliminar, sumar y restar cantidad
-    const eliminarBotones = document.querySelectorAll('.eliminar-producto');
-    const sumarBotones = document.querySelectorAll('.sumar-cantidad');
-    const restarBotones = document.querySelectorAll('.restar-cantidad');
-
-    eliminarBotones.forEach(btn => {
-        btn.addEventListener('click', (event) => {
-            const nombreProducto = event.target.getAttribute('data-producto');
-            eliminarProductoDePedido(nombreProducto);
-            actualizarModalPedido();
-            actualizarCantidadTotal();
-        });
-    });
-
-    sumarBotones.forEach(btn => {
-        btn.addEventListener('click', (event) => {
-            const nombreProducto = event.target.getAttribute('data-producto');
-            const producto = productosEnPedido[nombreProducto];
-            producto.cantidad++;
-            totalCompra += producto.precio;
-            actualizarModalPedido();
-            actualizarCantidadTotal();
-        });
-    });
-
-    restarBotones.forEach(btn => {
-        btn.addEventListener('click', (event) => {
-            const nombreProducto = event.target.getAttribute('data-producto');
-            const producto = productosEnPedido[nombreProducto];
-            if (producto.cantidad > 0) {
-                producto.cantidad--;
-                totalCompra -= producto.precio;
-                actualizarModalPedido();
-                actualizarCantidadTotal();
-            }
-        });
-    });
-}
-
-    const comprarBtn = document.getElementById('comprar-btn');
-
-    comprarBtn.addEventListener('click', () => {
-        // Lógica para procesar la compra
-        alert('¡Compra realizada con éxito!');
-        
-        // Limpia el detalle del pedido y el total de la compra
-        const pedidoDetalleElement = document.getElementById('pedido-detalle');
-        const totalCompraElement = document.getElementById('total-compra');
-        pedidoDetalleElement.innerHTML = '';
-        totalCompraElement.textContent = '$0';
-        totalCompra = 0;
-        productosEnPedido = {};
-    });
-
     // Código para el modal "Ver pedido"
     const verPedidoButton = document.querySelector('.ver-pedido');
     const modalVerPedido = document.getElementById('modal-1');
@@ -305,13 +220,6 @@ function actualizarModalPedido() {
 
 
 
-
-
-
-//corazon card
-
-
-//corazon card
 
 
 const productosPromos = [
@@ -488,6 +396,9 @@ const productosHelados = [
     { id: 7, nombre: "super dulce de leche", precio: 1500, imagen: "./imagenes/helados/superdulcedeleche.jpg" }, 
 ];
 
+
+
+//agregar tarjetas
 function agregarTarjetas(container, productos) {
     for (const producto of productos) {
         let contenedor = document.createElement("div");
@@ -501,7 +412,6 @@ function agregarTarjetas(container, productos) {
                 <p>$${producto.precio}</p>
             </div>
             <div class="card-iconos">
-                <img src="./imagenes/iconos/corazon/heart.png" alt="corazon" class="heart">
                 
                 <div class="contador">
                     <img src="./imagenes/iconos/basura/trash.png" alt="trash" class="trash-btn">
@@ -514,6 +424,9 @@ function agregarTarjetas(container, productos) {
         container.appendChild(contenedor); // Agregar la tarjeta al contenedor
     }
 }
+//agregar tarjetas
+
+
 
 const containerPromos = document.querySelector("#Promos");
 const containerPizzas = document.querySelector("#Pizzas");

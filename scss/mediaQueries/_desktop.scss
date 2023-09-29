@@ -173,6 +173,23 @@
                         .card {
                             width: 32.5%;
                             height: 6rem;
+                            
+                            .contador {
+                                margin-top: 3rem;
+                                display: flex;
+                                flex-direction: row;
+                                background: $background;
+                                background: $gradient;
+                                border-radius: 1.5rem;
+                                width: 3.5rem;
+                                justify-content: space-around;
+                                align-items: center;
+                                height: 1.2rem;
+                                img{
+                                    width: 0.9rem;
+                                    height: 0.9rem;
+                                }
+                            }
                         }
                     }
                 }
@@ -180,6 +197,7 @@
                 .ver-pedido {
                     width: 50%;
                     margin-left: 25%;
+                    display: none;
                 }
 
                 .login {
@@ -199,4 +217,10 @@
         }
     }
 
+    .modal-aside{
+        top: -6vw;
+        left: -5vw;
+        height: 100vw;
+        width: 100vw;
+    }
 }
