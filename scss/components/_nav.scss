@@ -87,6 +87,7 @@
         opacity: 1;
         visibility: visible;
         position: fixed;
+        z-index: 11;
 
         .close-menu {
             display: block;
