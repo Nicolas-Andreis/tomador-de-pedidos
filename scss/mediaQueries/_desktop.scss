@@ -2,15 +2,42 @@
 @media (min-width: 800px) {
     body {
         background-color: red;
-
-
-        .header-mobile {
-            display: none;
-
-            .open-menu {
+        .nav-white{
+            .iniciar {
+                margin-right: 0.5rem;
+        
+                a {
+                    color: rgb(255, 255, 255);
+                    text-decoration: none;
+                    border: 1px solid rgb(255, 255, 255);
+                    width: 7rem;
+                    display: flex;
+                    justify-content: center;
+                    border-radius: 0.5rem;
+                    box-shadow: map-get($sombra, normal);
+        
+                    &:hover {
+                        color: white;
+                        background-color: red;
+                    }
+                }
+        
+            }
+            .logo{
+                h1{
+                    color: white;
+                }
+            }
+    
+            .header-mobile {
                 display: none;
+    
+                .open-menu {
+                    display: none;
+                }
             }
         }
+        
 
         .container {
             width: 100vw;
@@ -22,7 +49,7 @@
                 background-color: red;
                 width: 100%;
                 display: block;
-                width: 60vw;
+                width: 20vw;
                 height: 100vh;
                 position: sticky;
                 z-index: 9;

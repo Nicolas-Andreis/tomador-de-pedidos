@@ -20,6 +20,10 @@
         width: 40%;
         align-items: center;
 
+        h1 {
+            color: red;
+        }
+
     }
 
     .iniciar {
@@ -43,6 +47,7 @@
 
     }
 
+
     div {
         display: flex;
         flex-direction: row;
@@ -61,38 +66,42 @@
             border-radius: 0;
         }
     }
-
-    
 }
 
 .container {
     width: 100vw;
     display: flex;
     flex-direction: row;
-    .conatiner-todo{
+
+    .conatiner-todo {
         width: inherit;
     }
-    aside{
+
+    aside {
         display: none;
     }
+
     .aside-visible {
         display: block;
         transform: translateX(0);
         opacity: 1;
         visibility: visible;
         position: fixed;
-        .close-menu{
+
+        .close-menu {
             display: block;
             border: 0;
             background-color: rgba(255, 255, 255, 0);
             cursor: pointer;
             background-color: rgba(0, 0, 0, 0);
-            img{
+
+            img {
                 width: 3rem;
                 height: 3rem;
             }
         }
     }
+
     aside {
         background-color: red;
         width: 70vw;
@@ -106,23 +115,26 @@
         opacity: 0;
         visibility: hidden;
         transition: .4s;
-        .aside-logo{
+
+        .aside-logo {
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
             margin: 1rem auto;
-            img{
+
+            img {
                 width: 3rem;
                 height: 3rem;
                 border-radius: 2rem;
             }
-            p{
+
+            p {
                 color: white;
                 margin: 1rem;
             }
         }
-        
+
 
         .nav-red {
             background-color: red;
