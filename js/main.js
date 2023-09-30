@@ -1,3 +1,28 @@
+//codigo para el loader
+// Espera a que el documento HTML esté completamente cargado
+document.addEventListener('DOMContentLoaded', function () {
+    // Obtén una referencia al elemento "body"
+    const body = document.body;
+
+    // Quita la clase "hidden" del elemento "body" (si existe)
+    if (body.classList.contains('hidden')) {
+        body.classList.remove('hidden');
+    }
+
+    // Muestra el loader durante al menos 2 segundos
+    const loader = document.getElementById('loader');
+    if (loader) {
+        setTimeout(function () {
+            loader.style.display = 'none';
+        }, 1000); // Mostrar el loader durante medio segundo
+    }
+
+    // Tu lógica adicional aquí
+});
+//codigo para el loader
+
+
+
 
 
 //codigo para abrir y cerrar el aside en mobile
@@ -6,11 +31,11 @@ const openMenu = document.querySelector("#open-menu");
 const closeMenu = document.querySelector("#close-menu");
 const aside = document.querySelector("aside");
 
-openMenu.addEventListener("click", () =>{
+openMenu.addEventListener("click", () => {
     aside.classList.add("aside-visible");
 })
 
-closeMenu.addEventListener("click", () =>{
+closeMenu.addEventListener("click", () => {
     aside.classList.remove("aside-visible");
 })
 
@@ -42,7 +67,7 @@ retiroButton.addEventListener('click', () => {
     deliveryButton.classList.remove('active');
     retiroContenido.classList.add('active');
     deliveryContenido.classList.remove('active');
-}); 
+});
 // codigo para cambiar retiro a delivery
 
 
@@ -87,17 +112,17 @@ const horariosModal = document.getElementById('horariosModal');
 const closeBtn = horariosModal.querySelector('.close');
 
 verHorariosButton.addEventListener('click', () => {
-  horariosModal.style.display = 'block';
+    horariosModal.style.display = 'block';
 });
 
 closeBtn.addEventListener('click', () => {
-  horariosModal.style.display = 'none';
+    horariosModal.style.display = 'none';
 });
 
 window.addEventListener('click', (event) => {
-  if (event.target === horariosModal) {
-    horariosModal.style.display = 'none';
-  }
+    if (event.target === horariosModal) {
+        horariosModal.style.display = 'none';
+    }
 });
 
 //modal de horarios
@@ -171,21 +196,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
- function eliminarProductoDePedido(nombre) {
-    if (productosEnPedido[nombre]) {
-        totalCompra -= productosEnPedido[nombre].cantidad * productosEnPedido[nombre].precio;
-        delete productosEnPedido[nombre];
-        actualizarModalPedido(); // Actualizar el modal después de eliminar
-        actualizarCantidadTotal(); // Actualizar la cantidad total en las tarjetas
+    function eliminarProductoDePedido(nombre) {
+        if (productosEnPedido[nombre]) {
+            totalCompra -= productosEnPedido[nombre].cantidad * productosEnPedido[nombre].precio;
+            delete productosEnPedido[nombre];
+            actualizarModalPedido(); // Actualizar el modal después de eliminar
+            actualizarCantidadTotal(); // Actualizar la cantidad total en las tarjetas
 
-        // Reiniciar cantidad en la tarjeta específica
-        const contenedor = document.querySelector(`.card[data-producto="${nombre}"]`);
-        if (contenedor) {
-            const cantidadElement = contenedor.querySelector('.contador p');
-            cantidadElement.textContent = '0';
+            // Reiniciar cantidad en la tarjeta específica
+            const contenedor = document.querySelector(`.card[data-producto="${nombre}"]`);
+            if (contenedor) {
+                const cantidadElement = contenedor.querySelector('.contador p');
+                cantidadElement.textContent = '0';
+            }
         }
     }
-}
 
 
 
@@ -303,14 +328,14 @@ const productosCombos = [
     { id: 1, nombre: "combo pirata", precio: 2580, imagen: "./imagenes/burguers/burguerpirata.jpg" },
     { id: 2, nombre: "combo barbacoa", precio: 2680, imagen: "./imagenes/burguers/burguerbbq.jpg" },
     { id: 3, nombre: "combo corazon azul", precio: 2680, imagen: "./imagenes/burguers/burgurguercorazonazul.jpg" },
-    { id: 4, nombre: "combo inmortal", precio: 3720, imagen: "./imagenes/burguers/burguerinmortal.jpg" },    
+    { id: 4, nombre: "combo inmortal", precio: 3720, imagen: "./imagenes/burguers/burguerinmortal.jpg" },
 ];
 
 const productosBurguerSola = [
     { id: 1, nombre: "hamburguesa pirata", precio: 2580, imagen: "./imagenes/burguers/burguerpirata.jpg" },
     { id: 2, nombre: "hamburguesa barbacoa", precio: 2680, imagen: "./imagenes/burguers/burguerbbq.jpg" },
     { id: 3, nombre: "hamburguesa corazon azul", precio: 2680, imagen: "./imagenes/burguers/burgurguercorazonazul.jpg" },
-    { id: 4, nombre: "hamburguesa inmortal", precio: 3720, imagen: "./imagenes/burguers/burguerinmortal.jpg" },    
+    { id: 4, nombre: "hamburguesa inmortal", precio: 3720, imagen: "./imagenes/burguers/burguerinmortal.jpg" },
 ];
 
 const productosEmpanadas = [
@@ -331,7 +356,7 @@ const productosEmpanadas = [
     { id: 15, nombre: "cantimpalo", precio: 410, imagen: "./imagenes/empanadas/canastitas/cantimpalo.jpg" },
     { id: 16, nombre: "anana y jamon", precio: 410, imagen: "./imagenes/empanadas/canastitas/ananayjamon.jpg" },
     { id: 17, nombre: "wok de verduras", precio: 410, imagen: "./imagenes/empanadas/canastitas/wokdeverduras.jpg" },
-    { id: 18, nombre: "panceta y ciruela", precio: 410, imagen: "./imagenes/empanadas/canastitas/pancetayciruela.jpg" },    
+    { id: 18, nombre: "panceta y ciruela", precio: 410, imagen: "./imagenes/empanadas/canastitas/pancetayciruela.jpg" },
 ];
 
 const productosCalzones = [
@@ -339,19 +364,19 @@ const productosCalzones = [
     { id: 2, nombre: "calzone especial", precio: 3900, imagen: "./imagenes/calzones/calzoneespecial.jpg" },
     { id: 3, nombre: "calzone calabresa", precio: 3900, imagen: "./imagenes/calzones/calzonecalabresa.jpg" },
     { id: 4, nombre: "calzone capresse", precio: 3900, imagen: "./imagenes/calzones/calzonecapresse.jpg" },
-    { id: 5, nombre: "calzone napolitano", precio: 3590, imagen: "./imagenes/calzones/calzonenapolitano.jpg" },  
+    { id: 5, nombre: "calzone napolitano", precio: 3590, imagen: "./imagenes/calzones/calzonenapolitano.jpg" },
 ];
 
 const productosPapas = [
     { id: 1, nombre: "papas fritas", precio: 1270, imagen: "./imagenes/papas/papasfritas.jpg" },
-    { id: 2, nombre: "papas pirata", precio: 1480, imagen: "./imagenes/papas/papaspirata.jpg" },  
+    { id: 2, nombre: "papas pirata", precio: 1480, imagen: "./imagenes/papas/papaspirata.jpg" },
 ];
 
 const productosEnsaladas = [
     { id: 1, nombre: "ensalada caesar", precio: 2010, imagen: "./imagenes/ensalada/caesar.jpg" },
     { id: 2, nombre: "ensalada navegante", precio: 1900, imagen: "./imagenes/ensalada/navegante.jpg" },
     { id: 3, nombre: "ensalada egeo", precio: 1770, imagen: "./imagenes/ensalada/egeo.jpg" },
-    { id: 4, nombre: "ensalada arcoiris", precio: 1630, imagen: "./imagenes/ensalada/arcoirirs.jpg" },  
+    { id: 4, nombre: "ensalada arcoiris", precio: 1630, imagen: "./imagenes/ensalada/arcoirirs.jpg" },
 ];
 
 const productosPostres = [
@@ -359,7 +384,7 @@ const productosPostres = [
     { id: 2, nombre: "tiramisu", precio: 650, imagen: "./imagenes/postres/tiramisu.jpg" },
     { id: 3, nombre: "chocoreo", precio: 650, imagen: "./imagenes/postres/chocoreo.jpg" },
     { id: 4, nombre: "chocotorta", precio: 650, imagen: "./imagenes/postres/chocoreo.jpg" },
-    { id: 5, nombre: "muosse de chocolate", precio: 650, imagen: "./imagenes/postres/moussedechocolate.jpg" },  
+    { id: 5, nombre: "muosse de chocolate", precio: 650, imagen: "./imagenes/postres/moussedechocolate.jpg" },
 ];
 
 const productosBebidas = [
@@ -372,7 +397,7 @@ const productosBebidas = [
     { id: 7, nombre: "coca cola 500cc", precio: 500, imagen: "./imagenes/gaseosas 500cc/coca.jpg" },
     { id: 8, nombre: "coca zero 500cc", precio: 500, imagen: "./imagenes/gaseosas 500cc/cocazero.jpg" },
     { id: 9, nombre: "fanta 500cc", precio: 500, imagen: "./imagenes/gaseosas 500cc/fanta.jpg" },
-    { id: 10, nombre: "schweppers 50cc", precio: 500, imagen: "./imagenes/gaseosas 500cc/schweppers.jpg" },  
+    { id: 10, nombre: "schweppers 50cc", precio: 500, imagen: "./imagenes/gaseosas 500cc/schweppers.jpg" },
 ];
 
 const productosCervezas = [
@@ -383,7 +408,7 @@ const productosCervezas = [
     { id: 5, nombre: "imperial 473cc", precio: 580, imagen: "./imagenes/cervezas 473/imperial.jpg" },
     { id: 6, nombre: "imperial ipa 473cc", precio: 580, imagen: "./imagenes/cervezas 473/ipa.jpg" },
     { id: 7, nombre: "imperial roja 473cc", precio: 580, imagen: "./imagenes/cervezas 473/roja.jpg" },
-    { id: 8, nombre: "schneider 473cc", precio: 500, imagen: "./imagenes/cervezas 473/schneider.jpg" }, 
+    { id: 8, nombre: "schneider 473cc", precio: 500, imagen: "./imagenes/cervezas 473/schneider.jpg" },
 ];
 
 const productosHelados = [
@@ -393,7 +418,7 @@ const productosHelados = [
     { id: 4, nombre: "dulce de leche granizado", precio: 1500, imagen: "./imagenes/helados/dulcedelechegranizado.jpg" },
     { id: 5, nombre: "frutilla a la crema", precio: 1500, imagen: "./imagenes/helados/frutillaalacrema.jpg" },
     { id: 6, nombre: "limon granizado", precio: 1500, imagen: "./imagenes/helados/limongranizado.jpg" },
-    { id: 7, nombre: "super dulce de leche", precio: 1500, imagen: "./imagenes/helados/superdulcedeleche.jpg" }, 
+    { id: 7, nombre: "super dulce de leche", precio: 1500, imagen: "./imagenes/helados/superdulcedeleche.jpg" },
 ];
 
 
@@ -403,7 +428,7 @@ function agregarTarjetas(container, productos) {
     for (const producto of productos) {
         let contenedor = document.createElement("div");
         contenedor.classList.add("card"); // Agregar la clase "card"
-    
+
         // Definir el contenido HTML de la tarjeta
         contenedor.innerHTML = `
             <img src="${producto.imagen}" alt="">
@@ -420,7 +445,7 @@ function agregarTarjetas(container, productos) {
                 </div>
             </div>
         `;
-    
+
         container.appendChild(contenedor); // Agregar la tarjeta al contenedor
     }
 }
