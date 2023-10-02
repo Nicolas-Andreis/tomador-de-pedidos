@@ -7,9 +7,10 @@
     background-color: red;
     flex-direction: column;
     color: white;
+    z-index: 1000;
 }
 .hidden{ // para el body
-    overflow: hidden;
+    overflow-y: hidden;
     
 }
 .lds-dual-ring {

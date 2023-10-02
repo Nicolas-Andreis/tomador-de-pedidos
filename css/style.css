@@ -893,10 +893,11 @@ h3 {
   background-color: red;
   flex-direction: column;
   color: white;
+  z-index: 1000;
 }
 
 .hidden {
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 .lds-dual-ring {
@@ -1257,7 +1258,7 @@ body footer {
   }
   .modal-aside {
     top: -6vw;
-    left: -5vw;
+    left: -6vw;
     height: 100vw;
     width: 100vw;
   }
