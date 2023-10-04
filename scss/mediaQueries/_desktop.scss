@@ -2,10 +2,11 @@
 @media (min-width: 800px) {
     body {
         background-color: red;
-        .nav-white{
+
+        .nav-white {
             .iniciar {
                 margin-right: 0.5rem;
-        
+
                 a {
                     color: rgb(255, 255, 255);
                     text-decoration: none;
@@ -15,29 +16,30 @@
                     justify-content: center;
                     border-radius: 0.5rem;
                     box-shadow: map-get($sombra, normal);
-        
+
                     &:hover {
-                        color:red;
+                        color: red;
                         background-color: rgb(255, 255, 255);
                     }
                 }
-        
+
             }
-            .logo{
-                h1{
+
+            .logo {
+                h1 {
                     color: white;
                 }
             }
-    
+
             .header-mobile {
                 display: none;
-    
+
                 .open-menu {
                     display: none;
                 }
             }
         }
-        
+
 
         .container {
             width: 100vw;
@@ -77,24 +79,49 @@
                         li {
                             list-style: none;
                             margin-bottom: 0.5rem;
-                            margin-top: 1.9rem;
+                            margin-top: 1.5rem;
                             height: 2rem;
                             justify-content: flex-start;
                             display: flex;
                             align-items: center;
                             padding-left: 1rem;
                             cursor: pointer;
-
+                            position: relative;
+                            &:nth-child(1){
+                                margin-top: 2.2rem;
+                            }
                             &:hover {
                                 background-color: white;
                                 border-radius: 2rem 0rem 0rem 2rem;
                                 height: 2rem;
-                                transition: 0.3s;
-
+                                transition: 0s;
                                 a {
                                     color: black;
                                 }
+                                &::before {
+                                    content:'';
+                                    position: absolute;
+                                    width: 1rem;
+                                    height: 2rem;
+                                    bottom: 100%;
+                                    right:0;
+                                    background-color: transparent;
+                                    border-bottom-right-radius: .5rem;
+                                    box-shadow: 0 1rem 0 rgb(255, 255, 255);
+                                }
+                                &::after {
+                                    content:'';
+                                    position: absolute;
+                                    width: 1rem;
+                                    height: 2rem;
+                                    top: 100%;
+                                    right:0;
+                                    background-color: transparent;
+                                    border-top-right-radius: .5rem;
+                                    box-shadow: 0 -1rem 0 rgb(255, 255, 255);
+                                }
                             }
+                            
 
                             a {
                                 text-decoration: none;
@@ -174,7 +201,7 @@
                         .card {
                             width: 32.5%;
                             height: 6rem;
-                            
+
                             .contador {
                                 margin-top: 3rem;
                                 display: flex;
@@ -186,7 +213,8 @@
                                 justify-content: space-around;
                                 align-items: center;
                                 height: 1.2rem;
-                                img{
+
+                                img {
                                     width: 0.9rem;
                                     height: 0.9rem;
                                 }
@@ -218,7 +246,7 @@
         }
     }
 
-    .modal-aside{
+    .modal-aside {
         top: -6vw;
         left: -6vw;
         height: 100vw;

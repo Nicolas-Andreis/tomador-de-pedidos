@@ -1150,22 +1150,48 @@ body footer {
   body .container aside .nav-red ul li {
     list-style: none;
     margin-bottom: 0.5rem;
-    margin-top: 1.9rem;
+    margin-top: 1.5rem;
     height: 2rem;
     justify-content: flex-start;
     display: flex;
     align-items: center;
     padding-left: 1rem;
     cursor: pointer;
+    position: relative;
+  }
+  body .container aside .nav-red ul li:nth-child(1) {
+    margin-top: 2.2rem;
   }
   body .container aside .nav-red ul li:hover {
     background-color: white;
     border-radius: 2rem 0rem 0rem 2rem;
     height: 2rem;
-    transition: 0.3s;
+    transition: 0s;
   }
   body .container aside .nav-red ul li:hover a {
     color: black;
+  }
+  body .container aside .nav-red ul li:hover::before {
+    content: "";
+    position: absolute;
+    width: 1rem;
+    height: 2rem;
+    bottom: 100%;
+    right: 0;
+    background-color: transparent;
+    border-bottom-right-radius: 0.5rem;
+    box-shadow: 0 1rem 0 rgb(255, 255, 255);
+  }
+  body .container aside .nav-red ul li:hover::after {
+    content: "";
+    position: absolute;
+    width: 1rem;
+    height: 2rem;
+    top: 100%;
+    right: 0;
+    background-color: transparent;
+    border-top-right-radius: 0.5rem;
+    box-shadow: 0 -1rem 0 rgb(255, 255, 255);
   }
   body .container aside .nav-red ul li a {
     text-decoration: none;
