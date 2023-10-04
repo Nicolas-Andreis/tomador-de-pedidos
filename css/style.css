@@ -94,7 +94,6 @@ body {
   justify-content: space-between;
   align-items: center;
   color: rgba(243, 95, 95, 0.84);
-  margin-bottom: 0.5rem;
 }
 .nav-white div img {
   width: 2.2rem;
@@ -281,7 +280,7 @@ body {
   position: -webkit-sticky;
   /* Para navegadores basados en WebKit */
   position: sticky;
-  top: 0;
+  top: 3.3rem;
   /* Posición en la parte superior de la pantalla */
   background-color: white;
   /* Puedes personalizar el estilo */
@@ -342,7 +341,7 @@ h3 {
 }
 
 .promos {
-  margin-top: 1rem;
+  margin-top: 0rem;
 }
 
 #categorias-subtitle {
@@ -522,29 +521,6 @@ h3 {
   height: 1.5rem;
 }
 
-.ver-pedido {
-  width: 90%;
-  margin: auto;
-  position: fixed;
-  top: 90vh;
-  margin: auto;
-  border-radius: 2rem;
-  height: 3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  background: rgb(247, 189, 214);
-  background: linear-gradient(180deg, rgb(247, 189, 214) 0%, rgb(232, 126, 126) 21%, rgb(236, 152, 152) 62%, rgb(233, 148, 148) 80%);
-  border: none;
-}
-.ver-pedido p {
-  font-size: large;
-}
-.ver-pedido img {
-  width: 1.7rem;
-}
-
 /* Estilos para el modal */
 .modal {
   display: none;
@@ -585,27 +561,37 @@ h3 {
   cursor: pointer;
 }
 
-.ver-pedido {
-  width: 90%;
-  margin: auto;
-  position: fixed;
-  top: 90vh;
-  margin: auto;
-  border-radius: 2rem;
-  height: 3rem;
+.miCarritoButton {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  background: rgb(247, 189, 214);
-  background: linear-gradient(180deg, rgb(247, 189, 214) 0%, rgb(232, 126, 126) 21%, rgb(236, 152, 152) 62%, rgb(233, 148, 148) 80%);
-  border: none;
+  cursor: pointer;
+  position: sticky;
+  top: 0.7rem;
+  background-color: rgb(255, 255, 255);
+  z-index: 2;
+  border-bottom: 4px dotted #c7c7c7;
+  border-top: 4px dotted #c7c7c7;
+  width: 100%;
+  margin: 0 auto;
 }
-.ver-pedido p {
-  font-size: large;
+.miCarritoButton h3:nth-child(1) {
+  margin: 0.3rem;
 }
-.ver-pedido img {
-  width: 1.7rem;
+.miCarritoButton div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.miCarritoButton div img {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: relative;
+  bottom: 0.7rem;
+}
+.miCarritoButton div span {
+  position: relative;
+  right: -0.1rem;
 }
 
 /* Estilos para los modales */
@@ -1204,6 +1190,9 @@ body footer {
     width: 80%;
     border-radius: 1rem;
     margin: 1rem auto;
+  }
+  body .container .container-todo .miCarritoButton {
+    display: none;
   }
   body .container .container-todo nav {
     width: 100%;
