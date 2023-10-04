@@ -561,7 +561,9 @@ h3 {
   cursor: pointer;
 }
 
-.miCarritoButton {
+.miCarritoButton a {
+  color: black;
+  text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -575,21 +577,21 @@ h3 {
   width: 100%;
   margin: 0 auto;
 }
-.miCarritoButton h3:nth-child(1) {
+.miCarritoButton a h3:nth-child(1) {
   margin: 0.3rem;
 }
-.miCarritoButton div {
+.miCarritoButton a div {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.miCarritoButton div img {
+.miCarritoButton a div img {
   width: 1.5rem;
   height: 1.5rem;
   position: relative;
   bottom: 0.7rem;
 }
-.miCarritoButton div span {
+.miCarritoButton a div span {
   position: relative;
   right: -0.1rem;
 }
