@@ -599,6 +599,7 @@ h3 {
   bottom: 0.7rem;
 }
 .miCarritoButton a div span {
+  color: black;
   position: relative;
   right: -0.1rem;
 }
@@ -1007,8 +1008,9 @@ body footer {
 .miCarrito {
   background-color: white;
   width: 100%;
-  height: 100%;
+  height: 80vh;
   border-radius: 1rem;
+  margin: 1rem auto;
 }
 .miCarrito h3 {
   margin-top: 1rem;
@@ -1017,8 +1019,9 @@ body footer {
 .carta {
   background-color: white;
   width: 100%;
-  height: 100%;
+  height: 80vh;
   border-radius: 1rem;
+  margin: 1rem auto;
 }
 .carta h3 {
   margin-top: 1rem;
@@ -1048,9 +1051,9 @@ body footer {
 .zonaRepartos {
   background-color: white;
   width: 80%;
-  height: 80%;
+  height: 80vh;
   border-radius: 1rem;
-  margin: auto;
+  margin: 1rem auto;
 }
 .zonaRepartos h3 {
   margin-top: 1rem;
@@ -1102,6 +1105,40 @@ body footer {
   body .nav-white .logo h1 {
     color: white;
   }
+  body .nav-white .miCarritoButton {
+    background-color: transparent;
+    height: 2.5rem;
+    width: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  body .nav-white .miCarritoButton a {
+    background-color: rgb(255, 255, 255);
+    border-radius: 1.5rem;
+    height: 2.2rem;
+    width: 2.2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+  }
+  body .nav-white .miCarritoButton a div {
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  body .nav-white .miCarritoButton a div img {
+    width: 1rem;
+    height: 1rem;
+  }
+  body .nav-white .miCarritoButton a div span {
+    position: relative;
+    right: -0.1rem;
+    height: 1rem;
+    top: -0.3rem;
+    font-size: small;
+  }
   body .nav-white .header-mobile {
     display: none;
   }
@@ -1134,6 +1171,17 @@ body footer {
   }
   body .container aside .close-menu {
     display: none;
+  }
+  body .container aside .iniciar {
+    width: 15rem;
+    position: absolute;
+    top: -2.2rem;
+    right: -1rem;
+  }
+  body .container aside .iniciar a:hover {
+    background-color: white;
+    color: red;
+    border: 1px solid black;
   }
   body .container aside .nav-red {
     background-color: red;
