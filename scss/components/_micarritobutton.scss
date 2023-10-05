@@ -1,7 +1,4 @@
 .miCarritoButton {
-    width: 100%;
-    position: sticky;
-    top: 0.7rem;
     overflow: auto;
         color: black;
         text-decoration: none;
@@ -9,7 +6,6 @@
         justify-content: center;
         align-items: center;
         cursor: pointer;position: sticky;
-        top: 0.7rem;
         background-color: rgb(255, 255, 255);
         z-index: 2;
     a {
@@ -23,9 +19,6 @@
         top: 0.7rem;
         background-color: rgb(255, 255, 255);
         z-index: 2;
-        border-bottom: 4px dotted #c7c7c7;
-        border-top: 4px dotted #c7c7c7;
-        width: 100%;
         margin: 0 auto;
 
         h3:nth-child(1) {

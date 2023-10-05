@@ -71,29 +71,13 @@ body {
 .nav-white .logo h1 {
   color: red;
 }
-.nav-white .iniciar {
-  margin-right: 0.5rem;
-}
-.nav-white .iniciar a {
-  color: red;
-  text-decoration: none;
-  border: 1px solid red;
-  width: 7rem;
-  display: flex;
-  justify-content: center;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-}
-.nav-white .iniciar a:hover {
-  color: white;
-  background-color: red;
-}
 .nav-white div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   color: rgba(243, 95, 95, 0.84);
+  margin-right: 0.5rem;
 }
 .nav-white div img {
   width: 2.2rem;
@@ -147,6 +131,19 @@ body {
   opacity: 0;
   visibility: hidden;
   transition: 0.4s;
+}
+.container aside .iniciar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.container aside .iniciar a {
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+  border-radius: 0.5rem;
+  width: 40%;
+  margin: auto;
 }
 .container aside .aside-logo {
   display: flex;
@@ -562,9 +559,6 @@ h3 {
 }
 
 .miCarritoButton {
-  width: 100%;
-  position: sticky;
-  top: 0.7rem;
   overflow: auto;
   color: black;
   text-decoration: none;
@@ -573,7 +567,6 @@ h3 {
   align-items: center;
   cursor: pointer;
   position: sticky;
-  top: 0.7rem;
   background-color: rgb(255, 255, 255);
   z-index: 2;
 }
@@ -589,9 +582,6 @@ h3 {
   top: 0.7rem;
   background-color: rgb(255, 255, 255);
   z-index: 2;
-  border-bottom: 4px dotted #c7c7c7;
-  border-top: 4px dotted #c7c7c7;
-  width: 100%;
   margin: 0 auto;
 }
 .miCarritoButton a h3:nth-child(1) {

@@ -26,34 +26,13 @@
 
     }
 
-    .iniciar {
-        margin-right: 0.5rem;
-
-        a {
-            color: red;
-            text-decoration: none;
-            border: 1px solid red;
-            width: 7rem;
-            display: flex;
-            justify-content: center;
-            border-radius: 0.5rem;
-            box-shadow: map-get($sombra, normal);
-
-            &:hover {
-                color: white;
-                background-color: red;
-            }
-        }
-
-    }
-
-
     div {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         color: rgb(243 95 95 / 84%);
+        margin-right: 0.5rem;
         
 
         img {
@@ -116,7 +95,20 @@
         opacity: 0;
         visibility: hidden;
         transition: .4s;
-
+        
+        .iniciar{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            a{
+                color: white;
+                text-decoration: none;
+                border: 1px solid white;
+                border-radius: 0.5rem;
+                width: 40%;
+                margin: auto;
+            }
+        }
         .aside-logo {
             display: flex;
             flex-direction: row;
