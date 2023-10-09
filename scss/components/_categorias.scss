@@ -40,8 +40,13 @@
                 color: inherit;
 
                 .categoria-ovalo {
-                    background: rgb(247, 189, 214);
-                    background: linear-gradient(180deg, rgba(247, 189, 214, 1) 0%, rgba(232, 126, 126, 0.40948879551820727) 21%, rgba(236, 152, 152, 0.6559873949579832) 62%, rgba(233, 148, 148, 0.7596288515406162) 80%);
+                    background: #D66D75;
+                    /* fallback for old browsers */
+                    background: -webkit-linear-gradient(to right, #E29587, #D66D75);
+                    /* Chrome 10-25, Safari 5.1-6 */
+                    background: linear-gradient(to right, #E29587, #D66D75);
+                    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
                     box-shadow: map-get($sombra, normal);
                     background-color: $rojo;
                     margin: 0 0.5rem;
@@ -64,6 +69,8 @@
 
 .categorias a.active {
     .categoria-ovalo {
-        background: linear-gradient(180deg, rgb(247, 189, 214) 0%, rgb(237 0 0 / 74%) 21%, rgb(215 1 1 / 66%) 62%, rgb(229 39 39 / 76%) 80%);       
-      }  /* Color de fondo más fuerte para la categoría activa */
+        background: linear-gradient(180deg, rgb(247, 189, 214) 0%, rgb(237 0 0 / 74%) 21%, rgb(215 1 1 / 66%) 62%, rgb(229 39 39 / 76%) 80%);
+    }
+
+    /* Color de fondo más fuerte para la categoría activa */
 }

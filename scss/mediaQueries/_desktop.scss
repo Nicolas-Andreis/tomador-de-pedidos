@@ -1,7 +1,12 @@
 /*TABLET*/
 @media (min-width: 800px) {
     body {
-        background-color: red;
+        background: #EB5757;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #000000, #EB5757);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #000000, #EB5757);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
         .nav-white {
 
@@ -87,10 +92,10 @@
             width: 100vw;
             display: flex;
             flex-direction: row;
-            background-color: red;
+            background-color: rgba(255, 0, 0, 0);
 
             aside {
-                background-color: red;
+                background-color: rgba(255, 0, 0, 0);
                 width: 100%;
                 display: block;
                 width: 20vw;
@@ -117,17 +122,23 @@
                     position: absolute;
                     top: -2.2rem;
                     right: -1rem;
-                    
-                    a:hover{
-                        background-color: white;
-                        color: red;
+
+                    a:hover {
+                        background: #D66D75;
+                    /* fallback for old browsers */
+                    background: -webkit-linear-gradient(to right, #E29587, #D66D75);
+                    /* Chrome 10-25, Safari 5.1-6 */
+                    background: linear-gradient(to right, #E29587, #D66D75);
+                    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+                        color: rgb(255, 255, 255);
                         border: 1px solid black;
                     }
                 }
 
 
                 .nav-red {
-                    background-color: red;
+                    background-color: rgba(255, 0, 0, 0);
 
                     ul {
                         li {
@@ -270,8 +281,13 @@
                                 margin-top: 3rem;
                                 display: flex;
                                 flex-direction: row;
-                                background: $background;
-                                background: $gradient;
+                                background: #D66D75;
+                                /* fallback for old browsers */
+                                background: -webkit-linear-gradient(to right, #E29587, #D66D75);
+                                /* Chrome 10-25, Safari 5.1-6 */
+                                background: linear-gradient(to right, #E29587, #D66D75);
+                                /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
                                 border-radius: 1.5rem;
                                 width: 3.5rem;
                                 justify-content: space-around;

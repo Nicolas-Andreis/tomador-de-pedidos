@@ -22,7 +22,8 @@
         flex-direction: column;
         text-align: center;
         font-size: 0.9rem;
-        p:nth-child(2){
+
+        p:nth-child(2) {
             font-weight: bold;
         }
     }
@@ -54,8 +55,13 @@
         margin-top: 2rem;
         display: flex;
         flex-direction: row;
-        background: $background;
-        background: $gradient;
+        background: #D66D75;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #E29587, #D66D75);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #E29587, #D66D75);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
         border-radius: 1.5rem;
         width: 4rem;
         justify-content: space-around;

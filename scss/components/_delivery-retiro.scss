@@ -3,7 +3,8 @@ h3 {
     margin-top: 4rem;
     margin-bottom: 1rem;
 }
-.promos{
+
+.promos {
     margin-top: 0rem;
 }
 
@@ -43,8 +44,13 @@ h3 {
 
         .active {
             width: 50%;
-            background: $background;
-            background: $gradient;
+            background: #D66D75;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #E29587, #D66D75);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #E29587, #D66D75);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
             border: none;
             height: 2rem;
             border-radius: 0.5rem 0.5rem 0 0;
@@ -88,8 +94,13 @@ h3 {
                 color: inherit;
 
                 p {
-                    background: $background;
-                    background: $gradient;
+                    background: #D66D75;
+                    /* fallback for old browsers */
+                    background: -webkit-linear-gradient(to right, #E29587, #D66D75);
+                    /* Chrome 10-25, Safari 5.1-6 */
+                    background: linear-gradient(to right, #E29587, #D66D75);
+                    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
                     border-radius: 1rem;
                     width: 6rem;
                     height: 2rem;
@@ -131,8 +142,13 @@ h3 {
                 align-items: center;
 
                 p:nth-child(2) {
-                    background: $background;
-                    background: $gradient;
+                    background: #D66D75;
+                    /* fallback for old browsers */
+                    background: -webkit-linear-gradient(to right, #E29587, #D66D75);
+                    /* Chrome 10-25, Safari 5.1-6 */
+                    background: linear-gradient(to right, #E29587, #D66D75);
+                    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
                     border-radius: 1rem;
                     width: 5rem;
                     text-align: center;
