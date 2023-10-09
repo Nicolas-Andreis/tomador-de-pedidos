@@ -112,7 +112,7 @@ body {
   opacity: 1;
   visibility: visible;
   position: fixed;
-  z-index: 11;
+  z-index: 133;
 }
 .container .aside-visible .close-menu {
   display: block;
@@ -126,7 +126,12 @@ body {
   height: 3rem;
 }
 .container aside {
-  background-color: red;
+  background: #EB5757;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #000000, #EB5757);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #000000, #EB5757);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   width: 70vw;
   height: 100vh;
   position: absolute;
@@ -169,7 +174,7 @@ body {
   margin: 1rem;
 }
 .container aside .nav-red {
-  background-color: red;
+  background-color: transparent;
 }
 .container aside .nav-red ul li {
   list-style: none;
@@ -183,12 +188,7 @@ body {
   cursor: pointer;
 }
 .container aside .nav-red ul li:hover {
-  background: #EB5757;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #000000, #EB5757);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #000000, #EB5757);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-color: white;
   border-radius: 2rem 0rem 0rem 2rem;
   height: 3rem;
 }
@@ -1230,13 +1230,8 @@ body footer {
     right: -1rem;
   }
   body .container aside .iniciar a:hover {
-    background: #D66D75;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #E29587, #D66D75);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #E29587, #D66D75);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    color: rgb(255, 255, 255);
+    background-color: white;
+    color: red;
     border: 1px solid black;
   }
   body .container aside .nav-red {
