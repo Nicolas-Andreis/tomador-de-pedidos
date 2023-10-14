@@ -48,17 +48,22 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+header {
+  position: sticky;
+  top: 0;
+  background-color: white; /* Personaliza el color de fondo según tu diseño */
+  z-index: 1000;
+  height: 4rem;
+}
+
 .nav-white {
   display: flex;
   flex-direction: column;
-  padding-top: 1rem;
-  height: 4rem;
-  overflow: auto;
-}
-.nav-white .nav-pagajoso {
-  height: 4vh;
+  width: 100%;
+  background-color: white;
   position: sticky;
-  z-index: 100;
+  top: 1rem;
+  padding-top: 1rem;
 }
 .nav-white .header-mobile {
   display: flex;
@@ -293,7 +298,7 @@ body {
   position: -webkit-sticky;
   /* Para navegadores basados en WebKit */
   position: sticky;
-  top: 3.7rem;
+  top: 4.7rem;
   /* Posición en la parte superior de la pantalla */
   background-color: white;
   /* Puedes personalizar el estilo */
@@ -506,7 +511,7 @@ h3 {
   justify-content: center;
   border-radius: 0.5rem;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  margin: 1rem auto 1rem auto;
+  margin: 2rem auto 1rem auto;
   height: 3rem;
 }
 .container-horario .abierto {
@@ -1136,6 +1141,20 @@ body footer {
     background: linear-gradient(to right, #000000, #EB5757);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
+  body header {
+    background: #EB5757;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #000000, #EB5757);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #000000, #EB5757);
+  }
+  body .nav-white {
+    background: #EB5757;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #000000, #EB5757);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #000000, #EB5757);
+  }
   body .nav-white .iniciar {
     margin-right: 0.5rem;
   }
@@ -1324,6 +1343,7 @@ body footer {
     width: 90%;
     margin: 0 auto;
     align-items: center;
+    top: 4rem;
   }
   body .container .container-todo .categorias ul li {
     margin: auto 0.4rem;
