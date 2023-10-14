@@ -1147,6 +1147,7 @@ body footer {
     background: -webkit-linear-gradient(to right, #000000, #EB5757);
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #000000, #EB5757);
+    position: static;
   }
   body .nav-white {
     background: #EB5757;
@@ -1343,7 +1344,7 @@ body footer {
     width: 90%;
     margin: 0 auto;
     align-items: center;
-    top: 4rem;
+    top: 0;
   }
   body .container .container-todo .categorias ul li {
     margin: auto 0.4rem;
