@@ -1,4 +1,4 @@
-//codigo para el loader
+//codigo para el loader /////////////////////////////////////////////////////////////////////////////////////
 // Espera a que el documento HTML esté completamente cargado
 document.addEventListener('DOMContentLoaded', function () {
     // Obtén una referencia al elemento "body"
@@ -17,15 +17,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 1000); // Mostrar el loader durante medio segundo
     }
 
-    // Tu lógica adicional aquí
 });
-//codigo para el loader
+//codigo para el loader /////////////////////////////////////////////////////////////////////////////////////
 
 
 
 
 
-//codigo para abrir y cerrar el aside en mobile
+//codigo para abrir y cerrar el aside en mobile /////////////////////////////////////////////////////////////
 
 const openMenu = document.querySelector("#open-menu");
 const closeMenu = document.querySelector("#close-menu");
@@ -40,7 +39,7 @@ closeMenu.addEventListener("click", () => {
 })
 
 
-//codigo para abrir y cerrar el aside en mobile
+//codigo para abrir y cerrar el aside en mobile /////////////////////////////////////////////////////////////
 
 
 
@@ -49,7 +48,7 @@ closeMenu.addEventListener("click", () => {
 
 
 
-// codigo para cambiar retiro a delivery
+// codigo para cambiar retiro a delivery ////////////////////////////////////////////////////////////////////
 const deliveryButton = document.getElementById('delivery-button');
 const retiroButton = document.getElementById('retiro-button');
 const deliveryContenido = document.getElementById('delivery-contenido');
@@ -68,13 +67,13 @@ retiroButton.addEventListener('click', () => {
     retiroContenido.classList.add('active');
     deliveryContenido.classList.remove('active');
 });
-// codigo para cambiar retiro a delivery
+// codigo para cambiar retiro a delivery ////////////////////////////////////////////////////////////////////
 
 
 
 
 
-//horario de apertura 
+// horario de apertura /////////////////////////////////////////////////////////////////////////////////////
 const abiertoDiv = document.querySelector('.abierto');
 const horaActual = new Date();
 const horaActualNumero = horaActual.getHours() + horaActual.getMinutes() / 60;
@@ -99,14 +98,14 @@ if (abierto) {
     abiertoDiv.innerHTML = '<p>cerrado</p>';
 }
 
-// horario de apertura
+// horario de apertura /////////////////////////////////////////////////////////////////////////////////////
 
 
 
 
 
 
-//modal de horarios
+//modal de horarios //////////////////////////////////////////////////////////////////////////
 const verHorariosButton = document.getElementById('ver-horarios-button');
 const horariosModal = document.getElementById('horariosModal');
 const closeBtn = horariosModal.querySelector('.close');
@@ -125,128 +124,49 @@ window.addEventListener('click', (event) => {
     }
 });
 
-//modal de horarios
+//modal de horarios //////////////////////////////////////////////////////////////////////////
 
 
 
 
-
+// botones de las cards //////////////////////////////////////////////////////////////////////////////////////
+// Espera a que el DOM se cargue antes de ejecutar el código
 document.addEventListener('DOMContentLoaded', () => {
-    let totalCompra = 0;
-    const contenedores = document.querySelectorAll('.card');
-    let productosEnPedido = {};
+    let totalCompra = 0; // Inicializa el costo total de la compra
+    const contenedores = document.querySelectorAll('.card'); // Obtiene todas las tarjetas de productos
 
+    // Itera a través de cada tarjeta de producto
     contenedores.forEach(contenedor => {
         const cantidadElement = contenedor.querySelector('.contador p');
         const imgTrash = contenedor.querySelector('.contador .trash-btn');
         const imgSum = contenedor.querySelector('.contador .sum-btn');
-        const nombreProducto = contenedor.querySelector('.card-texto p:first-child').textContent;
         const precioProducto = parseInt(contenedor.querySelector('.card-texto p:last-child').textContent.replace('$', ''));
-        const imagenProducto = contenedor.querySelector('img').getAttribute('src');
+        
 
+        // Agrega un evento al botón de eliminar
         imgTrash.addEventListener('click', () => {
+            // Reduce el costo total al multiplicar la cantidad por el precio del producto
             totalCompra -= parseInt(cantidadElement.textContent) * precioProducto;
-            cantidadElement.textContent = '0';
-            actualizarCantidadTotal();
-            eliminarProductoDePedido(nombreProducto);
-            actualizarModalPedido();
+            cantidadElement.textContent = '0'; // Restablece la cantidad a 0
         });
 
+        // Agrega un evento al botón de aumentar la cantidad
         imgSum.addEventListener('click', () => {
             let cantidad = parseInt(cantidadElement.textContent);
-            cantidad++;
-            totalCompra += precioProducto;
-            cantidadElement.textContent = cantidad.toString();
-            actualizarCantidadTotal();
-            agregarProductoAPedido(nombreProducto, cantidad, precioProducto, imagenProducto);
-            actualizarModalPedido();
+            cantidad++; // Aumenta la cantidad
+            cantidadElement.textContent = cantidad.toString();  
         });
-    });
-
-    function actualizarCantidadTotal() {
-        const cantidades = document.querySelectorAll('.card .contador p');
-        const cantidadTotalElement = document.getElementById('cantidad-total');
-
-        let cantidadTotal = 0;
-        cantidades.forEach(cantidadElement => {
-            cantidadTotal += parseInt(cantidadElement.textContent);
-        });
-
-        cantidadTotalElement.textContent = cantidadTotal.toString();
-    }
-
-    function agregarProductoAPedido(nombre, cantidad, precio, imagen) {
-        if (!productosEnPedido[nombre]) {
-            productosEnPedido[nombre] = {
-                cantidad: 0,
-                precio: precio,
-                imagen: imagen
-            };
-        }
-
-        productosEnPedido[nombre].cantidad += cantidad;
-    }
-
-    function actualizarCantidadEnTarjeta(nombre, cantidad) {
-        const contenedor = document.querySelector(`.card:has(.card-texto p:first-child:contains("${nombre}"))`);
-        if (contenedor) {
-            const cantidadElement = contenedor.querySelector('.contador p');
-            cantidadElement.textContent = cantidad.toString();
-        }
-    }
-
-
-    function eliminarProductoDePedido(nombre) {
-        if (productosEnPedido[nombre]) {
-            totalCompra -= productosEnPedido[nombre].cantidad * productosEnPedido[nombre].precio;
-            delete productosEnPedido[nombre];
-            actualizarModalPedido(); // Actualizar el modal después de eliminar
-            actualizarCantidadTotal(); // Actualizar la cantidad total en las tarjetas
-
-            // Reiniciar cantidad en la tarjeta específica
-            const contenedor = document.querySelector(`.card[data-producto="${nombre}"]`);
-            if (contenedor) {
-                const cantidadElement = contenedor.querySelector('.contador p');
-                cantidadElement.textContent = '0';
-            }
-        }
-    }
-
-
-
-    // Código para el modal "Ver pedido"
-    const verPedidoButton = document.querySelector('.ver-pedido');
-    const modalVerPedido = document.getElementById('modal-1');
-    const closeVerPedido = modalVerPedido.querySelector('.close');
-
-    verPedidoButton.addEventListener('click', () => {
-        actualizarModalPedido();
-        modalVerPedido.style.display = 'block';
-    });
-
-    closeVerPedido.addEventListener('click', () => {
-        modalVerPedido.style.display = 'none';
-    });
-
-    window.addEventListener('click', (event) => {
-        if (event.target === modalVerPedido) {
-            modalVerPedido.style.display = 'none';
-        }
-    });
+    });    
 });
+// botones de las cards //////////////////////////////////////////////////////////////////////////////////////
 
 
 
 
 
+//carga de productos /////////////////////////////////////////////////////////////////////////////////////////
 
-
-
-
-
-
-
-
+// creacion del array para los productos
 const productosPromos = [
     { id: 1, nombre: "promo para sillonear", precio: 4350, imagen: "./imagenes/promos/parasillonear.png" },
     { id: 2, nombre: "promo hinchada", precio: 3430, imagen: "./imagenes/promos/promohinchada.png" },
@@ -423,10 +343,11 @@ const productosHelados = [
 
 
 
-//agregar tarjetas
+// Función para agregar tarjetas de productos a un contenedor
 function agregarTarjetas(container, productos) {
+        // Itera a través de la lista de productos y crea una tarjeta para cada uno
     for (const producto of productos) {
-        let contenedor = document.createElement("div");
+        let contenedor = document.createElement("div");// Crea un elemento div para la tarjeta
         contenedor.classList.add("card"); // Agregar la clase "card"
 
         // Definir el contenido HTML de la tarjeta
@@ -452,7 +373,7 @@ function agregarTarjetas(container, productos) {
 //agregar tarjetas
 
 
-
+// Obtén contenedores HTML específicos donde deseas agregar tarjetas de productos
 const containerPromos = document.querySelector("#Promos");
 const containerPizzas = document.querySelector("#Pizzas");
 const containerMediasPizzas = document.querySelector("#MediasPizzas");
@@ -467,6 +388,7 @@ const containerBebidas = document.querySelector("#Bebidas");
 const containerCervezas = document.querySelector("#Cervezas");
 const containerHelados = document.querySelector("#Helados");
 
+// Llama a la función agregarTarjetas para cada contenedor y lista de productos correspondiente
 agregarTarjetas(containerPromos, productosPromos);
 agregarTarjetas(containerPizzas, productosPizzas);
 agregarTarjetas(containerMediasPizzas, productosMediasPizzas);
@@ -480,6 +402,12 @@ agregarTarjetas(containerPostres, productosPostres);
 agregarTarjetas(containerBebidas, productosBebidas);
 agregarTarjetas(containerCervezas, productosCervezas);
 agregarTarjetas(containerHelados, productosHelados);
+
+//carga de productos /////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 
 
 
