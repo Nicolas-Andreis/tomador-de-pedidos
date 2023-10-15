@@ -117,7 +117,7 @@ header {
   opacity: 1;
   visibility: visible;
   position: fixed;
-  z-index: 133;
+  z-index: 1033;
 }
 .container .aside-visible .close-menu {
   display: block;
