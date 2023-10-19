@@ -1480,6 +1480,7 @@ body footer {
     margin: 0 auto;
     align-items: center;
     top: 0;
+    padding-left: 20rem;
   }
   body .container .container-todo .categorias ul li {
     margin: auto 0.4rem;
