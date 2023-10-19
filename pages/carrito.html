@@ -59,40 +59,102 @@
                 </div>
 
                 <div class="logo">
-                    <img src="../imagenes/logo/logo.png" alt="logo" >
+                    <img src="../imagenes/logo/logo.png" alt="logo">
                     <h1 class="titulos">Il Pirata</h1>
                 </div>
             </div>
-            
+
         </nav>
     </header>
     <main class="container">
         <aside>
             <div class="aside-logo">
-                <img src="../imagenes/logo/logo.png" alt="logo" >
+                <img src="../imagenes/logo/logo.png" alt="logo">
                 <p class="titulos">Il Pirata</p>
-            
-            <button class="close-menu" id="close-menu" type="button">
-                <img src="../imagenes/iconos/nav/back.png" alt="menu" class="icon">
-            </button>
-        </div>
+
+                <button class="close-menu" id="close-menu" type="button">
+                    <img src="../imagenes/iconos/nav/back.png" alt="menu" class="icon">
+                </button>
+            </div>
             <nav class="nav-red">
                 <ul class="">
-                    <li><a class="" href="../index.html" >
-                        <img src="../imagenes/iconos/aside/back.png" alt="">Seguir comprando</a></li>
-                    
-                </ul> 
+                    <li><a class="" href="../index.html">
+                            <img src="../imagenes/iconos/aside/back.png" alt="">Seguir comprando</a></li>
+                </ul>
             </nav>
         </aside>
-        <div class="miCarrito">
+        <div class="miCarrito" id="miCarrito">
             <h3>Mi carrito</h3>
-        </div>
+            <p class="frase" id="carrito-vacio">Tu carrito esta vacio</p>
+            <div class="container-cardCarrito disabled" id="carrito-productos">
+                <!-- esto se va a rrellenar con js -->
+
+                <div class="cardCarrito">
+                    <img src="../imagenes/pizzas/aceitunas.jpg" alt="">
+                    <div class="card-texto">
+                        <p>${producto.nombre}</p>
+                        <p>$${producto.precio}</p>
+                    </div>
+                    <div class="card-iconos">
+                        <div>
+                            <p>$5000</p>
+                        </div>
+                        <div class="contador">
+                            <img src="../imagenes/iconos/basura/trash.png" alt="trash" class="trash-btn">
+                            <p>0</p>
+                            <img src="../imagenes/iconos/shopping cart/sum.png" alt="+" class="sum-btn">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cardCarrito">
+                    <img src="../imagenes/pizzas/aceitunas.jpg" alt="">
+                    <div class="card-texto">
+                        <p>${producto.nombre}</p>
+                        <p>$${producto.precio}</p>
+                    </div>
+                    <div class="card-iconos">
+                        <div>
+                            <p>$5000</p>
+                        </div>
+                        <div class="contador">
+                            <img src="../imagenes/iconos/basura/trash.png" alt="trash" class="trash-btn">
+                            <p>0</p>
+                            <img src="../imagenes/iconos/shopping cart/sum.png" alt="+" class="sum-btn">
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+            <div class="container-acciones" id="carrito-acciones">
+                <div class="button-vaciarCarrito">
+                    <button id="carrito-acciones-vaciar">Vaciar carrito</button>
+                </div>
+                <div class="container-resumen">
+                    <div class="container-total">
+                        <p>Total:</p>
+                        <P id="total">$10000</P>
+                    </div>
+                    <div class="container-comprarAhora">
+                        <button id="carrito-acciones-comprar">Comprar ahora</button>
+                    </div>
+                </div>
+            </div>
+            <p class="frase" id="carrito-comprado">Muchas gracias por tu compra</p>
+            
+            
     </main>
     <footer>
         Derechos Reservados Nicolás Andreis &copy; 2023
     </footer>
     <script src="../js/main.js"></script>
-    
+    <script src="../js/carrito.js"></script>
+    <script src="../db/productos.js"></script>
+
 </body>
 
 </html>

@@ -10,19 +10,19 @@
         /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         header {
             background: #EB5757;
-        /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #000000, #EB5757);
-        /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #000000, #EB5757);
-        position: static;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #000000, #EB5757);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #000000, #EB5757);
+            position: static;
         }
 
         .nav-white {
             background: #EB5757;
-        /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #000000, #EB5757);
-        /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #000000, #EB5757);
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #000000, #EB5757);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #000000, #EB5757);
 
             .iniciar {
                 margin-right: 0.5rem;
@@ -298,11 +298,16 @@
                                 /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
                                 border-radius: 1.5rem;
-                                width: 3.5rem;
+                                width: 2rem;
                                 justify-content: space-around;
                                 align-items: center;
-                                height: 1.2rem;
-
+                                height: 2rem;
+                                cursor: pointer;
+                                .sum-btn{
+                                    width: 2rem;
+                                    height: 2rem;
+                                    padding: 0.5rem;
+                                }
                                 img {
                                     width: 0.9rem;
                                     height: 0.9rem;
@@ -343,4 +348,92 @@
     }
 
 
+
+
+    //mi carrito//////////////////////////////////////////////////
+    .disabled {
+        display: none;
+    }
+
+    .miCarrito {
+        background-color: white;
+        width: 100%;
+        height: 80vh;
+        border-radius: 1rem;
+        margin: 1rem auto;
+        overflow-y: auto;
+
+        h3 {
+            margin-top: 1rem;
+        }
+
+        .frase {
+            margin-left: 5%;
+        }
+
+        .container-acciones {
+            width: 90%;
+            margin: 1rem auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            .button-vaciarCarrito {
+                border-radius: 0.5rem;
+                box-shadow: map-get($sombra, normal);
+                height: 3rem;
+                width: 8rem;
+                display: flex;
+                justify-content: center;
+
+                button {
+                    background-color: transparent;
+                    border: none;
+                }
+
+            }
+
+            .container-resumen {
+                display: flex;
+                flex-direction: row;
+                width: 35%;
+                height: 3rem;
+                justify-content: space-between;
+                align-items: center;
+                border-radius: 0.5rem;
+                box-shadow: map-get($sombra, normal);
+
+                .container-total {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+
+                    p {
+                        margin: 0 0.2rem;
+                        font-weight: bold;
+                    }
+                }
+
+                .container-comprarAhora {
+                    height: 100%;
+
+                    button {
+                        color: white;
+                        width: 8rem;
+                        border-radius: 0 .5rem .5rem 0;
+                        border: none;
+                        height: 100%;
+                        background: #D66D75;
+                        /* fallback for old browsers */
+                        background: -webkit-linear-gradient(to right, #E29587, #D66D75);
+                        /* Chrome 10-25, Safari 5.1-6 */
+                        background: linear-gradient(to right, #E29587, #D66D75);
+                        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                    }
+                }
+            }
+
+        }
+    }
 }

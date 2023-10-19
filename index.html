@@ -70,7 +70,7 @@
                 <div class="miCarritoButton">
                     <a href="./pages/carrito.html">
                     <div>
-                        <span>0</span>
+                        <span class="numerito">0</span>
                         <img src="./imagenes/iconos/shopping cart/shoppingcart.png" alt="">
                     </div>
                     </a>
@@ -107,7 +107,7 @@
                     <li><a class="" href="./pages/carta.html" data-modal="modal-carta">
                             <img src="./imagenes/iconos/aside/menu.png" alt="carta">Carta</a></li>
                     <li><a class="" href="./pages/carrito.html" data-modal="modal-carta">
-                            <img src="./imagenes/iconos/aside/carrito.png" alt="carrito">Mi carrito <span class="numero">0</span>
+                            <img src="./imagenes/iconos/aside/carrito.png" alt="carrito">Mi carrito <span class="numerito" id="numerito">0</span>
                         </a></li>
                 </ul>
             </nav>
@@ -352,8 +352,12 @@
     <footer>
         Derechos Reservados Nicolás Andreis &copy; 2023
     </footer>
-    <script src="./js/main.js"></script>
-
+    <script type="module" src="./db/productos.js"></script>
+    <script type="module" src="./db/usuarios.js"></script>
+    <script type="module" src="./js/usuario.js"></script>
+    <script type="module" src="./js/carrito.js"></script>
+    <script type="module" src="./js/administrador.js"></script>
+    <script type="module" src="./js/main.js"></script>
 </body>
 
 </html>
