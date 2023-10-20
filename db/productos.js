@@ -324,8 +324,8 @@ function agregarAlcarrito(e) {
         position: "right", // `left`, `center` or `right`
         stopOnFocus: true,
         offset: {
-            x: 70, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-            y: 10 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+            x: "4rem", // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+            y: "2rem" // vertical axis - can be a number or a string indicating unity. eg: '2em'
           }, // Prevents dismissing of toast on hover
         style: {
           background: "linear-gradient(to right, #000000, #EB5757)",
