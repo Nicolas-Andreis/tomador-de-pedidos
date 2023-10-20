@@ -55,8 +55,8 @@
 
             .miCarritoButton {
                 background-color: transparent;
-                height: 2.5rem;
-                width: 2.5rem;
+                height: 4rem;
+                width: 4rem;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -64,29 +64,32 @@
                 a {
                     background-color: rgb(255, 255, 255);
                     border-radius: 1.5rem;
-                    height: 2.2rem;
-                    width: 2.2rem;
+                    height: 3rem;
+                    width: 3rem;
                     display: flex;
                     justify-content: space-around;
                     align-items: flex-end;
+                    overflow: hidden;
 
                     div {
                         color: black;
                         display: flex;
-                        justify-content: center;
-                        align-items: center;
+                        justify-content: revert;
+                        align-items: flex-end;
+                        margin-right: 1.5rem;
 
                         img {
-                            width: 1rem;
-                            height: 1rem;
+                            width: 1.5rem;
+                            height: 1.5rem;
                         }
 
                         span {
                             position: relative;
-                            right: -0.1rem;
+                            right: -4rem;
                             height: 1rem;
-                            top: -0.3rem;
-                            font-size: small;
+                            top: -0.5rem;
+                            font-size: medium;
+                            font-weight: bold;
                         }
                     }
                 }
@@ -304,11 +307,13 @@
                                 align-items: center;
                                 height: 2rem;
                                 cursor: pointer;
-                                .sum-btn{
+
+                                .sum-btn {
                                     width: 2rem;
                                     height: 2rem;
                                     padding: 0.5rem;
                                 }
+
                                 img {
                                     width: 0.9rem;
                                     height: 0.9rem;

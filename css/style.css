@@ -639,10 +639,14 @@ h3 {
   position: relative;
   bottom: 0.7rem;
 }
-.miCarritoButton a div span {
+.miCarritoButton a div .numerito {
   color: black;
   position: relative;
   right: -0.1rem;
+  width: auto;
+  height: auto;
+  font-weight: bold;
+  font-size: medium;
 }
 
 /* Estilos para los modales */
@@ -1036,6 +1040,12 @@ h3 {
   margin: 0;
 }
 
+.numerito {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 5rem;
+}
+
 body .container .container-todo {
   width: 100%;
 }
@@ -1174,7 +1184,6 @@ body footer {
   justify-content: space-between;
   align-items: center;
   border-radius: 0.5rem;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 .miCarrito .container-acciones .container-resumen .container-total {
   display: flex;
@@ -1191,7 +1200,7 @@ body footer {
 .miCarrito .container-acciones .container-resumen .container-comprarAhora button {
   color: white;
   width: 8rem;
-  border-radius: 0 0.5rem 0.5rem 0;
+  border-radius: 0.5rem;
   border: none;
   height: 100%;
   background: #D66D75;
@@ -1313,8 +1322,8 @@ body footer {
   }
   body .nav-white .miCarritoButton {
     background-color: transparent;
-    height: 2.5rem;
-    width: 2.5rem;
+    height: 4rem;
+    width: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1322,28 +1331,31 @@ body footer {
   body .nav-white .miCarritoButton a {
     background-color: rgb(255, 255, 255);
     border-radius: 1.5rem;
-    height: 2.2rem;
-    width: 2.2rem;
+    height: 3rem;
+    width: 3rem;
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
+    overflow: hidden;
   }
   body .nav-white .miCarritoButton a div {
     color: black;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: revert;
+    align-items: flex-end;
+    margin-right: 1.5rem;
   }
   body .nav-white .miCarritoButton a div img {
-    width: 1rem;
-    height: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
   }
   body .nav-white .miCarritoButton a div span {
     position: relative;
-    right: -0.1rem;
+    right: -4rem;
     height: 1rem;
-    top: -0.3rem;
-    font-size: small;
+    top: -0.5rem;
+    font-size: medium;
+    font-weight: bold;
   }
   body .nav-white .header-mobile {
     display: none;
