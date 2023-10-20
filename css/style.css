@@ -1343,7 +1343,6 @@ body footer {
     display: flex;
     justify-content: revert;
     align-items: flex-end;
-    margin-right: 1.5rem;
   }
   body .nav-white .miCarritoButton a div img {
     width: 1.5rem;
@@ -1351,7 +1350,7 @@ body footer {
   }
   body .nav-white .miCarritoButton a div span {
     position: relative;
-    right: -4rem;
+    right: 0.4rem;
     height: 1rem;
     top: -0.5rem;
     font-size: medium;
