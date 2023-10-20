@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let productos = [];
 
     // Función para cargar los productos desde el archivo JSON
-    fetch("https://nicolas-andreis.github.io/Il-pirata/js/productos.json")
+    fetch("../js/productos.json")
         .then((response) => response.json())
         .then((data) => {
             productos = data; // Almacena los productos en la variable productos
