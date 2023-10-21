@@ -87,7 +87,7 @@
             </nav>
         </aside>
         <div class="miCarrito" id="miCarrito">
-            <h3>Mi carrito</h3>
+            <h3 id="micarriTitle">Mi carrito</h3>
             <p class="frase" id="carrito-vacio">Tu carrito esta vacio</p>
             <div class="container-cardCarrito disabled" id="carrito-productos">
                 <!-- esto se va a rrellenar con js -->
@@ -133,7 +133,7 @@
 
             </div>
 
-            <div class="container-acciones" id="carrito-acciones">
+            <div class="container-acciones disabled" id="carrito-acciones">
                 <div class="button-vaciarCarrito">
                     <button id="carrito-acciones-vaciar">Vaciar carrito</button>
                 </div>
@@ -150,6 +150,74 @@
             <p class="frase" id="carrito-comprado">Muchas gracias por tu compra</p>
 
 
+            <!-- pasos para confirmar la compra -->
+            <div id="paso1" class="disabled">
+                <!-- envio o retiro radial -->
+                <!-- esto se va a rrellenar con js -->
+                <h2>Selecciona un método:</h2>
+                <form id="metodoForm">
+                    <input type="radio" id="retiroLocal" name="metodo" value="retiro">
+                    <label for="retiroLocal">Retiro en el local</label><br>
+
+                    <input type="radio" id="envio" name="metodo" value="envio">
+                    <label for="envio">Envío</label><br>
+
+                </form>
+                <form id="envioForm" class="disabled">
+                    <h2>Información de Envío</h2>
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" id="direccion" name="direccion" required><br>
+
+                    <label for="telefono">Teléfono:</label>
+                    <input type="text" id="telefono" name="telefono" required><br>
+
+
+                    <!-- Agregar el botón "Continuar" -->
+                    <button type="button" id="continuarPaso2Envio">Continuar</button>
+                </form>
+
+                <form id="retiroLocalForm" class="disabled">
+                    <h2>Información de Retiro en el Local</h2>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required><br>
+
+                    <label for="telefonoRetiro">Teléfono:</label>
+                    <input type="text" id="telefonoRetiro" name="telefonoRetiro" required><br>
+
+
+                    <!-- Agregar el botón "Continuar" -->
+                    <button type="button" id="continuarPaso2Retiro">Continuar</button>
+                </form>
+            </div>
+            <div id="paso2" class="disabled">
+                <form id="metodoPagoForm">
+                    <input type="radio" id="mercadoPago" name="metodo-pago" value="Mercado Pago">
+                    <label for="mercadoPago">Mercado Pago</label><br>
+                
+                    <input type="radio" id="efectivo" name="metodo-pago" value="Efectivo">
+                    <label for="efectivo">Efectivo</label><br>
+                
+                    <button type="button" id="siguientePasoPago">Siguiente</button>
+                </form>
+            </div>
+            <div id="paso3" class="disabled">
+                <!-- resumen del pedido con enviar  -->
+                <!-- esto se va a rrellenar con js -->
+                <h3>il pirata</h3>
+                <div id="resumen-datos">
+                    <!-- esto se va a rrellenar con js -->
+                </div>
+                <div id="productos-comprados">
+                    <!-- esto se va a rrellenar con js -->
+                </div>
+                <div id="metodo-de-pago">
+                    <!-- esto se va a rrellenar con js -->
+                </div>
+                <div id="pago-total">
+                    <!-- esto se va a rrellenar con js -->
+                </div>
+                <button id="enviarPedido">enviar pedido</button>
+            </div>
     </main>
     <footer>
         Derechos Reservados Nicolás Andreis &copy; 2023

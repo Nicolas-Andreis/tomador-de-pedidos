@@ -13,6 +13,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const botonVaciar = document.querySelector("#carrito-acciones-vaciar");
     const contenedorTotal = document.querySelector("#total");
     const botonComprar = document.querySelector("#carrito-acciones-comprar");
+    const paso1 = document.querySelector("#paso1");
+    const paso2 = document.querySelector("#paso2");
+    const paso3 = document.querySelector("#paso3");
+    const envio = document.querySelector("#envioForm");
+    const retiro = document.querySelector("#retiroLocalForm");
+    const radioEnvio = document.getElementById("envio");
+    const radioRetiroLocal = document.getElementById("retiroLocal");
+    const btnContinuarRetiro = document.getElementById("continuarPaso2Retiro");
+    const btnContinuarEnvio = document.getElementById("continuarPaso2Envio");
+    const btnContinuarPago = document.getElementById("siguientePasoPago");
+    const titulo = document.getElementById("micarriTitle");
+    const enviarPedido = document.getElementById("enviarPedido");
+
+
 
     contenedorCarritoProductos.innerHTML = "";
 
@@ -152,21 +166,128 @@ document.addEventListener("DOMContentLoaded", function () {
     botonComprar.addEventListener("click", comprarCarrito);
 
     function comprarCarrito() {
-        Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'Tu compra a sido exitosa',
-            showConfirmButton: false,
-            timer: 1500
-        })
+        // Swal.fire({
+        //     position: 'center',
+        //     icon: 'success',
+        //     title: 'Tu compra a sido exitosa',
+        //     showConfirmButton: false,
+        //     timer: 1500
+        // })
 
-        productosEnCarrito.length = 0;
+        // productosEnCarrito.length = 0; esto lo oculte
         localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
 
         contenedorCarritoVacio.classList.add("disabled");
         contenedorCarritoProductos.classList.add("disabled");
         contenedorCarritoAcciones.classList.add("disabled");
-        contenedorCarritoComprado.classList.remove("disabled");
-    }
+        titulo.classList.add("disabled");
+        // contenedorCarritoComprado.classList.remove("disabled");
+        paso1.classList.remove("disabled");
 
-});
+        radioEnvio.addEventListener("change", function () {
+            if (radioEnvio.checked) {
+                document.getElementById("envioForm").classList.remove("disabled");
+                document.getElementById("retiroLocalForm").classList.add("disabled");
+            }
+        });
+
+        radioRetiroLocal.addEventListener("change", function () {
+            if (radioRetiroLocal.checked) {
+                document.getElementById("retiroLocalForm").classList.remove("disabled");
+                document.getElementById("envioForm").classList.add("disabled");
+            }
+        });
+        btnContinuarRetiro.addEventListener("click", function () {
+            document.getElementById("paso2").classList.remove("disabled");
+            document.getElementById("paso1").classList.add("disabled");
+        });
+
+        btnContinuarEnvio.addEventListener("click", function () {
+            document.getElementById("paso2").classList.remove("disabled");
+            document.getElementById("paso1").classList.add("disabled");
+        });
+
+        function resumenDelPedido() {
+            const resumenDatos = document.querySelector("#resumen-datos");
+            const productosComprados = document.querySelector("#productos-comprados");
+            const pagoTotal = document.querySelector("#pago-total");
+            const metodoDePago = document.querySelector("#metodo-de-pago");
+
+            // Obtener la información de envío o retiro según la selección del usuario
+            const infoEnvio = radioEnvio.checked
+                ? {
+                    tipo: "Envío",
+                    direccion: document.querySelector("#direccion").value,
+                    telefono: document.querySelector("#telefono").value,
+                }
+                : {
+                    tipo: "Retiro en el Local",
+                    nombre: document.querySelector("#nombre").value,
+                    telefonoRetiro: document.querySelector("#telefonoRetiro").value,
+                };
+
+            // Crear una lista de productos comprados en formato de lista HTML
+            const listaProductosHTML = productosEnCarrito.map(producto => `
+                <li>${producto.cantidad} x ${producto.nombre} - $${producto.cantidad * producto.precio}</li>
+            `).join("<br>"); // Usamos join para convertir la lista en una cadena separada por saltos de línea
+
+            // Calcular el total de la compra
+            const totalCalculado = productosEnCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
+
+            // Actualizar los elementos HTML con la información del resumen
+            resumenDatos.innerHTML = `
+                <h3>Resumen de Datos</h3>
+                <p>Método de entrega: ${infoEnvio.tipo}</p>
+                <p>Dirección: ${infoEnvio.direccion || ""}</p>
+                <p>Nombre: ${infoEnvio.nombre || ""}</p>
+                <p>Teléfono: ${infoEnvio.telefono || infoEnvio.telefonoRetiro || ""}</p>
+            `;
+
+            productosComprados.innerHTML = `
+                <h3>Productos Comprados</h3>
+                ${listaProductosHTML}
+            `;
+            // Obtener el método de pago seleccionado
+            const metodoPagoSeleccionado = document.querySelector('input[name="metodo-pago"]:checked');
+
+            if (metodoPagoSeleccionado) {
+                metodoDePago.innerHTML = `
+            <h3>Método de Pago</h3>
+            <p>${metodoPagoSeleccionado.value}</p>
+        `;
+            }
+
+
+
+            pagoTotal.innerHTML = `
+                <h3> Total de la Compra</h3>
+                    <p>$${totalCalculado}</p>
+            `;
+        }
+
+
+        btnContinuarPago.addEventListener("click", function () {
+            document.getElementById("paso3").classList.remove("disabled");
+            document.getElementById("paso1").classList.add("disabled");
+            document.getElementById("paso2").classList.add("disabled");
+            resumenDelPedido();
+        });
+
+        enviarPedido.addEventListener("click", function () {
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Tu compra a sido exitosa',
+                showConfirmButton: false,
+                timer: 1500
+            })
+            // Vaciar el carrito
+            productosEnCarrito = [];
+            localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+            cargarProductosCarrito(); // Actualizar la vista del carrito
+
+            document.getElementById("paso3").classList.add("disabled");
+        });
+    }
+}
+);
