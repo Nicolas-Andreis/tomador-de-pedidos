@@ -1210,6 +1210,129 @@ body footer {
   background: linear-gradient(to right, #E29587, #D66D75);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+.miCarrito #paso1 {
+  padding: 1rem;
+  text-align: center;
+}
+.miCarrito #paso1 #metodoForm label {
+  width: 50%;
+  margin-top: 1rem;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.miCarrito #paso1 #envioForm {
+  display: flex;
+  flex-direction: column;
+  /* text-align: center; */
+  width: 50%;
+  margin: 0 auto;
+}
+.miCarrito #paso1 #envioForm input {
+  border-radius: 1rem;
+  height: 2.2rem;
+  border: 1px solid gray;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  padding-left: 0.5rem;
+}
+.miCarrito #paso1 #retiroLocalForm {
+  display: flex;
+  flex-direction: column;
+  /* text-align: center; */
+  width: 50%;
+  margin: 0 auto;
+}
+.miCarrito #paso1 #retiroLocalForm input {
+  border-radius: 1rem;
+  height: 2.2rem;
+  border: 1px solid gray;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  padding-left: 0.5rem;
+}
+.miCarrito #paso1 #continuarPaso2Retiro {
+  width: 10rem;
+  height: 3rem;
+  border-radius: 2rem;
+  margin: 0 auto;
+  color: white;
+  background: rgb(247, 189, 214);
+  background: linear-gradient(180deg, rgb(247, 189, 214) 0%, rgb(232, 126, 126) 21%, rgb(236, 152, 152) 62%, rgb(233, 148, 148) 80%);
+  border: none;
+}
+.miCarrito #paso1 #continuarPaso2Envio {
+  width: 10rem;
+  height: 3rem;
+  border-radius: 2rem;
+  margin: 0 auto;
+  color: white;
+  background: rgb(247, 189, 214);
+  background: linear-gradient(180deg, rgb(247, 189, 214) 0%, rgb(232, 126, 126) 21%, rgb(236, 152, 152) 62%, rgb(233, 148, 148) 80%);
+  border: none;
+}
+.miCarrito #paso2 {
+  padding: 1rem;
+  text-align: center;
+}
+.miCarrito #paso2 #metodoPagoForm label {
+  width: 50%;
+  margin-top: 1rem;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.miCarrito #paso2 #siguientePasoPago {
+  width: 10rem;
+  height: 3rem;
+  border-radius: 2rem;
+  margin: 1rem auto;
+  color: white;
+  background: rgb(247, 189, 214);
+  background: linear-gradient(180deg, rgb(247, 189, 214) 0%, rgb(232, 126, 126) 21%, rgb(236, 152, 152) 62%, rgb(233, 148, 148) 80%);
+  border: none;
+}
+.miCarrito #paso3 h3 {
+  text-align: center;
+  margin-left: 0;
+}
+.miCarrito #paso3 #resumen-datos {
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  font-size: 1.2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.miCarrito #paso3 #resumen-datos h3 {
+  border-bottom: 1px solid black;
+  width: 100%;
+  margin: 1rem 0;
+  font-weight: bold;
+  font-size: 3rem;
+}
+.miCarrito #paso3 #productos-comprados {
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+  font-size: 1.2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.miCarrito #paso3 #metodo-de-pago {
+  margin: 1rem auto;
+  font-size: 1.2rem;
+}
+.miCarrito #paso3 #pago-total {
+  border-bottom: 1px solid black;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+.miCarrito #paso3 #enviarPedido {
+  width: 50%;
+  height: 3rem;
+  border-radius: 2rem;
+  margin: 1rem auto;
+  color: white;
+  background: rgb(247, 189, 214);
+  background: linear-gradient(180deg, rgb(247, 189, 214) 0%, rgb(232, 126, 126) 21%, rgb(236, 152, 152) 62%, rgb(233, 148, 148) 80%);
+  border: none;
+  margin-left: 25%;
+}
 
 .carta {
   background-color: white;

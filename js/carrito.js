@@ -236,15 +236,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Actualizar los elementos HTML con la información del resumen
             resumenDatos.innerHTML = `
-                <h3>Resumen de Datos</h3>
-                <p>Método de entrega: ${infoEnvio.tipo}</p>
+                
+                <h3>${infoEnvio.tipo} </h3>
                 <p>Dirección: ${infoEnvio.direccion || ""}</p>
-                <p>Nombre: ${infoEnvio.nombre || ""}</p>
+                <p>Cliente: ${infoEnvio.nombre || ""}</p>
                 <p>Teléfono: ${infoEnvio.telefono || infoEnvio.telefonoRetiro || ""}</p>
             `;
 
             productosComprados.innerHTML = `
-                <h3>Productos Comprados</h3>
+                
                 ${listaProductosHTML}
             `;
             // Obtener el método de pago seleccionado
@@ -252,7 +252,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (metodoPagoSeleccionado) {
                 metodoDePago.innerHTML = `
-            <h3>Método de Pago</h3>
+            
             <p>${metodoPagoSeleccionado.value}</p>
         `;
             }
@@ -260,8 +260,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             pagoTotal.innerHTML = `
-                <h3> Total de la Compra</h3>
-                    <p>$${totalCalculado}</p>
+                
+                    <p>Total: $${totalCalculado}</p>
             `;
         }
 
