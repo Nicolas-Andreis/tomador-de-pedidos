@@ -280,7 +280,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 title: 'Tu compra a sido exitosa',
                 showConfirmButton: false,
                 timer: 1500
-            })
+            });
+
+
+            
             // Vaciar el carrito
             productosEnCarrito = [];
             localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));

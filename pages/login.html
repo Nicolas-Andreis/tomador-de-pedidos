@@ -20,17 +20,17 @@
         </div>
         <div>
             <form id="loginForm" class="container-form">
-                <div class="container-input">
+                <div class="container-input" id="loginForm1">
                     <img src="../imagenes/login/user.png" alt="usuario">
                     <label for="username"></label>
                     <input type="text" id="username" name="username" required placeholder="usuario">
                 </div>
-                <div class="container-input">
+                <div class="container-input" id="loginForm2">
                     <img src="../imagenes/login/candado.png" alt="contraseña">
                     <label for="password"></label>
                     <input type="password" id="password" name="password" required placeholder="contraseña">
                 </div>
-                <button type="submit">Iniciar Sesión</button>
+                <button type="submit" id="btn-logearse">Iniciar Sesión</button>
             </form>
         </div>
         <div class="registro">
@@ -45,6 +45,8 @@
             </a>
         </div>
     </div>
+    <script type="module" src="../db/usuarios.js"></script>
+    <script type="module" src="../js/usuario.js"></script>
     <script src="../js/main.js"></script>
 </body>
 

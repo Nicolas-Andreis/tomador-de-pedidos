@@ -1,0 +1,21 @@
+.iniciar {
+    display: flex;
+    flex-direction: column;
+
+    p {
+        color: white;
+        margin: auto;
+    }
+
+    button {
+        width: 60%;
+        margin:  1rem auto;
+        color: white;
+        text-decoration: none;
+        border: 1px solid white;
+        border-radius: 0.5rem;
+        background-color: transparent;
+
+
+    }
+}

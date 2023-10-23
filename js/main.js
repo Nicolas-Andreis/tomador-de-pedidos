@@ -255,4 +255,28 @@ closeButtons.forEach(button => {
     });
 });
 
+// const iniciarSesion = document.getElementById("inicioSesion")
+const userLogin = document.getElementById("userLogin")
+let usuarioLogeado = JSON.parse(sessionStorage.getItem ("usuario"))
 
+if(usuarioLogeado === null){
+    const a = document.createElement("a")
+    a.href = "../pages/login.html"
+    a.innerHTML = "iniciar sesion"
+    userLogin.append(a)
+}else{
+    // iniciarSesion.className.add("disabled")
+    const p = document.createElement("p")
+    const close = document.createElement ("button")
+
+    p.innerHTML = `Bienvenido ${usuarioLogeado.user}`
+    close.id = "cerrar__sesion"
+    close.innerHTML = "cerrar sesion"
+    close.addEventListener("click", () => {
+        alert(`gracias por comprar en nuestra tienda ${usuarioLogeado.user}. usuario deslogeado`)
+        sessionStorage.removeItem("usuario")
+        location.reload()
+    })
+    userLogin.appendChild(p)
+    userLogin.appendChild(close)
+}

@@ -33,6 +33,7 @@ header{
 
         h1 {
             color: red;
+            margin-left: .5rem;
         }
 
     }
@@ -40,7 +41,6 @@ header{
     div {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
         align-items: center;
         color: rgb(243 95 95 / 84%);
         margin-right: 0.5rem;
@@ -114,7 +114,6 @@ header{
         transition: .4s;
         
         .iniciar{
-            width: 100%;
             display: flex;
             justify-content: center;
             a{
@@ -122,8 +121,11 @@ header{
                 text-decoration: none;
                 border: 1px solid white;
                 border-radius: 0.5rem;
-                width: 40%;
+                width: 50%;
                 margin: auto;
+                display: flex;
+                justify-content: center;
+                margin-left: 3rem;
             }
         }
         .aside-logo {

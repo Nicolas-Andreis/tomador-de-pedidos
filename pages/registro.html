@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <!--CSS-->
     <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body class="login">
     <div class="login-desktop">
         <div class="container-logo-login">
@@ -17,29 +19,35 @@
             <h2>¡Bienvenido!</h2>
         </div>
         <div>
-            <form id="loginForm" class="container-form">
+            <form id="registerForm" class="container-form">
                 <div class="container-input">
                     <img src="../imagenes/login/user.png" alt="usuario">
-                    <label for="username"></label>
-                    <input type="text" id="username" name="username" required placeholder="usuario">
+                    <label for="new-username"></label>
+                    <input type="text" id="new-username" name="username" required placeholder="usuario">
                 </div>
                 <div class="container-input">
                     <img src="../imagenes/login/candado.png" alt="contraseña">
-                    <label for="password"></label>
-                    <input type="password" id="password" name="password" required placeholder="contraseña">
+                    <label for="new-password"></label>
+                    <input type="password" id="new-password" name="password" required placeholder="contraseña">
                 </div>
-                <div class="container-input">
+                <!-- <div class="container-input">
                     <img src="../imagenes/login/ubicacion (1).png" alt="contraseña">
-                    <label for="password"></label>
-                    <input type="password" id="direccion" name="password" required placeholder="Dirección">
+                    <label for="direccion"></label>
+                    <input type="text" id="direccion" name="direccion" required placeholder="Dirección">
                 </div>
                 <div class="container-input">
                     <img src="../imagenes/login/telefono.png" alt="contraseña">
-                    <label for="password"></label>
-                    <input type="password" id="telefono" name="password" required placeholder="telefono">
-                </div>
-                <button type="submit">Registrarse</button>
+                    <label for="tel"></label>
+                    <input type="tel" id="telefono" name="telefono" required placeholder="telefono">
+                </div> -->
+                <button type="submit" id="btn-register">Registrarse</button>
             </form>
         </div>
+        <script type="module" src="../js/registro.js"></script>
+        <script type="module" src="../db/usuarios.js"></script>
+
+        <script src="../js/main.js"></script>
+
 </body>
+
 </html>

@@ -23,7 +23,9 @@
             background: -webkit-linear-gradient(to right, #000000, #EB5757);
             /* Chrome 10-25, Safari 5.1-6 */
             background: linear-gradient(to right, #000000, #EB5757);
-
+            div{
+                justify-content: space-between;
+            }
             .iniciar {
                 margin-right: 0.5rem;
 
@@ -46,8 +48,12 @@
             }
 
             .logo {
+                margin: 0;
+                width: auto;
+                margin-left: 1rem;
                 h1 {
                     color: white;
+                    margin-left: 1rem;
                 }
 
 
@@ -76,7 +82,7 @@
                         display: flex;
                         justify-content: revert;
                         align-items: flex-end;
-                        
+
 
                         img {
                             width: 1.5rem;
@@ -135,10 +141,27 @@
                 }
 
                 .iniciar {
-                    width: 15rem;
-                    position: absolute;
-                    top: -2.2rem;
-                    right: -1rem;
+                    position: relative;
+                    top: 1rem;
+                    left: -1rem;
+                    height: 5rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0 auto;
+                    text-align: center;
+                    width: 100%;
+
+                    button {
+                        width: 50%;
+                    }
+
+                    a {
+                        position: relative;
+                        margin: 0;
+                        top: 0;
+                        width: 50%;
+                    }
 
                     a:hover {
                         background-color: white;
