@@ -261,7 +261,7 @@ let usuarioLogeado = JSON.parse(sessionStorage.getItem ("usuario"))
 
 if(usuarioLogeado === null){
     const a = document.createElement("a")
-    a.href = "../pages/login.html"
+    a.href = "pages/login.html"
     a.innerHTML = "iniciar sesion"
     userLogin.append(a)
 }else{
