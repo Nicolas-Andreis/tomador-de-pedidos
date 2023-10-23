@@ -212,7 +212,11 @@ document.addEventListener("DOMContentLoaded", function () {
             const productosComprados = document.querySelector("#productos-comprados");
             const pagoTotal = document.querySelector("#pago-total");
             const metodoDePago = document.querySelector("#metodo-de-pago");
-
+            const infoAdicional = document.querySelector("#info-adicional");
+        
+            let costoEnvio = 0;
+            let descuento = 0;
+        
             // Obtener la información de envío o retiro según la selección del usuario
             const infoEnvio = radioEnvio.checked
                 ? {
@@ -225,44 +229,59 @@ document.addEventListener("DOMContentLoaded", function () {
                     nombre: document.querySelector("#nombre").value,
                     telefonoRetiro: document.querySelector("#telefonoRetiro").value,
                 };
-
+        
+            // Calcular el costo de envío o el descuento
+            if (radioEnvio.checked) {
+                costoEnvio = 250;
+            } else {
+                descuento = 0.1; // 10% de descuento
+            }
+        
             // Crear una lista de productos comprados en formato de lista HTML
             const listaProductosHTML = productosEnCarrito.map(producto => `
                 <li>${producto.cantidad} x ${producto.nombre} - $${producto.cantidad * producto.precio}</li>
             `).join("<br>"); // Usamos join para convertir la lista en una cadena separada por saltos de línea
-
+        
             // Calcular el total de la compra
-            const totalCalculado = productosEnCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
-
+            let totalCalculado = productosEnCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
+        
             // Actualizar los elementos HTML con la información del resumen
             resumenDatos.innerHTML = `
-                
                 <h3>${infoEnvio.tipo} </h3>
                 <p>Dirección: ${infoEnvio.direccion || ""}</p>
                 <p>Cliente: ${infoEnvio.nombre || ""}</p>
                 <p>Teléfono: ${infoEnvio.telefono || infoEnvio.telefonoRetiro || ""}</p>
             `;
-
+        
             productosComprados.innerHTML = `
-                
                 ${listaProductosHTML}
             `;
+        
             // Obtener el método de pago seleccionado
             const metodoPagoSeleccionado = document.querySelector('input[name="metodo-pago"]:checked');
-
+        
             if (metodoPagoSeleccionado) {
                 metodoDePago.innerHTML = `
-            
-            <p>${metodoPagoSeleccionado.value}</p>
-        `;
+                    <p>${metodoPagoSeleccionado.value}</p>
+                `;
             }
-
-
-
+        
+            // Mostrar la información adicional
+            infoAdicional.innerHTML = '';
+            if (radioEnvio.checked) {
+                infoAdicional.innerHTML += `<p>Costo de envío: $${costoEnvio}</p>`;
+            } else {
+                infoAdicional.innerHTML += `<p>Descuento: ${descuento * 100}%</p>`;
+            }
+        
+            // Agregar costo de envío y aplicar descuento al total
+            totalCalculado += costoEnvio;
+            totalCalculado -= totalCalculado * descuento;
+        
             pagoTotal.innerHTML = `
-                
-                    <p>Total: $${totalCalculado}</p>
+                <p>Total: $${totalCalculado}</p>
             `;
+            console.log("Total Calculado: " + totalCalculado);
         }
 
 

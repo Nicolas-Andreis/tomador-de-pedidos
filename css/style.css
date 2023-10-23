@@ -1167,7 +1167,7 @@ body footer {
 
 .miCarrito {
   background-color: white;
-  width: 100%;
+  width: 50%;
   height: 80vh;
   border-radius: 1rem;
   margin: 1rem auto;
@@ -1801,6 +1801,12 @@ body footer {
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #E29587, #D66D75);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  #paso3 {
+    width: 40%;
+    margin: 0 auto;
+    border: 1px solid black;
+    padding: 0.5rem;
   }
 }
 
