@@ -75,6 +75,7 @@ function agregarTarjetas(container, productos, containerName) {
                         <img src="./imagenes/iconos/shopping cart/sum.png" alt="+" class="sum-btn" id="${producto.nombre}" data-product-type="${containerName}">
                     </div>
                 </div>
+                
             `;
 
         container.appendChild(contenedor); // Agregar la tarjeta al contenedor
