@@ -23,9 +23,11 @@
             background: -webkit-linear-gradient(to right, #000000, #EB5757);
             /* Chrome 10-25, Safari 5.1-6 */
             background: linear-gradient(to right, #000000, #EB5757);
-            div{
+
+            div {
                 justify-content: space-between;
             }
+
             .iniciar {
                 margin-right: 0.5rem;
 
@@ -51,6 +53,7 @@
                 margin: 0;
                 width: auto;
                 margin-left: 1rem;
+
                 h1 {
                     color: white;
                     margin-left: 1rem;
@@ -465,10 +468,11 @@
 
         }
     }
-    #paso3{
+
+    #paso3 {
         width: 40%;
-    margin: 0 auto;
-    border: 1px solid black;
-    padding: 0.5rem;
+        margin: 0 auto;
+        border: 1px solid black;
+        padding: 0.5rem;
     }
 }

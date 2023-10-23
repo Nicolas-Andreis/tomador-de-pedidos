@@ -206,7 +206,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("paso2").classList.remove("disabled");
             document.getElementById("paso1").classList.add("disabled");
         });
-
+        
         function resumenDelPedido() {
             const resumenDatos = document.querySelector("#resumen-datos");
             const productosComprados = document.querySelector("#productos-comprados");
