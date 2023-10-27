@@ -1,3 +1,10 @@
+.category-group{
+    &.disabled{
+        display: none;
+      }
+}
+  
+    
 body {
     .container {
         .container-todo {

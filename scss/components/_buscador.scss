@@ -1,0 +1,35 @@
+.buscador{
+    background-color: white;
+    border-radius: 1rem;
+    width: 84%;
+    margin: 0 auto;
+    box-shadow: map-get($sombra, normal);
+    .lupa{
+        background: #D66D75;
+                    /* fallback for old browsers */
+                    background: -webkit-linear-gradient(to right, #E29587, #D66D75);
+                    /* Chrome 10-25, Safari 5.1-6 */
+                    background: linear-gradient(to right, #E29587, #D66D75);
+                    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        border-radius: 1rem 0 0 1rem;
+        width: 3rem;
+        height: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 3px solid rgb(255, 255, 255);
+        cursor: pointer;
+        img{
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+    input{
+        border: none;
+        height: 2rem;
+        width: 100%;
+        border-radius: 0 1rem 1rem 0;
+        padding-left: .4rem;
+    }
+}

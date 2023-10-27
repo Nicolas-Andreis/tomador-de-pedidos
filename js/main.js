@@ -280,3 +280,5 @@ if(usuarioLogeado === null){
     userLogin.appendChild(p)
     userLogin.appendChild(close)
 }
+
+

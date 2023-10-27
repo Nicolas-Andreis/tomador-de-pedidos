@@ -56,15 +56,15 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
 
-// Función para agregar tarjetas de productos a un contenedor
-function agregarTarjetas(container, productos, containerName) {
-    // Itera a través de la lista de productos y crea una tarjeta para cada uno
-    for (const producto of productos) {
-        let contenedor = document.createElement("div"); // Crea un elemento div para la tarjeta
-        contenedor.classList.add("card"); // Agregar la clase "card"
+    // Función para agregar tarjetas de productos a un contenedor
+    function agregarTarjetas(container, productos, containerName) {
+        // Itera a través de la lista de productos y crea una tarjeta para cada uno
+        for (const producto of productos) {
+            let contenedor = document.createElement("div"); // Crea un elemento div para la tarjeta
+            contenedor.classList.add("card"); // Agregar la clase "card"
 
-        // Definir el contenido HTML de la tarjeta
-        contenedor.innerHTML = `
+            // Definir el contenido HTML de la tarjeta
+            contenedor.innerHTML = `
                 <img src="${producto.imagen}" alt="">
                 <div class="card-texto">
                     <p>${producto.nombre}</p>
@@ -78,149 +78,169 @@ function agregarTarjetas(container, productos, containerName) {
                 
             `;
 
-        container.appendChild(contenedor); // Agregar la tarjeta al contenedor
+            container.appendChild(contenedor); // Agregar la tarjeta al contenedor
+        }
     }
-}
-document.addEventListener("DOMContentLoaded", () => {
-    let totalCompra = 0; // Inicializa el costo total de la compra
-    const contenedores = document.querySelectorAll(".card"); // Obtiene todas las tarjetas de productos
+    document.addEventListener("DOMContentLoaded", () => {
+        let totalCompra = 0; // Inicializa el costo total de la compra
+        const contenedores = document.querySelectorAll(".card"); // Obtiene todas las tarjetas de productos
 
-    // Itera a través de cada tarjeta de producto
-    contenedores.forEach((contenedor) => {
-        const imgSum = contenedor.querySelector(".contador .sum-btn");
-        const precioProducto = parseInt(
-            contenedor
-                .querySelector(".card-texto p:last-child")
-                .textContent.replace("$", "")
+        // Itera a través de cada tarjeta de producto
+        contenedores.forEach((contenedor) => {
+            const imgSum = contenedor.querySelector(".contador .sum-btn");
+            const precioProducto = parseInt(
+                contenedor
+                    .querySelector(".card-texto p:last-child")
+                    .textContent.replace("$", "")
+            );
+
+            // Agrega un evento al botón de eliminar
+            imgTrash.addEventListener("click", () => {
+                // Reduce el costo total al multiplicar la cantidad por el precio del producto
+                totalCompra -= parseInt(cantidadElement.textContent) * precioProducto;
+                cantidadElement.textContent = "0"; // Restablece la cantidad a 0
+            });
+
+            // Agrega un evento al botón de aumentar la cantidad
+            imgSum.addEventListener("click", () => {
+                let cantidad = parseInt(cantidadElement.textContent);
+                cantidad++; // Aumenta la cantidad
+                cantidadElement.textContent = cantidad.toString();
+            });
+        });
+    });
+    // botones de las cards //////////////////////////////////////////////////////////////////////////////////////
+
+    //traemos botones de la card ////////////////////////////////////////////////////////////////////////////////
+
+    let botonesSumar = document.querySelectorAll(".sum-btn");
+    console.log(botonesSumar);
+    let botonesTrash = document.querySelectorAll(".trash-btn");
+    const numeritos = document.querySelectorAll(".numerito");
+
+    function actualizarBotonesAgregar() {
+        botonesSumar = document.querySelectorAll(".sum-btn");
+
+        botonesSumar.forEach((boton) => {
+            boton.addEventListener("click", agregarAlcarrito);
+        });
+
+        botonesTrash.forEach((boton) => {
+            boton.addEventListener("click", eliminarDelCarrito); // Agrega este event listener
+        });
+    }
+    actualizarBotonesAgregar();
+
+    let productosEnCarrito;
+    let productosEnCarritoLS = localStorage.getItem("productos-en-carrito");
+
+    if (productosEnCarritoLS) {
+        productosEnCarrito = JSON.parse(productosEnCarritoLS);
+        actualizarNumerito();
+    } else {
+        productosEnCarrito = []; //queremos que lo guarde en un array los productos en carrito
+    }
+
+    function agregarAlcarrito(e) {
+        Toastify({
+            text: "Producto agregado",
+            duration: 3000,
+            newWindow: true,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true,
+            offset: {
+                x: "4rem", // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                y: "2rem" // vertical axis - can be a number or a string indicating unity. eg: '2em'
+            }, // Prevents dismissing of toast on hover
+            style: {
+                background: "linear-gradient(to right, #000000, #EB5757)",
+                borderRadius: ".5rem",
+                textTransform: "uppercase",
+                fontSize: ".75rem"
+            },
+            onClick: function () { } // Callback after click
+        }).showToast();
+        const idBoton = e.currentTarget.id;
+        const container = e.currentTarget.getAttribute("data-product-type");
+        let productoAgregado;
+
+        // Encuentra el producto en la lista correcta
+        productoAgregado = productos[container].find(
+            (producto) => producto.nombre === idBoton
         );
 
-        // Agrega un evento al botón de eliminar
-        imgTrash.addEventListener("click", () => {
-            // Reduce el costo total al multiplicar la cantidad por el precio del producto
-            totalCompra -= parseInt(cantidadElement.textContent) * precioProducto;
-            cantidadElement.textContent = "0"; // Restablece la cantidad a 0
-        });
+        if (productoAgregado) {
+            console.log("Producto agregado al carrito:", productoAgregado);
+        } else {
+            console.log("Producto no encontrado en la lista.");
+        }
 
-        // Agrega un evento al botón de aumentar la cantidad
-        imgSum.addEventListener("click", () => {
-            let cantidad = parseInt(cantidadElement.textContent);
-            cantidad++; // Aumenta la cantidad
-            cantidadElement.textContent = cantidad.toString();
-        });
-    });
-});
-// botones de las cards //////////////////////////////////////////////////////////////////////////////////////
+        if (productosEnCarrito.some((producto) => producto.nombre === idBoton)) {
+            const index = productosEnCarrito.findIndex(
+                (producto) => producto.nombre === idBoton
+            );
+            productosEnCarrito[index].cantidad++;
+        } else {
+            productoAgregado.cantidad = 1;
+            productosEnCarrito.push(productoAgregado);
+        }
 
-//traemos botones de la card ////////////////////////////////////////////////////////////////////////////////
-
-let botonesSumar = document.querySelectorAll(".sum-btn");
-console.log(botonesSumar);
-let botonesTrash = document.querySelectorAll(".trash-btn");
-const numeritos = document.querySelectorAll(".numerito");
-
-function actualizarBotonesAgregar() {
-    botonesSumar = document.querySelectorAll(".sum-btn");
-
-    botonesSumar.forEach((boton) => {
-        boton.addEventListener("click", agregarAlcarrito);
-    });
-
-    botonesTrash.forEach((boton) => {
-        boton.addEventListener("click", eliminarDelCarrito); // Agrega este event listener
-    });
-}
-actualizarBotonesAgregar();
-
-let productosEnCarrito;
-let productosEnCarritoLS = localStorage.getItem("productos-en-carrito");
-
-if (productosEnCarritoLS) {
-    productosEnCarrito = JSON.parse(productosEnCarritoLS);
-    actualizarNumerito();
-} else {
-    productosEnCarrito = []; //queremos que lo guarde en un array los productos en carrito
-}
-
-function agregarAlcarrito(e) {
-    Toastify({
-        text: "Producto agregado",
-        duration: 3000,
-        newWindow: true,
-        close: true,
-        gravity: "top", // `top` or `bottom`
-        position: "right", // `left`, `center` or `right`
-        stopOnFocus: true,
-        offset: {
-            x: "4rem", // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-            y: "2rem" // vertical axis - can be a number or a string indicating unity. eg: '2em'
-          }, // Prevents dismissing of toast on hover
-        style: {
-          background: "linear-gradient(to right, #000000, #EB5757)",
-          borderRadius: ".5rem",
-          textTransform: "uppercase",
-          fontSize: ".75rem"
-        },
-        onClick: function(){} // Callback after click
-      }).showToast();
-    const idBoton = e.currentTarget.id;
-    const container = e.currentTarget.getAttribute("data-product-type");
-    let productoAgregado;
-
-    // Encuentra el producto en la lista correcta
-    productoAgregado = productos[container].find(
-        (producto) => producto.nombre === idBoton
-    );
-
-    if (productoAgregado) {
-        console.log("Producto agregado al carrito:", productoAgregado);
-    } else {
-        console.log("Producto no encontrado en la lista.");
+        actualizarNumerito();
+        localStorage.setItem(
+            "productos-en-carrito",
+            JSON.stringify(productosEnCarrito)
+        );
     }
 
-    if (productosEnCarrito.some((producto) => producto.nombre === idBoton)) {
+    function eliminarDelCarrito(e) {
+        const idBoton = e.currentTarget.id;
+        const container = e.currentTarget.getAttribute("data-product-type");
+
+        // Encuentra el índice del producto en el array
         const index = productosEnCarrito.findIndex(
             (producto) => producto.nombre === idBoton
         );
-        productosEnCarrito[index].cantidad++;
-    } else {
-        productoAgregado.cantidad = 1;
-        productosEnCarrito.push(productoAgregado);
+
+        if (index !== -1) {
+            // Elimina el producto del array
+            productosEnCarrito.splice(index, 1);
+        }
+        actualizarNumerito();
     }
 
-    actualizarNumerito();
-    localStorage.setItem(
-        "productos-en-carrito",
-        JSON.stringify(productosEnCarrito)
-    );
-}
+    function actualizarNumerito() {
+        let nuevoNumerito = productosEnCarrito.reduce(
+            (acc, producto) => acc + producto.cantidad,
+            0
+        );
 
-function eliminarDelCarrito(e) {
-    const idBoton = e.currentTarget.id;
-    const container = e.currentTarget.getAttribute("data-product-type");
+        const numeritos = document.querySelectorAll(".numerito"); // Obtén todos los elementos con la clase "numerito"
 
-    // Encuentra el índice del producto en el array
-    const index = productosEnCarrito.findIndex(
-        (producto) => producto.nombre === idBoton
-    );
-
-    if (index !== -1) {
-        // Elimina el producto del array
-        productosEnCarrito.splice(index, 1);
+        numeritos.forEach((numerito) => {
+            numerito.innerText = nuevoNumerito;
+        });
     }
-    actualizarNumerito();
-}
 
-function actualizarNumerito() {
-    let nuevoNumerito = productosEnCarrito.reduce(
-        (acc, producto) => acc + producto.cantidad,
-        0
-    );
+    const filterInput = document.getElementById("filterInput");
 
-    const numeritos = document.querySelectorAll(".numerito"); // Obtén todos los elementos con la clase "numerito"
+    filterInput.addEventListener("input", function () {
+        const filtro = filterInput.value.toLowerCase(); // Obtener el valor del input en minúsculas
 
-    numeritos.forEach((numerito) => {
-        numerito.innerText = nuevoNumerito;
+        // Obtener todos los elementos con la clase "category-group"
+        const categoryGroups = document.querySelectorAll(".category-group");
+
+        // Iterar a través de los elementos y ocultar/mostrar según el filtro
+        categoryGroups.forEach((group) => {
+            const groupID = group.getAttribute("id").toLowerCase();
+            if (groupID.includes(filtro)) {
+                group.style.display = "block"; // Mostrar elementos que coinciden
+            } else {
+                group.style.display = "none"; // Ocultar elementos que no coinciden
+            }
+        });
     });
-}
+
 
 });
