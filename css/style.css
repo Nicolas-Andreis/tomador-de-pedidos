@@ -265,7 +265,6 @@ header {
   display: none;
 }
 .card .contador {
-  margin-top: 2rem;
   display: flex;
   flex-direction: row;
   background: #D66D75;
@@ -1027,12 +1026,6 @@ h3 {
 .container-cardCarrito .cardCarrito .contador {
   display: flex;
   flex-direction: row;
-  background: #D66D75;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #E29587, #D66D75);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #E29587, #D66D75);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border-radius: 1.5rem;
   width: 4rem;
   justify-content: space-around;
@@ -1041,6 +1034,28 @@ h3 {
 }
 .container-cardCarrito .cardCarrito .contador img {
   margin: 0;
+}
+.container-cardCarrito .cardCarrito .contador .sum-btn {
+  background: #D66D75;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #E29587, #D66D75);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #E29587, #D66D75);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 1.7rem;
+  width: 1.7rem;
+  border-radius: 1rem;
+  padding: 0.3rem;
+}
+.container-cardCarrito .cardCarrito .contador .trash-btn {
+  height: 1.7rem;
+  width: 1.7rem;
+  border-radius: 1rem;
+  padding: 0.3rem;
+  border: 2px solid #E29587;
+}
+.container-cardCarrito .cardCarrito .contador p {
+  margin: 0 0.3rem;
 }
 
 .numerito {

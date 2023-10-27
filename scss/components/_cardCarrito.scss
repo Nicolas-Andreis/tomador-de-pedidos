@@ -1,7 +1,8 @@
-.container-cardCarrito{
+.container-cardCarrito {
     display: flex;
     flex-direction: column;
     width: 100%;
+
     .cardCarrito {
         width: 90%;
         margin: 0.2rem auto;
@@ -12,7 +13,7 @@
         align-items: center;
         border-radius: 0.5rem;
         box-shadow: map-get($sombra, normal);
-    
+
         img {
             height: 4rem;
             width: 5rem;
@@ -20,24 +21,24 @@
             object-fit: cover;
             margin-left: 0.5rem;
         }
-    
+
         .card-texto {
             display: flex;
             flex-direction: column;
             text-align: center;
             font-size: 0.9rem;
-    
+
             p:nth-child(2) {
                 font-weight: bold;
             }
         }
-    
+
         .card-iconos {
             display: flex;
             flex-direction: column;
             margin-right: 0.5rem;
         }
-    
+
         .card-iconos img {
             width: 1.5rem;
             height: 1rem;
@@ -45,36 +46,66 @@
             margin-bottom: 0.8rem;
             margin-left: 3rem;
         }
-    
+
         .heart {
             align-self: end;
         }
-    
+
         .active-heart {
             display: none;
         }
-    
-        p{
+
+        p {
             font-weight: bold;
         }
+
         .contador {
             display: flex;
             flex-direction: row;
-            background: #D66D75;
-            /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #E29587, #D66D75);
-            /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #E29587, #D66D75);
-            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
+            // background: #D66D75;
+            // /* fallback for old browsers */
+            // background: -webkit-linear-gradient(to right, #E29587, #D66D75);
+            // /* Chrome 10-25, Safari 5.1-6 */
+            // background: linear-gradient(to right, #E29587, #D66D75);
+            // /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
             border-radius: 1.5rem;
             width: 4rem;
             justify-content: space-around;
             align-items: center;
             height: 1.8rem;
-    
+
             img {
                 margin: 0;
+            }
+
+            .sum-btn {
+                background: #D66D75;
+                /* fallback for old browsers */
+                background: -webkit-linear-gradient(to right, #E29587, #D66D75);
+                /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to right, #E29587, #D66D75);
+                /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                height: 1.7rem;
+                width: 1.7rem;
+                border-radius: 1rem;
+                padding: .3rem;
+            }
+            .trash-btn{
+                // background: #D66D75;
+                // /* fallback for old browsers */
+                // background: -webkit-linear-gradient(to right, #E29587, #D66D75);
+                // /* Chrome 10-25, Safari 5.1-6 */
+                // background: linear-gradient(to right, #E29587, #D66D75);
+                // /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                height: 1.7rem;
+                width: 1.7rem;
+                border-radius: 1rem;
+                padding: .3rem;
+                border: 2px solid #E29587;
+            }
+            p{
+                margin: 0 .3rem;
             }
         }
     }

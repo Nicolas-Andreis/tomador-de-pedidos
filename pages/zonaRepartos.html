@@ -84,14 +84,25 @@
                 </ul> 
             </nav>
         </aside>
+        <!-- <div class="zonaRepartos">
+            <h3>Zona de repartos</h3>
+            <label for="">ingrese su dirección</label>
+            <input type="text">
+            <iframe src="https://www.google.com/maps/d/embed?mid=1ELNktHZKKRrr_8_GQLPTy5XAY45ybrqT&ehbc=2E312F" width="640" height="480"></iframe>
+        </div> -->
         <div class="zonaRepartos">
             <h3>Zona de repartos</h3>
-            <iframe src="https://www.google.com/maps/d/embed?mid=1ELNktHZKKRrr_8_GQLPTy5XAY45ybrqT&ehbc=2E312F" width="640" height="480"></iframe>
+            <!-- <label for="direccion">Ingrese su dirección:</label>
+            <input type="text" id="direccion">
+            <button onclick="buscarDireccion()">Buscar en el mapa</button> -->
+            <iframe src="https://www.google.com/maps/d/embed?mid=1ELNktHZKKRrr_8_GQLPTy5XAY45ybrqT&hl=es&ehbc=2E312F" width="640" height="480" id="mapa"></iframe>
         </div>
     </main>
     <footer>
         Derechos Reservados Nicolás Andreis &copy; 2023
     </footer>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ57qNyA24BLcesVRxaWsOdZn1z2YnTAY&callback=initMap" async defer></script>
+    <script src="../js/maps.js"></script>
     <script src="../js/main.js"></script>
     
 </body>

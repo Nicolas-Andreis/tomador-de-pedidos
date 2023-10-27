@@ -26,8 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const titulo = document.getElementById("micarriTitle");
     const enviarPedido = document.getElementById("enviarPedido");
 
-
-
     contenedorCarritoProductos.innerHTML = "";
 
     function cargarProductosCarrito() {
@@ -56,8 +54,9 @@ document.addEventListener("DOMContentLoaded", function () {
                             <p>$${producto.precio * producto.cantidad}</p>
                         </div>
                         <div class="contador">
-                            <img src="../imagenes/iconos/basura/trash.png" alt="trash" class="trash-btn" id="${producto.nombre}">
+                            <img src="../imagenes/iconos/basura/minus.png" alt="trash" class="trash-btn" id="${producto.nombre}">
                             <p>${producto.cantidad}</p>
+                            <img src="../imagenes/iconos/shopping cart/sum.png" alt="sum" class="sum-btn" id="${producto.nombre}">
                         </div>
                     </div>
                 </div>
@@ -77,18 +76,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     cargarProductosCarrito();
 
-
-
-
     function actualizarBotonesEliminar() {
         botonesEliminar = document.querySelectorAll(".trash-btn");
-
         botonesEliminar.forEach(boton => {
             boton.addEventListener("click", eliminarDelCarrito)
         });
+        
+        const botonesSumar = document.querySelectorAll(".sum-btn");
+        botonesSumar.forEach(boton => {
+            boton.addEventListener("click", sumarProducto);
+        });
     }
-
-
 
     function eliminarDelCarrito(e) {
         Toastify({
@@ -128,7 +126,38 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function sumarProducto(e) {
+        Toastify({
+            text: "Producto agregado",
+            duration: 3000,
+            newWindow: true,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true,
+            offset: {
+                x: "4rem", // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+                y: "2rem" // vertical axis - can be a number or a string indicating unity. eg: '2em'
+            }, // Prevents dismissing of toast on hover
+            style: {
+                background: "linear-gradient(to right, #000000, #EB5757)",
+                borderRadius: ".5rem",
+                textTransform: "uppercase",
+                fontSize: ".75rem"
+            },
+            onClick: function () { } // Callback after click
+        }).showToast();
+        e.stopPropagation();
+        const idBoton = e.currentTarget.id;
+        const index = productosEnCarrito.findIndex(producto => producto.nombre === idBoton);
 
+        if (index !== -1) {
+            const productoEnCarrito = productosEnCarrito[index];
+            productoEnCarrito.cantidad++;
+            localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+            cargarProductosCarrito();
+        }
+    }
 
     botonVaciar.addEventListener("click", vaciarCarrito);
 
@@ -153,15 +182,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 cargarProductosCarrito();
             }
         })
-
-
     }
 
     function actualizarTotal() {
         const totalCalculado = productosEnCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
         total.innerText = `$${totalCalculado}`;
     }
-
 
     botonComprar.addEventListener("click", comprarCarrito);
 
@@ -206,17 +232,17 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("paso2").classList.remove("disabled");
             document.getElementById("paso1").classList.add("disabled");
         });
-        
+
         function resumenDelPedido() {
             const resumenDatos = document.querySelector("#resumen-datos");
             const productosComprados = document.querySelector("#productos-comprados");
             const pagoTotal = document.querySelector("#pago-total");
             const metodoDePago = document.querySelector("#metodo-de-pago");
             const infoAdicional = document.querySelector("#info-adicional");
-        
+
             let costoEnvio = 0;
             let descuento = 0;
-        
+
             // Obtener la información de envío o retiro según la selección del usuario
             const infoEnvio = radioEnvio.checked
                 ? {
@@ -229,22 +255,22 @@ document.addEventListener("DOMContentLoaded", function () {
                     nombre: document.querySelector("#nombre").value,
                     telefonoRetiro: document.querySelector("#telefonoRetiro").value,
                 };
-        
+
             // Calcular el costo de envío o el descuento
             if (radioEnvio.checked) {
                 costoEnvio = 250;
             } else {
                 descuento = 0.1; // 10% de descuento
             }
-        
+
             // Crear una lista de productos comprados en formato de lista HTML
             const listaProductosHTML = productosEnCarrito.map(producto => `
                 <li>${producto.cantidad} x ${producto.nombre} - $${producto.cantidad * producto.precio}</li>
             `).join("<br>"); // Usamos join para convertir la lista en una cadena separada por saltos de línea
-        
+
             // Calcular el total de la compra
             let totalCalculado = productosEnCarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
-        
+
             // Actualizar los elementos HTML con la información del resumen
             resumenDatos.innerHTML = `
                 <h3>${infoEnvio.tipo} </h3>
@@ -252,20 +278,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p>Cliente: ${infoEnvio.nombre || ""}</p>
                 <p>Teléfono: ${infoEnvio.telefono || infoEnvio.telefonoRetiro || ""}</p>
             `;
-        
+
             productosComprados.innerHTML = `
                 ${listaProductosHTML}
             `;
-        
+
             // Obtener el método de pago seleccionado
             const metodoPagoSeleccionado = document.querySelector('input[name="metodo-pago"]:checked');
-        
+
             if (metodoPagoSeleccionado) {
                 metodoDePago.innerHTML = `
                     <p>${metodoPagoSeleccionado.value}</p>
                 `;
             }
-        
+
             // Mostrar la información adicional
             infoAdicional.innerHTML = '';
             if (radioEnvio.checked) {
@@ -273,17 +299,16 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 infoAdicional.innerHTML += `<p>Descuento: ${descuento * 100}%</p>`;
             }
-        
+
             // Agregar costo de envío y aplicar descuento al total
             totalCalculado += costoEnvio;
             totalCalculado -= totalCalculado * descuento;
-        
+
             pagoTotal.innerHTML = `
                 <p>Total: $${totalCalculado}</p>
             `;
             console.log("Total Calculado: " + totalCalculado);
         }
-
 
         btnContinuarPago.addEventListener("click", function () {
             document.getElementById("paso3").classList.remove("disabled");
@@ -301,8 +326,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 timer: 1500
             });
 
-
-            
             // Vaciar el carrito
             productosEnCarrito = [];
             localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
@@ -311,5 +334,4 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("paso3").classList.add("disabled");
         });
     }
-}
-);
+});
