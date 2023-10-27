@@ -1,6 +1,35 @@
 //carga de productos /////////////////////////////////////////////////////////////////////////////////////////
 
 document.addEventListener("DOMContentLoaded", function () {
+
+
+    // const iniciarSesion = document.getElementById("inicioSesion")
+    const userLogin = document.getElementById("userLogin")
+    let usuarioLogeado = JSON.parse(sessionStorage.getItem("usuario"))
+
+    if (usuarioLogeado === null) {
+        const a = document.createElement("a")
+        a.href = "pages/login.html"
+        a.innerHTML = "iniciar sesion"
+        userLogin.append(a)
+    } else {
+        // iniciarSesion.className.add("disabled")
+        const p = document.createElement("p")
+        const close = document.createElement("button")
+
+        p.innerHTML = `Bienvenido ${usuarioLogeado.user}`
+        close.id = "cerrar__sesion"
+        close.innerHTML = "cerrar sesion"
+        close.addEventListener("click", () => {
+            alert(`gracias por comprar en nuestra tienda ${usuarioLogeado.user}. usuario deslogeado`)
+            sessionStorage.removeItem("usuario")
+            location.reload()
+        })
+        userLogin.appendChild(p)
+        userLogin.appendChild(close)
+    }
+
+
     // Array para almacenar los productos
     let productos = [];
 
@@ -56,7 +85,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
 
-    // Función para agregar tarjetas de productos a un contenedor
     function agregarTarjetas(container, productos, containerName) {
         // Itera a través de la lista de productos y crea una tarjeta para cada uno
         for (const producto of productos) {
@@ -65,22 +93,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Definir el contenido HTML de la tarjeta
             contenedor.innerHTML = `
-                <img src="${producto.imagen}" alt="">
-                <div class="card-texto">
-                    <p>${producto.nombre}</p>
-                    <p>$${producto.precio}</p>
-                </div>
-                <div class="card-iconos">
-                    <div class="contador">
-                        <img src="./imagenes/iconos/shopping cart/sum.png" alt="+" class="sum-btn" id="${producto.nombre}" data-product-type="${containerName}">
+                    <img src="${producto.imagen}" alt="">
+                    <div class="card-texto">
+                        <p>${producto.nombre}</p>
+                        <p>$${producto.precio}</p>
                     </div>
-                </div>
-                
-            `;
+                    <div class="card-iconos">
+                    
+                        <div class="contador">
+                        
+                            <img src="./imagenes/iconos/shopping cart/sum.png" alt="+" class="sum-btn" id="${producto.nombre}" data-product-type="${containerName}">
+                        </div>
+                        
+                    </div>
+                `;
 
             container.appendChild(contenedor); // Agregar la tarjeta al contenedor
+
         }
     }
+
+
     document.addEventListener("DOMContentLoaded", () => {
         let totalCompra = 0; // Inicializa el costo total de la compra
         const contenedores = document.querySelectorAll(".card"); // Obtiene todas las tarjetas de productos
@@ -158,7 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 background: "linear-gradient(to right, #000000, #EB5757)",
                 borderRadius: ".5rem",
                 textTransform: "uppercase",
-                fontSize: ".75rem"
+                fontSize: ".75rem",
             },
             onClick: function () { } // Callback after click
         }).showToast();
@@ -223,6 +256,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+
+
+
+
+    //filtrado del buscador
     const filterInput = document.getElementById("filterInput");
 
     filterInput.addEventListener("input", function () {
