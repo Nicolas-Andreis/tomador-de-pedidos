@@ -1,9 +1,9 @@
-//carga de productos /////////////////////////////////////////////////////////////////////////////////////////
+
 
 document.addEventListener("DOMContentLoaded", function () {
 
 
-    // const iniciarSesion = document.getElementById("inicioSesion")
+
     const userLogin = document.getElementById("userLogin")
     let usuarioLogeado = JSON.parse(sessionStorage.getItem("usuario"))
 
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
         userLogin.appendChild(close)
     }
 
-
+//carga de productos /////////////////////////////////////////////////////////////////////////////////////////
     // Array para almacenar los productos
     let productos = [];
 
@@ -260,7 +260,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    //filtrado del buscador
+    //filtrado del buscador///////////////////////////////////////////////////////////////////////////////////
     const filterInput = document.getElementById("filterInput");
 
     filterInput.addEventListener("input", function () {

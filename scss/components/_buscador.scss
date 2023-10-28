@@ -33,3 +33,23 @@
         padding-left: .4rem;
     }
 }
+#categories {
+    list-style: none;
+    padding: 0;
+}
+
+#categories li {
+    display: none;
+    margin: 5px 0;
+}
+
+.suggestion {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.suggestion:hover {
+    background-color: #f0f0f0;
+}

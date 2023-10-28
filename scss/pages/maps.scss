@@ -1,0 +1,45 @@
+
+#map {
+    height: 50%;
+    width: 60%;
+}
+.map {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.container-mapa{
+    background-color: white;
+    padding: 1rem;
+    width: 90%;
+    border-radius: 1rem;
+    height: 80vh;
+    label{
+        width: 100%;
+    }
+    #searchButton{
+        background: #D66D75;
+                    /* fallback for old browsers */
+                    background: -webkit-linear-gradient(to right, #E29587, #D66D75);
+                    /* Chrome 10-25, Safari 5.1-6 */
+                    background: linear-gradient(to right, #E29587, #D66D75);
+                    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            border-radius: 0 1rem 1rem 0;
+            border: none;
+            width: 6rem;
+            height: 2.15rem;
+            position: relative;
+            left: -1rem;
+            text-align: center;
+            box-shadow: map-get($sombra, normal);
+    }
+    #addressInput{
+        border: none;
+        height: 2rem;
+        width: 50%;
+        border-radius: 1rem 0 0 1rem;
+        padding-left: .4rem;
+        box-shadow: map-get($sombra, normal);
+    }
+}

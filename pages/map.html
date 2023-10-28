@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<!--
+ @license
+ Copyright 2019 Google LLC. All Rights Reserved.
+ SPDX-License-Identifier: Apache-2.0
+-->
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Favicon-->
+    <link rel="shortcut icon" href="./imagenes/logo/logo.png" type="image/x-icon">
+    <!-- SITE TITLE -->
+    <title>Il pirata</title>
+
+    <!-- SEO -->
+
+    <!--Robots controlar la indexación y seguimiento -->
+    <meta name="robots" content="index, follow"> <!-- Permite la indexación y seguimiento de los motores de búsqueda -->
+
+    <!-- DESCRIPTION -->
+    <meta name="description"
+        content="¡Disfruta de las mejores pizzas, panes y empanadas a domicilio! Somos tu opción número uno en Carhué. Saborea nuestras deliciosas pizzas recién horneadas, panes artesanales y sabrosas empanadas. ¡Realiza tu pedido ahora y déjate tentar por nuestros irresistibles sabores!">
+
+    <!-- KEYWORDS -->
+    <meta name="keywords"
+        content="delivery, pizzas, empanadas, mejores pizzas, comida rápida, entrega a domicilio, sabores, menú, pedidos en línea, pizza a domicilio, empanadas caseras, comida italiana, servicio de entrega, calidad, panes, artesanales, horno de barro">
+    <!--Permite ser encontrado con palabras claves por los motores de busqueda-->
+
+    <!-- Autor de la página -->
+    <meta name="author" content="Nicolás Andreis">
+
+    <!--GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;900&family=Roboto:wght@300;500;900&display=swap"
+        rel="stylesheet">
+
+    <!--BOOSTRAP CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+    <!--ANIMATE CSS CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- toastify CDN -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Simple Polygon</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <style>
+        /**
+       * @license
+       * Copyright 2019 Google LLC. All Rights Reserved.
+       * SPDX-License-Identifier: Apache-2.0
+       */
+        /** 
+       * Always set the map height explicitly to define the size of the div element
+       * that contains the map. 
+       */
+        #map {
+            height: 50%;
+            width: 50%;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        .map {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script>
+                function initMap() {
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 13,
+                center: { lat: -38.71748549364629, lng: -62.26527236505682 },
+                mapTypeId: "terrain",
+            });
+
+            // Define las coordenadas para el polígono
+            const triangleCoords = [
+                { lat: -38.72877920047321, lng: -62.28279604771731 },
+                { lat: -38.72724418581539, lng: -62.28126944034737 },
+                { lat: -38.72439338377408, lng: -62.28456629531017 },
+                { lat: -38.719829733075294, lng: -62.288181070153136 },
+                { lat: -38.71491256835326, lng: -62.28851823182839 },
+                { lat: -38.71330567180822, lng: -62.286457483253095 },
+                { lat: -38.70980308025898, lng: -62.28624201456476 },
+                { lat: -38.70774645072307, lng: -62.28455180475309 },
+                { lat: -38.704186410743894, lng: -62.28845501375812 },
+                { lat: -38.699640082565196, lng: -62.28451578374901 },
+                { lat: -38.692709348251356, lng: -62.27569925981683 },
+                { lat: -38.69581959087023, lng: -62.271341525418 },
+                { lat: -38.697962289218815, lng: -62.2676874400408 },
+                { lat: -38.69771938106904, lng: -62.26361792614513 },
+                { lat: -38.69771938106904, lng: -62.26361792614513 },
+                { lat: -38.69323975654183, lng: -62.251728887268264 },
+                { lat: -38.69510226762035, lng: -62.24803643428165 },
+                { lat: -38.69437616965158, lng: -62.246071359577975 },
+                { lat: -38.696613520565045, lng: -62.24047222788343 },
+                { lat: -38.70368344219037, lng: -62.24616696491019 },
+                { lat: -38.70792536814638, lng: -62.243684681114516 },
+                { lat: -38.709675124240114, lng: -62.24551147186648 },
+                { lat: -38.712169700405354, lng: -62.24223092012662 },
+                { lat: -38.71204240385786, lng: -62.23907258884102 },
+                { lat: -38.72517622940475, lng: -62.22259487199366 },
+                { lat: -38.74122809516418, lng: -62.242073824650234 },
+                { lat: -38.73367212864735, lng: -62.25129266235875 },
+                { lat: -38.73895055886765, lng: -62.25903341763549 },
+                { lat: -38.736511181340255, lng: -62.262439799520415 },
+                { lat: -38.73624481714682, lng: -62.26617627113095 },
+                { lat: -38.73430035730841, lng: -62.26873980774614 }
+            ];
+
+            // Construye el polígono
+            const bermudaTriangle = new google.maps.Polygon({
+                paths: triangleCoords,
+                strokeColor: "green",
+                strokeOpacity: 0.8,
+                strokeWeight: 2,
+                fillColor: "green",
+                fillOpacity: 0.35,
+            });
+
+            bermudaTriangle.setMap(map);
+
+            const geocoder = new google.maps.Geocoder();
+
+            // Función para geocodificar y mostrar la dirección en el mapa
+            function geocodeAddress(address) {
+                geocoder.geocode({ address: address, componentRestrictions: { locality: "Bahía Blanca" } }, (results, status) => {
+                    if (status === "OK") {
+                        const location = results[0].geometry.location;
+                        map.setCenter(location);
+
+                        // Crear un marcador en la ubicación
+                        new google.maps.Marker({
+                            map: map,
+                            position: location,
+                            title: results[0].formatted_address,
+                        });
+
+                        // Verificar si la ubicación está dentro del polígono
+                        const isInside = google.maps.geometry.poly.containsLocation(location, bermudaTriangle);
+
+                        // Mostrar un mensaje en el HTML
+                        const message = document.getElementById("message");
+                        if (isInside) {
+                            message.innerHTML = "Estás dentro de la zona de reparto.";
+                            message.style.color = "green";
+                        } else {
+                            message.innerHTML = "Estás fuera de la zona de reparto.";
+                            message.style.color = "red";
+                        }
+                    } else {
+                        alert("No se pudo encontrar la dirección en Bahía Blanca: " + status);
+                    }
+                });
+            }
+
+            // Event listener para el botón de búsqueda
+            document.getElementById("searchButton").addEventListener("click", () => {
+                const address = document.getElementById("addressInput").value;
+                geocodeAddress(address);
+            });
+
+            // Event listener para buscar al presionar Enter
+            document.getElementById("addressInput").addEventListener("keyup", (event) => {
+                if (event.key === "Enter") {
+                    const address = document.getElementById("addressInput").value;
+                    geocodeAddress(address);
+                }
+            });
+        }
+
+        window.initMap = initMap;
+    </script>
+</head>
+
+<body class="map">
+    <header>
+        <nav class="nav-white">
+            <div>
+                <div class="header-mobile">
+                    <button class="open-menu" id="open-menu" type="button">
+                        <img src="../imagenes/iconos/nav/menu.png" alt="menu" class="icon">
+                    </button>
+                </div>
+                <div class="logo">
+                    <img src="../imagenes/logo/logo.png" alt="logo" >
+                    <h1 class="titulos">Il Pirata</h1>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+        <aside>
+            <div class="aside-logo">
+                <img src="../imagenes/logo/logo.png" alt="logo" >
+                <p class="titulos">Il Pirata</p>
+                <button class="close-menu" id="close-menu" type="button">
+                    <img src="../imagenes/iconos/nav/back.png" alt="menu" class="icon">
+                </button>
+            </div>
+            <nav class="nav-red">
+                <ul>
+                    <li>
+                        <a class="" href="../index.html">
+                            <img src="../imagenes/iconos/aside/back.png" alt="">Ir a comprar
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <div class="container-mapa">
+            <label for="addressInput">Ingresa tu dirección en Bahía Blanca:</label>
+            <input type="text" id="addressInput" placeholder="Ejemplo: Calle 123, Bahía Blanca">
+            <button id="searchButton">Buscar</button>
+            <div id="map" style="height: 70%; width: 100%; margin: 1rem auto; border-radius: 1rem;"></div>
+            <p id="message" style="text-align: center; font-weight: bold;"></p>
+        </div>
+    </main>
+
+
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ57qNyA24BLcesVRxaWsOdZn1z2YnTAY&callback=initMap&v=weekly"
+        defer></script>
+        
+</body>
+
+</html>
