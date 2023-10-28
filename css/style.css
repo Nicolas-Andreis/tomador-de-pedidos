@@ -1480,7 +1480,7 @@ body footer {
 .container-mapa {
   background-color: white;
   padding: 1rem;
-  width: 90%;
+  width: 100%;
   border-radius: 1rem;
   height: 80vh;
 }
