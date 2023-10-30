@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Tu código JavaScript aquí
-
+    //llamado a productos en carrito de localstorage
     let productosEnCarrito = localStorage.getItem("productos-en-carrito");
     productosEnCarrito = JSON.parse(productosEnCarrito);
 
+    //llamado de nodos
     const contenedorCarritoVacio = document.querySelector("#carrito-vacio");
     const contenedorCarritoProductos = document.querySelector("#carrito-productos");
     const contenedorCarritoAcciones = document.querySelector("#carrito-acciones");
@@ -64,10 +64,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 contenedorCarritoProductos.append(div);
             });
         } else {
-            contenedorCarritoVacio.classList.remove("disabled");
-            contenedorCarritoProductos.classList.add("disabled");
-            contenedorCarritoAcciones.classList.add("disabled");
-            contenedorCarritoComprado.classList.add("disabled");
+            contenedorCarritoVacio.classList.remove("disabled"); //si no hay productos en el carritos, que se muestre
+            contenedorCarritoProductos.classList.add("disabled"); //ocultar
+            contenedorCarritoAcciones.classList.add("disabled"); //ocultar
+            contenedorCarritoComprado.classList.add("disabled"); //ocultar
         }
 
         // Actualiza los botones eliminar y el total
