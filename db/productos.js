@@ -22,9 +22,7 @@ filterInput.addEventListener("input", function () {
 //filtrado del buscador///////////////////////////////////////////////////////////////////////////////////
 
 
-
-
-
+//inicio de sesion////////////////////////////////////////////////////////////////////////////////////////
     const userLogin = document.getElementById("userLogin");
     let usuarioLogeado = JSON.parse(sessionStorage.getItem("usuario"));
 
@@ -50,6 +48,9 @@ filterInput.addEventListener("input", function () {
         userLogin.appendChild(p);
         userLogin.appendChild(close);
     }
+//inicio de sesion////////////////////////////////////////////////////////////////////////////////////////
+
+
 
     // Array para almacenar los productos
     let productos = [];
@@ -349,22 +350,6 @@ filterInput.addEventListener("input", function () {
 
     // Asegúrate de llamar a actualizarNumerito() una vez al cargar la página para inicializar el contador
     actualizarNumerito();
-
-
-
-
-
-
-
-
-
-
-    
-
-    
-
-
-
 });
 
 
