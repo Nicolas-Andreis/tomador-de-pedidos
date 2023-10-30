@@ -334,4 +334,71 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("paso3").classList.add("disabled");
         });
     }
+
+
+    // validar direccion/////////////////////////////////////////////////////////////
+    document.getElementById("continuarPaso2Envio").addEventListener("click", function () {
+        var direccion = document.getElementById("direccion").value;
+        var coordenadas = [
+            { lat: -38.72877920047321, lng: -62.28279604771731 },
+            { lat: -38.72724418581539, lng: -62.28126944034737 },
+            { lat: -38.72439338377408, lng: -62.28456629531017 },
+            { lat: -38.719829733075294, lng: -62.288181070153136 },
+            { lat: -38.71491256835326, lng: -62.28851823182839 },
+            { lat: -38.71330567180822, lng: -62.286457483253095 },
+            { lat: -38.70980308025898, lng: -62.28624201456476 },
+            { lat: -38.70774645072307, lng: -62.28455180475309 },
+            { lat: -38.704186410743894, lng: -62.28845501375812 },
+            { lat: -38.699640082565196, lng: -62.28451578374901 },
+            { lat: -38.692709348251356, lng: -62.27569925981683 },
+            { lat: -38.69581959087023, lng: -62.271341525418 },
+            { lat: -38.697962289218815, lng: -62.2676874400408 },
+            { lat: -38.69771938106904, lng: -62.26361792614513 },
+            { lat: -38.69771938106904, lng: -62.26361792614513 },
+            { lat: -38.69323975654183, lng: -62.251728887268264 },
+            { lat: -38.69510226762035, lng: -62.24803643428165 },
+            { lat: -38.69437616965158, lng: -62.246071359577975 },
+            { lat: -38.696613520565045, lng: -62.24047222788343 },
+            { lat: -38.70368344219037, lng: -62.24616696491019 },
+            { lat: -38.70792536814638, lng: -62.243684681114516 },
+            { lat: -38.709675124240114, lng: -62.24551147186648 },
+            { lat: -38.712169700405354, lng: -62.24223092012662 },
+            { lat: -38.71204240385786, lng: -62.23907258884102 },
+            { lat: -38.72517622940475, lng: -62.22259487199366 },
+            { lat: -38.74122809516418, lng: -62.242073824650234 },
+            { lat: -38.73367212864735, lng: -62.25129266235875 },
+            { lat: -38.73895055886765, lng: -62.25903341763549 },
+            { lat: -38.736511181340255, lng: -62.262439799520415 },
+            { lat: -38.73624481714682, lng: -62.26617627113095 },
+            { lat: -38.73430035730841, lng: -62.26873980774614 },
+            { lat: -38.73716614618817, lng: -62.272388941593555 }
+        ];
+
+        // Crear un objeto Geocoder
+        var geocoder = new google.maps.Geocoder();
+
+        // Usar el Geocoder para validar la dirección
+        geocoder.geocode({ 'address': direccion }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                var direccionLatLng = results[0].geometry.location;
+
+                // Verificar si la dirección está dentro del polígono
+                var dentroDelPoligono = google.maps.geometry.poly.containsLocation(direccionLatLng, new google.maps.Polygon({ paths: coordenadas }));
+
+                if (dentroDelPoligono) {
+                    // Dirección válida y dentro del polígono, continuar con el proceso
+                    document.getElementById("paso2").classList.remove("disabled");
+                    document.getElementById("paso1").classList.add("disabled");
+                    
+                } else {
+                    // Dirección válida, pero fuera del polígono, mostrar un mensaje de error
+                    alert("La dirección está fuera del área de entrega. Por favor, ingresa una dirección válida.");
+                    document.getElementById("paso2").classList.add("disabled");
+                    document.getElementById("paso1").classList.remove("disabled");
+                }
+            } 
+        });
+    });
+
+    
 });
