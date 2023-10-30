@@ -1,4 +1,30 @@
 document.addEventListener("DOMContentLoaded", function () {
+//filtrado del buscador///////////////////////////////////////////////////////////////////////////////////
+const filterInput = document.getElementById("filterInput");
+
+filterInput.addEventListener("input", function () {
+    const filtro = filterInput.value.toLowerCase(); // Obtener el valor del input en minúsculas
+
+    // Obtener todos los elementos con la clase "category-group"
+    const categoryGroups = document.querySelectorAll(".category-group");
+
+    // Iterar a través de los elementos y ocultar/mostrar según el filtro
+    categoryGroups.forEach((group) => {
+        const groupID = group.getAttribute("id").toLowerCase();
+        if (groupID.includes(filtro)) {
+            group.style.display = "block"; // Mostrar elementos que coinciden
+        } else {
+            group.style.display = "none"; // Ocultar elementos que no coinciden
+        }
+    });
+});
+
+//filtrado del buscador///////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
     const userLogin = document.getElementById("userLogin");
     let usuarioLogeado = JSON.parse(sessionStorage.getItem("usuario"));
 
@@ -338,23 +364,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
 
 
-    //filtrado del buscador///////////////////////////////////////////////////////////////////////////////////
-    const filterInput = document.getElementById("filterInput");
 
-    filterInput.addEventListener("input", function () {
-        const filtro = filterInput.value.toLowerCase(); // Obtener el valor del input en minúsculas
-
-        // Obtener todos los elementos con la clase "category-group"
-        const categoryGroups = document.querySelectorAll(".category-group");
-
-        // Iterar a través de los elementos y ocultar/mostrar según el filtro
-        categoryGroups.forEach((group) => {
-            const groupID = group.getAttribute("id").toLowerCase();
-            if (groupID.includes(filtro)) {
-                group.style.display = "block"; // Mostrar elementos que coinciden
-            } else {
-                group.style.display = "none"; // Ocultar elementos que no coinciden
-            }
-        });
-    });
 });
+
+
