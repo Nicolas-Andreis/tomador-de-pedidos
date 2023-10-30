@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
           <div class="card-iconos">
             <div class="contador">
-              <img src="../imagenes/iconos/basura/minus.png" alt="trash" class="trash-btn " id="${producto.nombre}" data-product-type="${containerName}">
+              <img src="./imagenes/iconos/shopping cart/minus.png" alt="trash" class="trash-btn " id="${producto.nombre}" data-product-type="${containerName}">
               <p>0</p>
               <img src="./imagenes/iconos/shopping cart/sum.png" alt="+" class="sum-btn" id="${producto.nombre}" data-product-type="${containerName}">
             </div>
