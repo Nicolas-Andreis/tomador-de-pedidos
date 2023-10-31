@@ -371,34 +371,50 @@ document.addEventListener("DOMContentLoaded", function () {
             { lat: -38.736511181340255, lng: -62.262439799520415 },
             { lat: -38.73624481714682, lng: -62.26617627113095 },
             { lat: -38.73430035730841, lng: -62.26873980774614 },
-            { lat: -38.73716614618817, lng: -62.272388941593555 }
+            { lat: -38.73716614618817, lng: -62.272388941593555 },
+            { lat: -38.72877920047321, lng: -62.28279604771731 }
+            
         ];
 
-        // Crear un objeto Geocoder
-        var geocoder = new google.maps.Geocoder();
+          // Crear un objeto Geocoder
+    var geocoder = new google.maps.Geocoder();
 
-        // Usar el Geocoder para validar la dirección
-        geocoder.geocode({ 'address': direccion }, function (results, status) {
-            if (status == google.maps.GeocoderStatus.OK) {
-                var direccionLatLng = results[0].geometry.location;
+    // Configurar las restricciones para buscar solo en Bahía Blanca, Buenos Aires, Argentina
+    var componentRestrictions = {
+        country: "AR", // Código del país (Argentina)
+        locality: "Bahía Blanca", // Ciudad o localidad (Bahía Blanca)
+        administrativeArea: "B", // Provincia (Buenos Aires)
+    };
 
-                // Verificar si la dirección está dentro del polígono
-                var dentroDelPoligono = google.maps.geometry.poly.containsLocation(direccionLatLng, new google.maps.Polygon({ paths: coordenadas }));
+    // Usar el Geocoder para validar la dirección con restricciones
+    geocoder.geocode({
+        'address': direccion,
+        'componentRestrictions': componentRestrictions
+    }, function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            var direccionLatLng = results[0].geometry.location;
 
-                if (dentroDelPoligono) {
-                    // Dirección válida y dentro del polígono, continuar con el proceso
-                    document.getElementById("paso2").classList.remove("disabled");
-                    document.getElementById("paso1").classList.add("disabled");
-                    
-                } else {
-                    // Dirección válida, pero fuera del polígono, mostrar un mensaje de error
-                    alert("La dirección está fuera del área de entrega. Por favor, ingresa una dirección válida.");
-                    document.getElementById("paso2").classList.add("disabled");
-                    document.getElementById("paso1").classList.remove("disabled");
-                }
-            } 
-        });
+            // Verificar si la dirección está dentro del polígono
+            var dentroDelPolígono = google.maps.geometry.poly.containsLocation(direccionLatLng, new google.maps.Polygon({ paths: coordenadas }));
+
+            if (dentroDelPolígono) {
+                // Dirección válida y dentro del polígono, continuar con el proceso
+                document.getElementById("paso2").classList.remove("disabled");
+                document.getElementById("paso1").classList.add("disabled");
+            } else {
+                // Dirección válida, pero fuera del polígono, mostrar un mensaje de error
+                alert("La dirección está fuera del área de entrega. Por favor, ingresa una dirección válida.");
+                document.getElementById("paso2").classList.add("disabled");
+                document.getElementById("paso1").classList.remove("disabled");
+            }
+        } else {
+            // La dirección no existe, mostrar un mensaje de error.
+            alert("La dirección no existe en Bahía Blanca, Buenos Aires, Argentina. Por favor, ingresa una dirección válida.");
+            document.getElementById("paso2").classList.add("disabled");
+            document.getElementById("paso1").classList.remove("disabled");
+        }
     });
+});
 
     
 });
