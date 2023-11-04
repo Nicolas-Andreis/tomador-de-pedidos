@@ -89,26 +89,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function eliminarDelCarrito(e) {
-        Toastify({
-            text: "Producto eliminado",
-            duration: 3000,
-            newWindow: true,
-            close: true,
-            gravity: "top", // `top` or `bottom`
-            position: "right", // `left`, `center` or `right`
-            stopOnFocus: true,
-            offset: {
-                x: "4rem", // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-                y: "2rem" // vertical axis - can be a number or a string indicating unity. eg: '2em'
-            }, // Prevents dismissing of toast on hover
-            style: {
-                background: "linear-gradient(to right, #000000, #EB5757)",
-                borderRadius: ".5rem",
-                textTransform: "uppercase",
-                fontSize: ".75rem"
-            },
-            onClick: function () { } // Callback after click
-        }).showToast();
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        })
+
+        Toast.fire({
+            icon: 'error',
+            title: 'Producto eliminado',
+            color: 'white',
+            background: "linear-gradient(to right, #000000, #EB5757)",
+            borderRadius: ".5rem",
+            textTransform: "uppercase",
+            fontSize: ".75rem",
+            timerProgressBarColor: 'white',
+        })
+        
         e.stopPropagation(); // Detiene la propagación del evento
         const idBoton = e.currentTarget.id;
         const index = productosEnCarrito.findIndex(producto => producto.nombre === idBoton);
@@ -127,26 +130,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function sumarProducto(e) {
-        Toastify({
-            text: "Producto agregado",
-            duration: 3000,
-            newWindow: true,
-            close: true,
-            gravity: "top", // `top` or `bottom`
-            position: "right", // `left`, `center` or `right`
-            stopOnFocus: true,
-            offset: {
-                x: "4rem", // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-                y: "2rem" // vertical axis - can be a number or a string indicating unity. eg: '2em'
-            }, // Prevents dismissing of toast on hover
-            style: {
-                background: "linear-gradient(to right, #000000, #EB5757)",
-                borderRadius: ".5rem",
-                textTransform: "uppercase",
-                fontSize: ".75rem"
-            },
-            onClick: function () { } // Callback after click
-        }).showToast();
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        })
+
+        Toast.fire({
+            icon: 'success',
+            title: 'Producto agregado',
+            color: 'white',
+            background: "linear-gradient(to right, #000000, #EB5757)",
+            borderRadius: ".5rem",
+            textTransform: "uppercase",
+            fontSize: ".75rem",
+            timerProgressBarColor: 'white',
+        })
+        
         e.stopPropagation();
         const idBoton = e.currentTarget.id;
         const index = productosEnCarrito.findIndex(producto => producto.nombre === idBoton);
@@ -317,23 +323,73 @@ document.addEventListener("DOMContentLoaded", function () {
             resumenDelPedido();
         });
 
+        
+        function generarPDF() {
+            const content = document.getElementById('paso3');
+            const downloadLink = document.getElementById('downloadLink');
+        
+            // Configura el ancho del PDF (80 mm) y permite que el alto se ajuste automáticamente
+            const pdfWidth = 80;
+        
+            // Calcula la altura total del contenido, incluido el contenido que no es visible
+            const pdfHeight = content.scrollHeight; // Ajusta la altura al contenido completo
+        
+            const pdf = new jsPDF({
+                orientation: 'portrait',
+                unit: 'mm',
+                format: [pdfWidth, pdfHeight]
+            });
+        
+            // Escala el contenido para que quepa en el PDF
+            const scale = pdfWidth / content.clientWidth;
+        
+            // Desplaza el contenido hacia arriba y captura cada sección
+            const captureSection = (yOffset) => {
+                html2canvas(content, { scrollY: -yOffset, scale: 1 / scale }).then(canvas => {
+                    const imgData = canvas.toDataURL('image/png');
+                    pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+        
+                    if (yOffset + pdfHeight < content.scrollHeight) {
+                        // Si no hemos capturado todo el contenido, agrega una nueva página
+                        pdf.addPage([pdfWidth, pdfHeight]);
+                        captureSection(yOffset + pdfHeight);
+                    } else {
+                        // Cuando se haya capturado todo, muestra el enlace de descarga
+                        downloadLink.style.display = 'block';
+        
+                        // Genera el objeto Blob para el PDF y establece la URL de descarga
+                        const pdfBlob = pdf.output('blob');
+                        downloadLink.href = URL.createObjectURL(pdfBlob);
+                    }
+                });
+            };
+        
+            // Inicia la captura de secciones desde el inicio del contenido
+            captureSection(0);
+        }
+        
         enviarPedido.addEventListener("click", function () {
+            // Generar el PDF
+            generarPDF();
+        
             Swal.fire({
                 position: 'center',
                 icon: 'success',
-                title: 'Tu compra a sido exitosa',
+                title: 'Tu compra ha sido exitosa',
                 showConfirmButton: false,
                 timer: 1500
             });
-
-            // Vaciar el carrito
-            productosEnCarrito = [];
-            localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
-            cargarProductosCarrito(); // Actualizar la vista del carrito
-
-            document.getElementById("paso3").classList.add("disabled");
+        
+            // Espera un momento (por ejemplo, 1 segundo) antes de vaciar el carrito y actualizar la vista
+            setTimeout(function () {
+                productosEnCarrito = [];
+                localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+                cargarProductosCarrito(); // Actualiza la vista del carrito
+                document.getElementById("paso3").classList.add("disabled");
+            }, 1000);
         });
-    }
+        
+        }
 
 
     // validar direccion/////////////////////////////////////////////////////////////

@@ -1407,6 +1407,15 @@ body footer {
   background: linear-gradient(180deg, rgb(247, 189, 214) 0%, rgb(232, 126, 126) 21%, rgb(236, 152, 152) 62%, rgb(233, 148, 148) 80%);
   border: none;
 }
+.miCarrito #paso3 {
+  width: 80mm;
+  /* Establece el ancho máximo del contenedor */
+  margin: 0 auto;
+}
+.miCarrito #paso3 img {
+  max-width: 100%;
+  /* Asegura que las imágenes no excedan el ancho del contenedor */
+}
 .miCarrito #paso3 h3 {
   text-align: center;
   margin-left: 0;

@@ -40,7 +40,7 @@
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
 
-    
+
 
     <!--ANIMATE CSS CDN-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -196,10 +196,10 @@
                     <h2>Selecciona un método:</h2>
                     <input type="radio" id="mercadoPago" name="metodo-pago" value="Mercado Pago">
                     <label for="mercadoPago">Mercado Pago</label><br>
-                
+
                     <input type="radio" id="efectivo" name="metodo-pago" value="Efectivo">
                     <label for="efectivo">Efectivo</label><br>
-                
+
                     <button type="button" id="siguientePasoPago">Siguiente</button>
                 </form>
             </div>
@@ -222,19 +222,25 @@
                 <div id="pago-total">
                     <!-- esto se va a rrellenar con js -->
                 </div>
-                <button id="enviarPedido">enviar pedido</button>
+                <button id="enviarPedido" onclick="generarPDF()">enviar pedido</button>
+                <a id="downloadLink" style="display: none" download="resumen_pedido.pdf">Descargar PDF</a>
             </div>
     </main>
     <footer>
         Derechos Reservados Nicolás Andreis &copy; 2023
     </footer>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ57qNyA24BLcesVRxaWsOdZn1z2YnTAY&libraries=geometry"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.2.3/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ57qNyA24BLcesVRxaWsOdZn1z2YnTAY&libraries=geometry"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/main.js"></script>
     <script src="../js/carrito.js"></script>
     <script src="../db/productos.js"></script>
+
 
 </body>
 

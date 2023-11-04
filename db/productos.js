@@ -1,28 +1,28 @@
 document.addEventListener("DOMContentLoaded", function () {
-//filtrado del buscador///////////////////////////////////////////////////////////////////////////////////
-const filterInput = document.getElementById("filterInput");
+    //filtrado del buscador///////////////////////////////////////////////////////////////////////////////////
+    const filterInput = document.getElementById("filterInput");
 
-filterInput.addEventListener("input", function () {
-    const filtro = filterInput.value.toLowerCase(); // Obtener el valor del input en minúsculas
+    filterInput.addEventListener("input", function () {
+        const filtro = filterInput.value.toLowerCase(); // Obtener el valor del input en minúsculas
 
-    // Obtener todos los elementos con la clase "category-group"
-    const categoryGroups = document.querySelectorAll(".category-group");
+        // Obtener todos los elementos con la clase "category-group"
+        const categoryGroups = document.querySelectorAll(".category-group");
 
-    // Iterar a través de los elementos y ocultar/mostrar según el filtro
-    categoryGroups.forEach((group) => {
-        const groupID = group.getAttribute("id").toLowerCase();
-        if (groupID.includes(filtro)) {
-            group.style.display = "block"; // Mostrar elementos que coinciden
-        } else {
-            group.style.display = "none"; // Ocultar elementos que no coinciden
-        }
+        // Iterar a través de los elementos y ocultar/mostrar según el filtro
+        categoryGroups.forEach((group) => {
+            const groupID = group.getAttribute("id").toLowerCase();
+            if (groupID.includes(filtro)) {
+                group.style.display = "block"; // Mostrar elementos que coinciden
+            } else {
+                group.style.display = "none"; // Ocultar elementos que no coinciden
+            }
+        });
     });
-});
 
-//filtrado del buscador///////////////////////////////////////////////////////////////////////////////////
+    //filtrado del buscador///////////////////////////////////////////////////////////////////////////////////
 
 
-//inicio de sesion////////////////////////////////////////////////////////////////////////////////////////
+    //inicio de sesion////////////////////////////////////////////////////////////////////////////////////////
     const userLogin = document.getElementById("userLogin");
     let usuarioLogeado = JSON.parse(sessionStorage.getItem("usuario"));
 
@@ -48,7 +48,7 @@ filterInput.addEventListener("input", function () {
         userLogin.appendChild(p);
         userLogin.appendChild(close);
     }
-//inicio de sesion////////////////////////////////////////////////////////////////////////////////////////
+    //inicio de sesion////////////////////////////////////////////////////////////////////////////////////////
 
 
 
@@ -127,7 +127,7 @@ filterInput.addEventListener("input", function () {
 
             container.appendChild(contenedor); // Agregar la tarjeta al contenedor
 
-            
+
             // Encuentra el producto en el carrito (si existe)
             const productoEnCarrito = productosEnCarrito.find(
                 (item) => item.nombre === producto.nombre
@@ -200,30 +200,31 @@ filterInput.addEventListener("input", function () {
         productosEnCarrito = []; // Queremos que lo guarde en un array los productos en carrito
     }
 
-    
+
     function agregarAlcarrito(e) {
-        Toastify({
-            text: "Producto agregado",
-            duration: 3000,
-            newWindow: true,
-            close: true,
-            gravity: "top", // `top` or `bottom`
-            position: "right", // `left`, `center` or `right`
-            stopOnFocus: true,
-            offset: {
-                x: "4rem", // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-                y: "2rem", // vertical axis - can be a number or a string indicating unity. eg: '2em'
-            }, // Prevents dismissing of toast on hover
-            style: {
-                background: "linear-gradient(to right, #000000, #EB5757)",
-                borderRadius: ".5rem",
-                textTransform: "uppercase",
-                fontSize: ".75rem",
-            },
-            onClick: function () {
-                // Callback after click
-            },
-        }).showToast();
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        })
+
+        Toast.fire({
+            icon: 'success',
+            title: 'Producto agregado',
+            color: 'white',
+            background: "linear-gradient(to right, #000000, #EB5757)",
+            borderRadius: ".5rem",
+            textTransform: "uppercase",
+            fontSize: ".75rem",
+            timerProgressBarColor: 'white',
+        })
+        
         const idBoton = e.currentTarget.id;
         const container = e.currentTarget.getAttribute("data-product-type");
 
@@ -252,28 +253,30 @@ filterInput.addEventListener("input", function () {
     }
 
     function eliminarDelCarrito(e) {
-        Toastify({
-            text: "Producto eliminado",
-            duration: 3000,
-            newWindow: true,
-            close: true,
-            gravity: "top", // `top` or `bottom`
-            position: "right", // `left`, `center` or `right`
-            stopOnFocus: true,
-            offset: {
-                x: "4rem", // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-                y: "2rem", // vertical axis - can be a number or a string indicating unity. eg: '2em'
-            }, // Prevents dismissing of toast on hover
-            style: {
-                background: "linear-gradient(to right, #000000, #EB5757)",
-                borderRadius: ".5rem",
-                textTransform: "uppercase",
-                fontSize: ".75rem",
-            },
-            onClick: function () {
-                // Callback after click
-            },
-        }).showToast();
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            timerProgressBarColor: 'white',
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        })
+
+        Toast.fire({
+            icon: 'error',
+            title: 'Producto eliminado',
+            color: 'white',
+            background: "linear-gradient(to right, #000000, #EB5757)",
+            borderRadius: ".5rem",
+            textTransform: "uppercase",
+            fontSize: ".75rem",
+            timerProgressBarColor: 'white',
+        })
+        
         const idBoton = e.currentTarget.id;
         const container = e.currentTarget.getAttribute("data-product-type");
 

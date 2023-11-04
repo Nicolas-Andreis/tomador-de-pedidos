@@ -97,9 +97,8 @@
                 border-top: 1px solid black;
                 border-bottom: 1px solid black;
             }
-            input {
-                
-            }
+
+            input {}
 
         }
 
@@ -116,7 +115,7 @@
                 border: 1px solid gray;
                 box-shadow: map-get($sombra, normal);
                 padding-left: 0.5rem;
-                
+
             }
         }
 
@@ -135,32 +134,35 @@
                 padding-left: 0.5rem;
             }
         }
-        #continuarPaso2Retiro{
+
+        #continuarPaso2Retiro {
             width: 10rem;
-                height: 3rem;
-                border-radius: 2rem;
-                margin: 0 auto;
-                color: white;
-                background: rgb(247 189 214);
-                background: linear-gradient(180deg, rgb(247, 189, 214) 0%, rgb(232 126 126) 21%, rgb(236 152 152) 62%, rgb(233 148 148) 80%);
-                border: none;
+            height: 3rem;
+            border-radius: 2rem;
+            margin: 0 auto;
+            color: white;
+            background: rgb(247 189 214);
+            background: linear-gradient(180deg, rgb(247, 189, 214) 0%, rgb(232 126 126) 21%, rgb(236 152 152) 62%, rgb(233 148 148) 80%);
+            border: none;
         }
-        #continuarPaso2Envio{
+
+        #continuarPaso2Envio {
             width: 10rem;
-                height: 3rem;
-                border-radius: 2rem;
-                margin: 0 auto;
-                color: white;
-                background: rgb(247 189 214);
-                background: linear-gradient(180deg, rgb(247, 189, 214) 0%, rgb(232 126 126) 21%, rgb(236 152 152) 62%, rgb(233 148 148) 80%);
-                border: none;
+            height: 3rem;
+            border-radius: 2rem;
+            margin: 0 auto;
+            color: white;
+            background: rgb(247 189 214);
+            background: linear-gradient(180deg, rgb(247, 189, 214) 0%, rgb(232 126 126) 21%, rgb(236 152 152) 62%, rgb(233 148 148) 80%);
+            border: none;
         }
     }
-    
+
     #paso2 {
         padding: 1rem;
         text-align: center;
-        #metodoPagoForm{
+
+        #metodoPagoForm {
             label {
 
                 width: 50%;
@@ -169,40 +171,52 @@
                 border-bottom: 1px solid black;
             }
         }
-        #siguientePasoPago{
+
+        #siguientePasoPago {
             width: 10rem;
-                height: 3rem;
-                border-radius: 2rem;
-                margin: 1rem auto;
-                color: white;
-                background: rgb(247 189 214);
-                background: linear-gradient(180deg, rgb(247, 189, 214) 0%, rgb(232 126 126) 21%, rgb(236 152 152) 62%, rgb(233 148 148) 80%);
-                border: none;
+            height: 3rem;
+            border-radius: 2rem;
+            margin: 1rem auto;
+            color: white;
+            background: rgb(247 189 214);
+            background: linear-gradient(180deg, rgb(247, 189, 214) 0%, rgb(232 126 126) 21%, rgb(236 152 152) 62%, rgb(233 148 148) 80%);
+            border: none;
         }
     }
 
     #paso3 {
-        h3{
+        width: 80mm;
+        /* Establece el ancho máximo del contenedor */
+        margin: 0 auto;
+
+        img {
+            max-width: 100%;
+            /* Asegura que las imágenes no excedan el ancho del contenedor */
+        }
+
+        h3 {
             text-align: center;
             margin-left: 0;
         }
-        
-        #resumen-datos{
+
+        #resumen-datos {
             border-bottom: 1px solid black;
             border-top: 1px solid black;
             font-size: 1.2rem;
             padding-top: 1rem;
             padding-bottom: 1rem;
-            h3{
-                border-bottom: 1px solid black; 
+
+            h3 {
+                border-bottom: 1px solid black;
                 width: 100%;
                 margin: 1rem 0;
                 font-weight: bold;
                 font-size: 3rem;
-                
+
             }
         }
-        #productos-comprados{
+
+        #productos-comprados {
             border-bottom: 1px solid black;
             border-top: 1px solid black;
             font-size: 1.2rem;
@@ -210,17 +224,20 @@
             padding-bottom: 1rem;
             list-style: none;
         }
-        #metodo-de-pago{
+
+        #metodo-de-pago {
             margin: 1rem auto;
             font-size: 1.2rem;
         }
-        #pago-total{
+
+        #pago-total {
             border-bottom: 1px solid black;
             font-weight: bold;
             font-size: 1.4rem;
-            
+
         }
-        #enviarPedido{
+
+        #enviarPedido {
             width: 50%;
             height: 3rem;
             border-radius: 2rem;
