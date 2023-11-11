@@ -81,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
         botonesEliminar.forEach(boton => {
             boton.addEventListener("click", eliminarDelCarrito)
         });
+        
 
         const botonesSumar = document.querySelectorAll(".sum-btn");
         botonesSumar.forEach(boton => {
