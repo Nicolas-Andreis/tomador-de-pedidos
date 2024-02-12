@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let productos = [];
 
     // Función para cargar los productos desde el archivo JSON
-    fetch("https://nicolas-andreis.github.io/Il-pirata/productos.json")
+    fetch("../productos.json")
         .then((response) => response.json())
         .then((data) => {
             productos = data; // Almacena los productos en la variable productos
@@ -173,8 +173,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     function agregarAlcarrito(e) {
-        
-        
+
+
         const idBoton = e.currentTarget.id;
         const container = e.currentTarget.getAttribute("data-product-type");
 
@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function eliminarDelCarrito(e) {
-        
+
         const idBoton = e.currentTarget.id;
         const container = e.currentTarget.getAttribute("data-product-type");
 
