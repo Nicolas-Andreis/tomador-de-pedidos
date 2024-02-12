@@ -40,15 +40,12 @@ document.addEventListener("DOMContentLoaded", function () {
             productos = data; // Almacena los productos en la variable productos
 
             // Obtén contenedores HTML específicos donde deseas agregar tarjetas de productos
-            const containerPromos = document.querySelector("#Promos");
             const containerPizzas = document.querySelector("#Pizzas");
             const containerMediasPizzas = document.querySelector("#MediasPizzas");
             const containerCombos = document.querySelector("#Combos");
             const containerBurguersSolas = document.querySelector("#BurguersSolas");
             const containerEmpanadas = document.querySelector("#Empanadas");
-            const containerCalzones = document.querySelector("#Calzones");
             const containerPapas = document.querySelector("#Papas");
-            const containerEnsaladas = document.querySelector("#Ensaladas");
             const containerPostres = document.querySelector("#Postres");
             const containerBebidas = document.querySelector("#Bebidas");
             const containerCervezas = document.querySelector("#Cervezas");
