@@ -1,21 +1,13 @@
 .card {
     width: 90%;
     margin: 0.7rem auto;
-    height: 5rem;
+    height: 2rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     border-radius: 0.5rem;
     box-shadow: map-get($sombra, normal);
-
-    img {
-        height: 4rem;
-        width: 5rem;
-        border-radius: 0.5rem;
-        object-fit: cover;
-        margin-left: 0.5rem;
-    }
 
     .card-texto {
         display: flex;

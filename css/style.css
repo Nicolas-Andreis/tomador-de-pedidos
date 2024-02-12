@@ -222,20 +222,13 @@ header {
 .card {
   width: 90%;
   margin: 0.7rem auto;
-  height: 5rem;
+  height: 2rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   border-radius: 0.5rem;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-}
-.card img {
-  height: 4rem;
-  width: 5rem;
-  border-radius: 0.5rem;
-  object-fit: cover;
-  margin-left: 0.5rem;
 }
 .card .card-texto {
   display: flex;
@@ -1811,7 +1804,7 @@ body footer {
   }
   body .container .container-todo .menu .container-cards .card {
     width: 32.5%;
-    height: 6rem;
+    height: 3rem;
   }
   body .container .container-todo .menu .container-cards .card .contador {
     display: flex;

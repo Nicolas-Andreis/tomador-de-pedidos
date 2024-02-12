@@ -43,7 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 div.classList.add("carrito-producto");
                 div.innerHTML = `
                 <div class="cardCarrito" id="${producto.nombre}">
-                    <img src=".${producto.imagen}" alt="${producto.nombre}">
                     <div class="card-texto">
                         <p>${producto.nombre}</p>
                         <p>$${producto.precio}</p>
@@ -131,29 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function sumarProducto(e) {
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-                toast.addEventListener('mouseenter', Swal.stopTimer)
-                toast.addEventListener('mouseleave', Swal.resumeTimer)
-            }
-        })
-
-        Toast.fire({
-            icon: 'success',
-            title: 'Producto agregado',
-            color: 'white',
-            background: "linear-gradient(to right, #000000, #EB5757)",
-            borderRadius: ".5rem",
-            textTransform: "uppercase",
-            fontSize: ".75rem",
-            timerProgressBarColor: 'white',
-        })
-        
+            
         e.stopPropagation();
         const idBoton = e.currentTarget.id;
         const index = productosEnCarrito.findIndex(producto => producto.nombre === idBoton);
@@ -265,9 +242,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Calcular el costo de envío o el descuento
             if (radioEnvio.checked) {
-                costoEnvio = 250;
+                costoEnvio = 470;
             } else {
-                descuento = 0.1; // 10% de descuento
+                descuento = 0; // 10% de descuento
             }
 
             // Crear una lista de productos comprados en formato de lista HTML
@@ -303,9 +280,7 @@ document.addEventListener("DOMContentLoaded", function () {
             infoAdicional.innerHTML = '';
             if (radioEnvio.checked) {
                 infoAdicional.innerHTML += `<p>Costo de envío: $${costoEnvio}</p>`;
-            } else {
-                infoAdicional.innerHTML += `<p>Descuento: ${descuento * 100}%</p>`;
-            }
+            } 
 
             // Agregar costo de envío y aplicar descuento al total
             totalCalculado += costoEnvio;
@@ -459,16 +434,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     document.getElementById("paso2").classList.remove("disabled");
                     document.getElementById("paso1").classList.add("disabled");
                 } else {
-                    // Dirección válida, pero fuera del polígono, mostrar un mensaje de error
-                    alert("La dirección está fuera del área de entrega. Por favor, ingresa una dirección válida.");
-                    document.getElementById("paso2").classList.add("disabled");
-                    document.getElementById("paso1").classList.remove("disabled");
+                    document.getElementById("paso2").classList.remove("disabled");
+                    document.getElementById("paso1").classList.add("disabled");
                 }
             } else {
-                // La dirección no existe, mostrar un mensaje de error.
-                alert("La dirección no existe en Bahía Blanca, Buenos Aires, Argentina. Por favor, ingresa una dirección válida.");
-                document.getElementById("paso2").classList.add("disabled");
-                document.getElementById("paso1").classList.remove("disabled");
+                document.getElementById("paso2").classList.remove("disabled");
+                    document.getElementById("paso1").classList.add("disabled");
             }
         });
     });

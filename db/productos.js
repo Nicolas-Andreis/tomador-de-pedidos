@@ -1,26 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    //filtrado del buscador///////////////////////////////////////////////////////////////////////////////////
-    const filterInput = document.getElementById("filterInput");
-
-    filterInput.addEventListener("input", function () {
-        const filtro = filterInput.value.toLowerCase(); // Obtener el valor del input en minúsculas
-
-        // Obtener todos los elementos con la clase "category-group"
-        const categoryGroups = document.querySelectorAll(".category-group");
-
-        // Iterar a través de los elementos y ocultar/mostrar según el filtro
-        categoryGroups.forEach((group) => {
-            const groupID = group.getAttribute("id").toLowerCase();
-            if (groupID.includes(filtro)) {
-                group.style.display = "block"; // Mostrar elementos que coinciden
-            } else {
-                group.style.display = "none"; // Ocultar elementos que no coinciden
-            }
-        });
-    });
-
-    //filtrado del buscador///////////////////////////////////////////////////////////////////////////////////
-
 
     //inicio de sesion////////////////////////////////////////////////////////////////////////////////////////
     const userLogin = document.getElementById("userLogin");
@@ -77,23 +55,20 @@ document.addEventListener("DOMContentLoaded", function () {
             const containerHelados = document.querySelector("#Helados");
 
             // Llama a la función agregarTarjetas para cada contenedor y lista de productos correspondiente
-            agregarTarjetas(containerPromos, productos.Promos, "Promos");
             agregarTarjetas(containerPizzas, productos.Pizzas, "Pizzas");
             agregarTarjetas(
                 containerMediasPizzas,
                 productos.mediasPizzas,
-                "MediasPizzas"
+                "mediasPizzas"
             );
             agregarTarjetas(containerCombos, productos.Combos, "Combos");
             agregarTarjetas(
                 containerBurguersSolas,
                 productos.BurguerSola,
-                "BurguersSolas"
+                "BurguerSola"
             );
             agregarTarjetas(containerEmpanadas, productos.Empanadas, "Empanadas");
-            agregarTarjetas(containerCalzones, productos.Calzones, "Calzones");
             agregarTarjetas(containerPapas, productos.Papas, "Papas");
-            agregarTarjetas(containerEnsaladas, productos.Ensaladas, "Ensaladas");
             agregarTarjetas(containerPostres, productos.Postres, "Postres");
             agregarTarjetas(containerBebidas, productos.Bebidas, "Bebidas");
             agregarTarjetas(containerCervezas, productos.Cervezas, "Cervezas");
@@ -111,7 +86,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Definir el contenido HTML de la tarjeta
             contenedor.innerHTML = `
-          <img src="${producto.imagen}" alt="">
           <div class="card-texto">
             <p>${producto.nombre}</p>
             <p>$${producto.precio}</p>
@@ -202,28 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     function agregarAlcarrito(e) {
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-                toast.addEventListener('mouseenter', Swal.stopTimer)
-                toast.addEventListener('mouseleave', Swal.resumeTimer)
-            }
-        })
-
-        Toast.fire({
-            icon: 'success',
-            title: 'Producto agregado',
-            color: 'white',
-            background: "linear-gradient(to right, #000000, #EB5757)",
-            borderRadius: ".5rem",
-            textTransform: "uppercase",
-            fontSize: ".75rem",
-            timerProgressBarColor: 'white',
-        })
+        
         
         const idBoton = e.currentTarget.id;
         const container = e.currentTarget.getAttribute("data-product-type");
@@ -253,29 +206,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function eliminarDelCarrito(e) {
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            timerProgressBarColor: 'white',
-            didOpen: (toast) => {
-                toast.addEventListener('mouseenter', Swal.stopTimer)
-                toast.addEventListener('mouseleave', Swal.resumeTimer)
-            }
-        })
-
-        Toast.fire({
-            icon: 'error',
-            title: 'Producto eliminado',
-            color: 'white',
-            background: "linear-gradient(to right, #000000, #EB5757)",
-            borderRadius: ".5rem",
-            textTransform: "uppercase",
-            fontSize: ".75rem",
-            timerProgressBarColor: 'white',
-        })
         
         const idBoton = e.currentTarget.id;
         const container = e.currentTarget.getAttribute("data-product-type");

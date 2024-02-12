@@ -1,27 +1,4 @@
 {
-    "Promos": [
-        {
-            "id": 1,
-            "nombre": "promo para sillonear",
-            "precio": 4350,
-            "imagen": "./imagenes/promos/parasillonear.png",
-            "productType": "Promos"
-        },
-        {
-            "id": 2,
-            "nombre": "promo hinchada",
-            "precio": 3430,
-            "imagen": "./imagenes/promos/promohinchada.png",
-            "productType": "Promos"
-        },
-        {
-            "id": 3,
-            "nombre": "promo para compartir",
-            "precio": 5590,
-            "imagen": "./imagenes/promos/paracompartir.png",
-            "productType": "Promos"
-        }
-    ],
     "Pizzas": [
         {
             "id": 1,
@@ -81,7 +58,7 @@
         },
         {
             "id": 9,
-            "nombre": "estacione",
+            "nombre": "papa y romero",
             "precio": 3620,
             "imagen": "./imagenes/pizzas/estacione.jpg",
             "productType": "Pizzas"
@@ -207,7 +184,7 @@
         },
         {
             "id": 27,
-            "nombre": "a tu gusto",
+            "nombre": "panceta y verdeo",
             "precio": 4730,
             "imagen": "./imagenes/pizzas/atugusto.jpg",
             "productType": "Pizzas"
@@ -242,7 +219,49 @@
         },
         {
             "id": 32,
-            "nombre": "alla pirata",
+            "nombre": "pepperoni",
+            "precio": 4340,
+            "imagen": "./imagenes/pizzas/allapirata.jpg",
+            "productType": "Pizzas"
+        },
+        {
+            "id": 33,
+            "nombre": "fugazza al pesto",
+            "precio": 4340,
+            "imagen": "./imagenes/pizzas/allapirata.jpg",
+            "productType": "Pizzas"
+        },
+        {
+            "id": 34,
+            "nombre": "verdura",
+            "precio": 4340,
+            "imagen": "./imagenes/pizzas/allapirata.jpg",
+            "productType": "Pizzas"
+        },
+        {
+            "id": 35,
+            "nombre": "salchicha",
+            "precio": 4340,
+            "imagen": "./imagenes/pizzas/allapirata.jpg",
+            "productType": "Pizzas"
+        },
+        {
+            "id": 36,
+            "nombre": "argenta",
+            "precio": 4340,
+            "imagen": "./imagenes/pizzas/allapirata.jpg",
+            "productType": "Pizzas"
+        },
+        {
+            "id": 37,
+            "nombre": "cerdo y barbacoa",
+            "precio": 4340,
+            "imagen": "./imagenes/pizzas/allapirata.jpg",
+            "productType": "Pizzas"
+        },
+        {
+            "id": 38,
+            "nombre": "a tu gusto",
             "precio": 4340,
             "imagen": "./imagenes/pizzas/allapirata.jpg",
             "productType": "Pizzas"
@@ -307,7 +326,7 @@
         },
         {
             "id": 9,
-            "nombre": "mitad estacione",
+            "nombre": "mitad papa y romero",
             "precio": 1900,
             "imagen": "./imagenes/pizzas/estacione.jpg",
             "productType": "mediasPizzas"
@@ -433,7 +452,7 @@
         },
         {
             "id": 27,
-            "nombre": "mitad a tu gusto",
+            "nombre": "mitad panceta y verdeo",
             "precio": 2470,
             "imagen": "./imagenes/pizzas/atugusto.jpg",
             "productType": "mediasPizzas"
@@ -468,7 +487,49 @@
         },
         {
             "id": 32,
-            "nombre": "mitad alla pirata",
+            "nombre": "mitad pepperoni",
+            "precio": 2270,
+            "imagen": "./imagenes/pizzas/allapirata.jpg",
+            "productType": "mediasPizzas"
+        },
+        {
+            "id": 33,
+            "nombre": "mitad fugazza al pesto",
+            "precio": 2270,
+            "imagen": "./imagenes/pizzas/allapirata.jpg",
+            "productType": "mediasPizzas"
+        },
+        {
+            "id": 34,
+            "nombre": "mitad verdura",
+            "precio": 2270,
+            "imagen": "./imagenes/pizzas/allapirata.jpg",
+            "productType": "mediasPizzas"
+        },
+        {
+            "id": 35,
+            "nombre": "mitad salchicha",
+            "precio": 2270,
+            "imagen": "./imagenes/pizzas/allapirata.jpg",
+            "productType": "mediasPizzas"
+        },
+        {
+            "id": 36,
+            "nombre": "mitad argenta",
+            "precio": 2270,
+            "imagen": "./imagenes/pizzas/allapirata.jpg",
+            "productType": "mediasPizzas"
+        },
+        {
+            "id": 37,
+            "nombre": "mitad cerdo y barbacoa",
+            "precio": 2270,
+            "imagen": "./imagenes/pizzas/allapirata.jpg",
+            "productType": "mediasPizzas"
+        },
+        {
+            "id": 38,
+            "nombre": "mitad a tu gusto",
             "precio": 2270,
             "imagen": "./imagenes/pizzas/allapirata.jpg",
             "productType": "mediasPizzas"
@@ -491,13 +552,6 @@
         },
         {
             "id": 3,
-            "nombre": "combo corazon azul",
-            "precio": 2680,
-            "imagen": "./imagenes/burguers/burgurguercorazonazul.jpg",
-            "productType": "Combos"
-        },
-        {
-            "id": 4,
             "nombre": "combo inmortal",
             "precio": 3720,
             "imagen": "./imagenes/burguers/burguerinmortal.jpg",
@@ -521,13 +575,6 @@
         },
         {
             "id": 3,
-            "nombre": "hamburguesa corazon azul",
-            "precio": 2680,
-            "imagen": "./imagenes/burguers/burgurguercorazonazul.jpg",
-            "productType": "BurguerSola"
-        },
-        {
-            "id": 4,
             "nombre": "hamburguesa inmortal",
             "precio": 3720,
             "imagen": "./imagenes/burguers/burguerinmortal.jpg",
@@ -537,166 +584,129 @@
     "Empanadas": [
         {
             "id": 1,
-            "nombre": "carne",
+            "nombre": "empanada jamon y queso",
             "precio": 410,
             "imagen": "./imagenes/empanadas/clasicas/carne.jpg",
             "productType": "Empanadas"
         },
         {
             "id": 2,
-            "nombre": "carne picante",
+            "nombre": "empanada carne",
             "precio": 410,
             "imagen": "./imagenes/empanadas/clasicas/carnepicante.jpg",
             "productType": "Empanadas"
         },
         {
             "id": 3,
-            "nombre": "carne cuchillo",
+            "nombre": "empanada carne picante",
             "precio": 410,
             "imagen": "./imagenes/empanadas/clasicas/carnecuchillo.jpg",
             "productType": "Empanadas"
         },
         {
             "id": 4,
-            "nombre": "pollo",
+            "nombre": "empanada pollo",
             "precio": 410,
             "imagen": "./imagenes/empanadas/clasicas/pollo.jpg",
             "productType": "Empanadas"
         },
         {
             "id": 5,
-            "nombre": "pastora",
+            "nombre": "empanada capresse",
             "precio": 410,
             "imagen": "./imagenes/empanadas/clasicas/pastora.jpg",
             "productType": "Empanadas"
         },
         {
             "id": 6,
-            "nombre": "cerdo barbacoa",
+            "nombre": "empanada humita",
             "precio": 410,
             "imagen": "./imagenes/empanadas/clasicas/cerdoybarbacoa.jpg",
             "productType": "Empanadas"
         },
         {
             "id": 7,
-            "nombre": "chesseburguer",
+            "nombre": "empanada cebolla y queso",
             "precio": 410,
             "imagen": "./imagenes/empanadas/clasicas/chesseburguer.jpg",
             "productType": "Empanadas"
         },
         {
             "id": 8,
-            "nombre": "calabaza y queso",
+            "nombre": "empanada roquefort",
             "precio": 410,
             "imagen": "./imagenes/empanadas/clasicas/calabazayqueso.jpg",
             "productType": "Empanadas"
         },
         {
             "id": 9,
-            "nombre": "jamon y queso",
+            "nombre": "empanada wok de vegetales",
             "precio": 410,
             "imagen": "./imagenes/empanadas/canastitas/jamonyqueso.jpg",
             "productType": "Empanadas"
         },
         {
             "id": 10,
-            "nombre": "cebolla y queso",
+            "nombre": "empanada verdura",
             "precio": 410,
             "imagen": "./imagenes/empanadas/canastitas/cebollayqueso.jpg",
             "productType": "Empanadas"
         },
         {
             "id": 11,
-            "nombre": "capresse",
+            "nombre": "empanada carne a cuchillo",
             "precio": 410,
             "imagen": "./imagenes/empanadas/canastitas/capresse.jpg",
             "productType": "Empanadas"
         },
         {
             "id": 12,
-            "nombre": "humita",
+            "nombre": "empanada pastora",
             "precio": 410,
             "imagen": "./imagenes/empanadas/canastitas/humita.jpg",
             "productType": "Empanadas"
         },
         {
             "id": 13,
-            "nombre": "roque apio y nuez",
+            "nombre": "empanada pollo y cheddar",
             "precio": 410,
             "imagen": "./imagenes/empanadas/canastitas/roqueapoynuez.jpg",
             "productType": "Empanadas"
         },
         {
             "id": 14,
-            "nombre": "roquefort",
+            "nombre": "empanada cerdo y barbacoa",
             "precio": 410,
             "imagen": "./imagenes/empanadas/canastitas/roquefort.jpg",
             "productType": "Empanadas"
         },
         {
             "id": 15,
-            "nombre": "cantimpalo",
+            "nombre": "empanada chesseburguer",
             "precio": 410,
             "imagen": "./imagenes/empanadas/canastitas/cantimpalo.jpg",
             "productType": "Empanadas"
         },
         {
             "id": 16,
-            "nombre": "anana y jamon",
+            "nombre": "empanada vacio",
             "precio": 410,
             "imagen": "./imagenes/empanadas/canastitas/ananayjamon.jpg",
             "productType": "Empanadas"
         },
         {
             "id": 17,
-            "nombre": "wok de verduras",
+            "nombre": "empanada de salchicha y cheddar",
             "precio": 410,
             "imagen": "./imagenes/empanadas/canastitas/wokdeverduras.jpg",
             "productType": "Empanadas"
         },
         {
             "id": 18,
-            "nombre": "panceta y ciruela",
+            "nombre": "empanda panceta y verdeo",
             "precio": 410,
             "imagen": "./imagenes/empanadas/canastitas/pancetayciruela.jpg",
             "productType": "Empanadas"
-        }
-    ],
-    "Calzones": [
-        {
-            "id": 1,
-            "nombre": "alla calzone",
-            "precio": 3470,
-            "imagen": "./imagenes/calzones/allacalzone.jpg",
-            "productType": "Calzones"
-        },
-        {
-            "id": 2,
-            "nombre": "calzone especial",
-            "precio": 3900,
-            "imagen": "./imagenes/calzones/calzoneespecial.jpg",
-            "productType": "Calzones"
-        },
-        {
-            "id": 3,
-            "nombre": "calzone calabresa",
-            "precio": 3900,
-            "imagen": "./imagenes/calzones/calzonecalabresa.jpg",
-            "productType": "Calzones"
-        },
-        {
-            "id": 4,
-            "nombre": "calzone capresse",
-            "precio": 3900,
-            "imagen": "./imagenes/calzones/calzonecapresse.jpg",
-            "productType": "Calzones"
-        },
-        {
-            "id": 5,
-            "nombre": "calzone napolitano",
-            "precio": 3590,
-            "imagen": "./imagenes/calzones/calzonenapolitano.jpg",
-            "productType": "Calzones"
         }
     ],
     "Papas": [
@@ -713,36 +723,6 @@
             "precio": 1480,
             "imagen": "./imagenes/papas/papaspirata.jpg",
             "productType": "Papas"
-        }
-    ],
-    "Ensaladas": [
-        {
-            "id": 1,
-            "nombre": "ensalada caesar",
-            "precio": 2010,
-            "imagen": "./imagenes/ensalada/caesar.jpg",
-            "productType": "Ensaladas"
-        },
-        {
-            "id": 2,
-            "nombre": "ensalada navegante",
-            "precio": 1900,
-            "imagen": "./imagenes/ensalada/navegante.jpg",
-            "productType": "Ensaladas"
-        },
-        {
-            "id": 3,
-            "nombre": "ensalada egeo",
-            "precio": 1770,
-            "imagen": "./imagenes/ensalada/egeo.jpg",
-            "productType": "Ensaladas"
-        },
-        {
-            "id": 4,
-            "nombre": "ensalada arcoiris",
-            "precio": 1630,
-            "imagen": "./imagenes/ensalada/arcoirirs.jpg",
-            "productType": "Ensaladas"
         }
     ],
     "Postres": [
@@ -827,28 +807,91 @@
         },
         {
             "id": 7,
+            "nombre": "pomelo 1.5lts",
+            "precio": 900,
+            "imagen": "./imagenes/gaseosas/schwepers.jpg",
+            "productType": "Bebidas"
+        },
+        {
+            "id": 8,
+            "nombre": "manzana 1.5lts",
+            "precio": 900,
+            "imagen": "./imagenes/gaseosas/schwepers.jpg",
+            "productType": "Bebidas"
+        },
+        {
+            "id": 9,
+            "nombre": "naranja 1.5lts",
+            "precio": 900,
+            "imagen": "./imagenes/gaseosas/schwepers.jpg",
+            "productType": "Bebidas"
+        },
+        {
+            "id": 10,
+            "nombre": "pera 1.5lts",
+            "precio": 900,
+            "imagen": "./imagenes/gaseosas/schwepers.jpg",
+            "productType": "Bebidas"
+        },
+        {
+            "id": 11,
             "nombre": "coca cola 500cc",
             "precio": 500,
             "imagen": "./imagenes/gaseosas 500cc/coca.jpg",
             "productType": "Bebidas"
         },
         {
-            "id": 8,
+            "id": 12,
             "nombre": "coca zero 500cc",
             "precio": 500,
             "imagen": "./imagenes/gaseosas 500cc/cocazero.jpg",
             "productType": "Bebidas"
         },
         {
-            "id": 9,
+            "id": 13,
             "nombre": "fanta 500cc",
             "precio": 500,
             "imagen": "./imagenes/gaseosas 500cc/fanta.jpg",
             "productType": "Bebidas"
         },
         {
-            "id": 10,
-            "nombre": "schweppers 50cc",
+            "id": 14,
+            "nombre": "schweppers 500cc",
+            "precio": 500,
+            "imagen": "./imagenes/gaseosas 500cc/schweppers.jpg",
+            "productType": "Bebidas"
+        },
+        {
+            "id": 15,
+            "nombre": "sprite 500cc",
+            "precio": 500,
+            "imagen": "./imagenes/gaseosas 500cc/schweppers.jpg",
+            "productType": "Bebidas"
+        },
+        {
+            "id": 16,
+            "nombre": "pomelo 500cc",
+            "precio": 500,
+            "imagen": "./imagenes/gaseosas 500cc/schweppers.jpg",
+            "productType": "Bebidas"
+        },
+        {
+            "id": 17,
+            "nombre": "manzana 500cc",
+            "precio": 500,
+            "imagen": "./imagenes/gaseosas 500cc/schweppers.jpg",
+            "productType": "Bebidas"
+        },
+        {
+            "id": 18,
+            "nombre": "naranja 500cc",
+            "precio": 500,
+            "imagen": "./imagenes/gaseosas 500cc/schweppers.jpg",
+            "productType": "Bebidas"
+        },
+        {
+            "id": 19,
+            "nombre": "pera 500cc",
             "precio": 500,
             "imagen": "./imagenes/gaseosas 500cc/schweppers.jpg",
             "productType": "Bebidas"
@@ -906,6 +949,13 @@
         },
         {
             "id": 8,
+            "nombre": "imperial negra 473cc",
+            "precio": 580,
+            "imagen": "./imagenes/cervezas 473/roja.jpg",
+            "productType": "Cervezas"
+        },
+        {
+            "id": 9,
             "nombre": "schneider 473cc",
             "precio": 500,
             "imagen": "./imagenes/cervezas 473/schneider.jpg",
@@ -915,49 +965,84 @@
     "Helados": [
         {
             "id": 1,
-            "nombre": "banana split",
+            "nombre": "chocolate suizo",
             "precio": 1500,
             "imagen": "./imagenes/helados/babanasplit.jpg",
             "productType": "Helados"
         },
         {
             "id": 2,
-            "nombre": "chocolate suizo",
+            "nombre": "chocolate king",
             "precio": 1500,
             "imagen": "./imagenes/helados/chocolatesuizo.jpg",
             "productType": "Helados"
         },
         {
             "id": 3,
-            "nombre": "crema tramontana",
+            "nombre": "crema almendras",
             "precio": 1500,
             "imagen": "./imagenes/helados/crematramontana.jpg",
             "productType": "Helados"
         },
         {
             "id": 4,
-            "nombre": "dulce de leche granizado",
+            "nombre": "chocolate rock",
             "precio": 1500,
             "imagen": "./imagenes/helados/dulcedelechegranizado.jpg",
             "productType": "Helados"
         },
         {
             "id": 5,
-            "nombre": "frutilla a la crema",
+            "nombre": "DDL tentación",
             "precio": 1500,
             "imagen": "./imagenes/helados/frutillaalacrema.jpg",
             "productType": "Helados"
         },
         {
             "id": 6,
-            "nombre": "limon granizado",
+            "nombre": "DDL granizado",
             "precio": 1500,
             "imagen": "./imagenes/helados/limongranizado.jpg",
             "productType": "Helados"
         },
         {
             "id": 7,
-            "nombre": "super dulce de leche",
+            "nombre": "Banana supreme",
+            "precio": 1500,
+            "imagen": "./imagenes/helados/superdulcedeleche.jpg",
+            "productType": "Helados"
+        },
+        {
+            "id": 8,
+            "nombre": "crema de frutillas",
+            "precio": 1500,
+            "imagen": "./imagenes/helados/superdulcedeleche.jpg",
+            "productType": "Helados"
+        },
+        {
+            "id": 9,
+            "nombre": "chocotorta argentina",
+            "precio": 1500,
+            "imagen": "./imagenes/helados/superdulcedeleche.jpg",
+            "productType": "Helados"
+        },
+        {
+            "id": 8,
+            "nombre": "Cookies & cream",
+            "precio": 1500,
+            "imagen": "./imagenes/helados/superdulcedeleche.jpg",
+            "productType": "Helados"
+        },
+        {
+            "id": 10,
+            "nombre": "Mousse de maracuyá",
+            "precio": 1500,
+            "imagen": "./imagenes/helados/superdulcedeleche.jpg",
+            "productType": "Helados"
+        },
+        {
+            "id": 11,
+            "nombre": "Menta con chocolate",
             "precio": 1500,
             "imagen": "./imagenes/helados/superdulcedeleche.jpg",
             "productType": "Helados"
