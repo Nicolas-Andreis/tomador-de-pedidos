@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let productos = [];
 
     // Función para cargar los productos desde el archivo JSON
-    fetch("productos.json")
+    fetch("https://nicolas-andreis.github.io/tomador-de-pedidos/productos.json")
         .then((response) => response.json())
         .then((data) => {
             productos = data; // Almacena los productos en la variable productos
