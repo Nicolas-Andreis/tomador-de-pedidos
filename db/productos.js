@@ -89,10 +89,12 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
           <div class="card-iconos">
             <div class="contador">
+            
               <img src="./imagenes/iconos/shopping cart/minus.png" alt="trash" class="trash-btn " id="${producto.nombre}" data-product-type="${containerName}">
               <p>0</p>
               <img src="./imagenes/iconos/shopping cart/sum.png" alt="+" class="sum-btn" id="${producto.nombre}" data-product-type="${containerName}">
             </div>
+            
           </div>
         `;
 
@@ -282,4 +284,13 @@ document.addEventListener("DOMContentLoaded", function () {
     actualizarNumerito();
 });
 
+// Agrega un controlador de eventos a cada h3 con la clase "toggle-button"
+const toggleButtons = document.querySelectorAll(".toggle-button");
 
+toggleButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        const containerId = button.nextElementSibling.id;
+        const container = document.getElementById(containerId);
+        container.classList.toggle("hidden"); // Toggle (alternar) la clase "hidden" para mostrar u ocultar
+    });
+});

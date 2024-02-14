@@ -1,6 +1,9 @@
 /*TABLET*/
 @media (min-width: 800px) {
     body {
+        .hidden {
+            display: none !important;
+        }
         background: #EB5757;
         /* fallback for old browsers */
         background: -webkit-linear-gradient(to right, #000000, #EB5757);
@@ -497,4 +500,16 @@
         border: 1px solid black;
         padding: 0.5rem;
     }
+
+    .toggle-button{
+        box-shadow: map-get($sombra, normal);
+        cursor: pointer;
+        width: 30%;
+        margin: 1rem 0;
+        border-radius: .5rem;
+        display: flex;
+        justify-content: center;
+        font-size: large;
+    }
+    
 }
