@@ -344,7 +344,7 @@ document.addEventListener("DOMContentLoaded", function () {
             Swal.fire({
                 position: 'center',
                 icon: 'success',
-                title: `Tu compra ha sido exitosa. Número de orden: ${orden.numeroOrden}`,
+                title: `Tu compra ha sido exitosa.`,
                 showConfirmButton: false,
                 timer: 1500
             });
