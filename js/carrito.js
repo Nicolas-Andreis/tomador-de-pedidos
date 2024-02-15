@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
         botonesEliminar.forEach(boton => {
             boton.addEventListener("click", eliminarDelCarrito)
         });
-        
+
 
         const botonesSumar = document.querySelectorAll(".sum-btn");
         botonesSumar.forEach(boton => {
@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
             fontSize: ".75rem",
             timerProgressBarColor: 'white',
         })
-        
+
         e.stopPropagation(); // Detiene la propagación del evento
         const idBoton = e.currentTarget.id;
         const index = productosEnCarrito.findIndex(producto => producto.nombre === idBoton);
@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function sumarProducto(e) {
-            
+
         e.stopPropagation();
         const idBoton = e.currentTarget.id;
         const index = productosEnCarrito.findIndex(producto => producto.nombre === idBoton);
@@ -174,7 +174,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     botonComprar.addEventListener("click", comprarCarrito);
-
+    // Variable para mantener un contador de pedidos
+    let numeroDeOrden = 1;
+    let infoEnvio;
     function comprarCarrito() {
         // Swal.fire({
         //     position: 'center',
@@ -208,12 +210,12 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
         btnContinuarRetiro.addEventListener("click", function () {
-            document.getElementById("paso2").classList.remove("disabled");
+
             document.getElementById("paso1").classList.add("disabled");
         });
 
         btnContinuarEnvio.addEventListener("click", function () {
-            document.getElementById("paso2").classList.remove("disabled");
+
             document.getElementById("paso1").classList.add("disabled");
         });
 
@@ -267,20 +269,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 ${listaProductosHTML}
             `;
 
-            // Obtener el método de pago seleccionado
-            const metodoPagoSeleccionado = document.querySelector('input[name="metodo-pago"]:checked');
+            // // Obtener el método de pago seleccionado
+            // const metodoPagoSeleccionado = document.querySelector('input[name="metodo-pago"]:checked');
 
-            if (metodoPagoSeleccionado) {
-                metodoDePago.innerHTML = `
-                    <p>${metodoPagoSeleccionado.value}</p>
-                `;
-            }
+            // if (metodoPagoSeleccionado) {
+            //     metodoDePago.innerHTML = `
+            //         <p>${metodoPagoSeleccionado.value}</p>
+            //     `;
+            // }
 
             // Mostrar la información adicional
             infoAdicional.innerHTML = '';
             if (radioEnvio.checked) {
                 infoAdicional.innerHTML += `<p>Costo de envío: $${costoEnvio}</p>`;
-            } 
+            }
 
             // Agregar costo de envío y aplicar descuento al total
             totalCalculado += costoEnvio;
@@ -292,157 +294,86 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("Total Calculado: " + totalCalculado);
         }
 
-        btnContinuarPago.addEventListener("click", function () {
+        btnContinuarRetiro.addEventListener("click", function () {
             document.getElementById("paso3").classList.remove("disabled");
             document.getElementById("paso1").classList.add("disabled");
-            document.getElementById("paso2").classList.add("disabled");
+            resumenDelPedido();
+        });
+        btnContinuarEnvio.addEventListener("click", function () {
+            document.getElementById("paso3").classList.remove("disabled");
+            document.getElementById("paso1").classList.add("disabled");
+
             resumenDelPedido();
         });
 
+       
+        enviarPedido.addEventListener("click", function () {
+            // Obtener los valores del formulario de envío o retiro local según la elección del usuario
+            const infoEnvio = radioEnvio.checked
+                ? {
+                    tipo: "Envío",
+                    direccion: document.querySelector("#direccion").value,
+                    telefono: document.querySelector("#telefono").value,
+                    nombre: document.querySelector("#nombre").value,
+                    // Agrega el costo del envío según tus necesidades
+                    precio: 470, // ¡Ajusta el costo del envío según tus requerimientos!
+                }
+                : {
+                    tipo: "Retiro en el Local",
+                    nombre: document.querySelector("#nombre").value,
+                    telefonoRetiro: document.querySelector("#telefonoRetiro").value,
+                };
         
-        function generarPDF() {
-            const content = document.getElementById('paso3');
-            const downloadLink = document.getElementById('downloadLink');
-        
-            // Configura el ancho del PDF (80 mm) y permite que el alto se ajuste automáticamente
-            const pdfWidth = 80;
-        
-            // Calcula la altura total del contenido, incluido el contenido que no es visible
-            const pdfHeight = content.scrollHeight; // Ajusta la altura al contenido completo
-        
-            const pdf = new jsPDF({
-                orientation: 'portrait',
-                unit: 'mm',
-                format: [pdfWidth, pdfHeight]
-            });
-        
-            // Escala el contenido para que quepa en el PDF
-            const scale = pdfWidth / content.clientWidth;
-        
-            // Desplaza el contenido hacia arriba y captura cada sección
-            const captureSection = (yOffset) => {
-                html2canvas(content, { scrollY: -yOffset, scale: 1 / scale }).then(canvas => {
-                    const imgData = canvas.toDataURL('image/png');
-                    pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-        
-                    if (yOffset + pdfHeight < content.scrollHeight) {
-                        // Si no hemos capturado todo el contenido, agrega una nueva página
-                        pdf.addPage([pdfWidth, pdfHeight]);
-                        captureSection(yOffset + pdfHeight);
-                    } else {
-                        // Cuando se haya capturado todo, muestra el enlace de descarga
-                        downloadLink.style.display = 'block';
-        
-                        // Genera el objeto Blob para el PDF y establece la URL de descarga
-                        const pdfBlob = pdf.output('blob');
-                        downloadLink.href = URL.createObjectURL(pdfBlob);
-                    }
-                });
+            // Crear una orden con la información relevante y asignar un número de orden
+            const orden = {
+                numeroOrden: numeroDeOrden++,
+                fecha: new Date(),
+                productos: productosEnCarrito,
+                total: calcularTotal(productosEnCarrito, infoEnvio),
+                envio: infoEnvio,
+                // Puedes incluir más detalles según tus necesidades
             };
         
-            // Inicia la captura de secciones desde el inicio del contenido
-            captureSection(0);
-        }
+            // Guardar la orden en el localStorage
+            const ordenesGuardadas = localStorage.getItem("ordenes") || "[]";
+            const ordenes = JSON.parse(ordenesGuardadas);
+            ordenes.push(orden);
+            localStorage.setItem("ordenes", JSON.stringify(ordenes));
         
-        enviarPedido.addEventListener("click", function () {
-            // Generar el PDF
-            generarPDF();
-        
+            // Mostrar un mensaje de éxito con el número de orden
             Swal.fire({
                 position: 'center',
                 icon: 'success',
-                title: 'Tu compra ha sido exitosa',
+                title: `Tu compra ha sido exitosa. Número de orden: ${orden.numeroOrden}`,
                 showConfirmButton: false,
                 timer: 1500
             });
         
-            // Espera un momento (por ejemplo, 1 segundo) antes de vaciar el carrito y actualizar la vista
+            // Esperar un momento antes de vaciar el carrito y actualizar la vista
             setTimeout(function () {
                 productosEnCarrito = [];
                 localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
-                cargarProductosCarrito(); // Actualiza la vista del carrito
+                cargarProductosCarrito(); // Actualizar la vista del carrito
                 document.getElementById("paso3").classList.add("disabled");
             }, 1000);
         });
         
-        }
-
-
-    // validar direccion/////////////////////////////////////////////////////////////
-    document.getElementById("continuarPaso2Envio").addEventListener("click", function () {
-        var direccion = document.getElementById("direccion").value;
-        var coordenadas = [
-            { lat: -38.72877920047321, lng: -62.28279604771731 },
-            { lat: -38.72724418581539, lng: -62.28126944034737 },
-            { lat: -38.72439338377408, lng: -62.28456629531017 },
-            { lat: -38.719829733075294, lng: -62.288181070153136 },
-            { lat: -38.71491256835326, lng: -62.28851823182839 },
-            { lat: -38.71330567180822, lng: -62.286457483253095 },
-            { lat: -38.70980308025898, lng: -62.28624201456476 },
-            { lat: -38.70774645072307, lng: -62.28455180475309 },
-            { lat: -38.704186410743894, lng: -62.28845501375812 },
-            { lat: -38.699640082565196, lng: -62.28451578374901 },
-            { lat: -38.692709348251356, lng: -62.27569925981683 },
-            { lat: -38.69581959087023, lng: -62.271341525418 },
-            { lat: -38.697962289218815, lng: -62.2676874400408 },
-            { lat: -38.69771938106904, lng: -62.26361792614513 },
-            { lat: -38.69771938106904, lng: -62.26361792614513 },
-            { lat: -38.69323975654183, lng: -62.251728887268264 },
-            { lat: -38.69510226762035, lng: -62.24803643428165 },
-            { lat: -38.69437616965158, lng: -62.246071359577975 },
-            { lat: -38.696613520565045, lng: -62.24047222788343 },
-            { lat: -38.70368344219037, lng: -62.24616696491019 },
-            { lat: -38.70792536814638, lng: -62.243684681114516 },
-            { lat: -38.709675124240114, lng: -62.24551147186648 },
-            { lat: -38.712169700405354, lng: -62.24223092012662 },
-            { lat: -38.71204240385786, lng: -62.23907258884102 },
-            { lat: -38.72517622940475, lng: -62.22259487199366 },
-            { lat: -38.74122809516418, lng: -62.242073824650234 },
-            { lat: -38.73367212864735, lng: -62.25129266235875 },
-            { lat: -38.73895055886765, lng: -62.25903341763549 },
-            { lat: -38.736511181340255, lng: -62.262439799520415 },
-            { lat: -38.73624481714682, lng: -62.26617627113095 },
-            { lat: -38.73430035730841, lng: -62.26873980774614 },
-            { lat: -38.73716614618817, lng: -62.272388941593555 },
-            { lat: -38.72877920047321, lng: -62.28279604771731 }
-
-        ];
-
-        // Crear un objeto Geocoder
-        var geocoder = new google.maps.Geocoder();
-
-        // Configurar las restricciones para buscar solo en Bahía Blanca, Buenos Aires, Argentina
-        var componentRestrictions = {
-            country: "AR", // Código del país (Argentina)
-            locality: "Bahía Blanca", // Ciudad o localidad (Bahía Blanca)
-            administrativeArea: "B", // Provincia (Buenos Aires)
-        };
-
-        // Usar el Geocoder para validar la dirección con restricciones
-        geocoder.geocode({
-            'address': direccion,
-            'componentRestrictions': componentRestrictions
-        }, function (results, status) {
-            if (status == google.maps.GeocoderStatus.OK) {
-                var direccionLatLng = results[0].geometry.location;
-
-                // Verificar si la dirección está dentro del polígono
-                var dentroDelPolígono = google.maps.geometry.poly.containsLocation(direccionLatLng, new google.maps.Polygon({ paths: coordenadas }));
-
-                if (dentroDelPolígono) {
-                    // Dirección válida y dentro del polígono, continuar con el proceso
-                    document.getElementById("paso2").classList.remove("disabled");
-                    document.getElementById("paso1").classList.add("disabled");
-                } else {
-                    document.getElementById("paso2").classList.remove("disabled");
-                    document.getElementById("paso1").classList.add("disabled");
-                }
-            } else {
-                document.getElementById("paso2").classList.remove("disabled");
-                    document.getElementById("paso1").classList.add("disabled");
+        // Ajusta la firma de la función para incluir infoEnvio
+        function calcularTotal(productos, infoEnvio) {
+            // Implementa la lógica para calcular el total
+            let totalCalculado = productos.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0);
+        
+            // Agrega el costo del envío al total si es una orden con envío
+            if (infoEnvio && infoEnvio.tipo === "Envío") {
+                totalCalculado += infoEnvio.precio || 0;
             }
-        });
-    });
+        
+            // Puedes agregar más lógica aquí según tus necesidades
+        
+            return totalCalculado;
+        }
+        
 
+    }
 
 });

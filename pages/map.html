@@ -79,7 +79,8 @@
         }
     </style>
     <script>
-                function initMap() {
+        async function initMap() {
+            const { Map } = await google.maps.importLibrary("maps");
             const map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 12.6,
                 center: { lat: -38.71748549364629, lng: -62.26527236505682 },
@@ -199,7 +200,7 @@
                     </button>
                 </div>
                 <div class="logo">
-                    <img src="../imagenes/logo/logo.png" alt="logo" >
+                    <img src="../imagenes/logo/logo.png" alt="logo">
                     <h1 class="titulos">Il Pirata</h1>
                 </div>
             </div>
@@ -208,7 +209,7 @@
     <main class="container">
         <aside>
             <div class="aside-logo">
-                <img src="../imagenes/logo/logo.png" alt="logo" >
+                <img src="../imagenes/logo/logo.png" alt="logo">
                 <p class="titulos">Il Pirata</p>
                 <button class="close-menu" id="close-menu" type="button">
                     <img src="../imagenes/iconos/nav/back.png" alt="menu" class="icon">
@@ -234,10 +235,15 @@
     </main>
 
     <script src="../js/main.js"></script>
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ57qNyA24BLcesVRxaWsOdZn1z2YnTAY&callback=initMap&v=weekly"
-        defer></script>
-        
+    <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQ57qNyA24BLcesVRxaWsOdZn1z2YnTAY&callback=initMap&libraries=geometry,drawing,places&v=weekly">
+</script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
 </body>
 
 </html>

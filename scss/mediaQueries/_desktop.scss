@@ -252,7 +252,7 @@
 
             .container-todo {
                 background-color: white;
-                width: 80%;
+                width: 90%;
                 border-radius: 1rem;
                 margin: 2rem auto;
                 z-index: 1;
@@ -324,10 +324,10 @@
                         flex-wrap: wrap;
 
                         .card {
-                            width: 32.5%;
-                            height: 4rem;
+                            width: 23%;
+                            height: 3rem;
                             padding: .2rem;
-
+                           
                             .contador {
                                 display: flex;
                                     flex-direction: row;
@@ -511,7 +511,7 @@
         justify-content: center;
         font-size: large;
         align-items: center;
-        height: 2rem;
+        height: 3rem;
     }
     
 }

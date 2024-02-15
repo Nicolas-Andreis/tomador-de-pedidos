@@ -1,0 +1,38 @@
+.orden{
+    display: flex;
+    width: 90%;
+    margin: .5rem auto;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    padding: 0.5rem;
+    box-shadow: map-get($sombra, normal);
+    border-radius: 1rem;
+}
+.ver-detalles{
+    background-color: transparent;
+    border: none;
+    border-radius: 1rem;
+    height: 4rem;
+    box-shadow: map-get($sombra, normal);
+}
+.totales-container{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.btn-eliminar-ordenes{
+    background-color: transparent;
+    border: none;
+    border-radius: 1rem;
+    height: 4rem;
+    box-shadow: map-get($sombra, normal);
+    padding: 1rem;
+}
+.totales-info{
+    border-radius: 1rem;
+    box-shadow: map-get($sombra, normal);
+    padding: 1rem;
+    font-weight: bold;
+}

@@ -221,7 +221,7 @@ header {
 
 .card {
   width: 90%;
-  margin: 0.7rem auto;
+  margin: 0.2rem auto;
   height: 2rem;
   display: flex;
   flex-direction: row;
@@ -234,10 +234,11 @@ header {
   display: flex;
   flex-direction: column;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 .card .card-texto p:nth-child(2) {
   font-weight: bold;
+  font-size: 0.7rem;
 }
 .card .card-iconos {
   display: flex;
@@ -1091,60 +1092,47 @@ h3 {
   background-color: transparent;
 }
 
-.buscador {
-  background-color: white;
+.orden {
+  display: flex;
+  width: 90%;
+  margin: 0.5rem auto;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  padding: 0.5rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   border-radius: 1rem;
-  width: 84%;
-  margin: 0 auto;
+}
+
+.ver-detalles {
+  background-color: transparent;
+  border: none;
+  border-radius: 1rem;
+  height: 4rem;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
-.buscador .lupa {
-  background: #D66D75;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #E29587, #D66D75);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #E29587, #D66D75);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  border-radius: 1rem 0 0 1rem;
-  width: 3rem;
-  height: 2rem;
+
+.totales-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 3px solid rgb(255, 255, 255);
-  cursor: pointer;
+  width: 90%;
+  justify-content: space-between;
+  margin: 0 auto;
 }
-.buscador .lupa img {
-  width: 1.5rem;
-  height: 1.5rem;
-}
-.buscador input {
+
+.btn-eliminar-ordenes {
+  background-color: transparent;
   border: none;
-  height: 2rem;
-  width: 100%;
-  border-radius: 0 1rem 1rem 0;
-  padding-left: 0.4rem;
+  border-radius: 1rem;
+  height: 4rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  padding: 1rem;
 }
 
-#categories {
-  list-style: none;
-  padding: 0;
-}
-
-#categories li {
-  display: none;
-  margin: 5px 0;
-}
-
-.suggestion {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  padding: 5px;
-  cursor: pointer;
-}
-
-.suggestion:hover {
-  background-color: #f0f0f0;
+.totales-info {
+  border-radius: 1rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  padding: 1rem;
+  font-weight: bold;
 }
 
 .category-group.disabled {
@@ -1756,7 +1744,7 @@ body footer {
   }
   body .container .container-todo {
     background-color: white;
-    width: 80%;
+    width: 90%;
     border-radius: 1rem;
     margin: 2rem auto;
     z-index: 1;
@@ -1810,8 +1798,8 @@ body footer {
     flex-wrap: wrap;
   }
   body .container .container-todo .menu .container-cards .card {
-    width: 32.5%;
-    height: 4rem;
+    width: 23%;
+    height: 3rem;
     padding: 0.2rem;
   }
   body .container .container-todo .menu .container-cards .card .contador {
@@ -1957,7 +1945,7 @@ body footer {
     justify-content: center;
     font-size: large;
     align-items: center;
-    height: 2rem;
+    height: 3rem;
   }
 }
 
