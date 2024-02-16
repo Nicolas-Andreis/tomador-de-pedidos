@@ -33,9 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 <strong>Orden: ${obtenerValor(orden.numeroOrden)}</strong>
                 <p>Fecha: ${obtenerValor(fechaString)}</p>
                 ${orden.envio?.nombre ? `<strong>${orden.envio.nombre}</strong>` : ""}
+                ${orden.envio?.direccion ? `<strong> ${orden.envio.direccion}</strong>` : ""}
                 ${orden.envio?.tipo ? `<strong> ${orden.envio.tipo}</strong>` : ""}
-                ${orden.envio?.direccion ? `<strong>Dirección: ${orden.envio.direccion}</strong>` : ""}
-                ${orden.envio?.telefono ? `<strong>Teléfono: ${orden.envio.telefono}</strong>` : ""}
+                
+                
                 <strong>Total: $${obtenerValor(orden.total.toFixed(2))}</strong>
                 <!-- Puedes agregar más detalles de la orden según tus necesidades -->
 
@@ -126,18 +127,18 @@ function verDetalles(numeroOrden) {
             <p>Número de Orden: ${ordenSeleccionada.numeroOrden}</p>
             <p>Fecha: ${new Date(ordenSeleccionada.fecha).toLocaleString()}</p>
             
-            ${ordenSeleccionada.envio?.tipo ? `<p>Tipo de Envío: ${ordenSeleccionada.envio.tipo}</p>` : ""}
+            ${ordenSeleccionada.envio?.tipo ? `<p>Tipo: ${ordenSeleccionada.envio.tipo}</p>` : ""}
         `;
 
         if (ordenSeleccionada.envio?.tipo === "Envío") {
             contenidoHTML += `
-                ${ordenSeleccionada.envio?.direccion ? `<p>Dirección de Envío: ${ordenSeleccionada.envio.direccion}</p>` : ""}
-                ${ordenSeleccionada.envio?.telefono ? `<p>Teléfono de Envío: ${ordenSeleccionada.envio.telefono}</p>` : ""}
+                ${ordenSeleccionada.envio?.direccion ? `<p>Envío: ${ordenSeleccionada.envio.direccion}</p>` : ""}
+                ${ordenSeleccionada.envio?.telefono ? `<p>Teléfono: ${ordenSeleccionada.envio.telefono}</p>` : ""}
             `;
         } else if (ordenSeleccionada.envio?.tipo === "Retiro en el Local") {
             contenidoHTML += `
-                ${ordenSeleccionada.envio?.nombre ? `<p>Nombre para Retiro: ${ordenSeleccionada.envio.nombre}</p>` : ""}
-                ${ordenSeleccionada.envio?.telefonoRetiro ? `<p>Teléfono para Retiro: ${ordenSeleccionada.envio.telefonoRetiro}</p>` : ""}
+                ${ordenSeleccionada.envio?.nombre ? `<p>Retiro: ${ordenSeleccionada.envio.nombre}</p>` : ""}
+                ${ordenSeleccionada.envio?.telefonoRetiro ? `<p>Teléfono: ${ordenSeleccionada.envio.telefonoRetiro}</p>` : ""}
             `;
         }
 
