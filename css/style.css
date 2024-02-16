@@ -1107,8 +1107,9 @@ h3 {
 .ver-detalles {
   background-color: transparent;
   border: none;
-  border-radius: 1rem;
-  height: 4rem;
+  border-radius: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
@@ -1133,6 +1134,38 @@ h3 {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   padding: 1rem;
   font-weight: bold;
+}
+
+.eliminar-orden {
+  background-color: transparent;
+  border-radius: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.ver-detalles img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.eliminar-orden img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.info-envios-retiros {
+  border-radius: 1rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  padding: 1rem;
+  font-weight: bold;
+  width: 90%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  margin: 1rem auto;
+  justify-content: space-between;
 }
 
 .category-group.disabled {

@@ -27,8 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
             // Función para obtener el valor o "N/A" si es undefined
             const obtenerValor = (propiedad) => (propiedad !== undefined ? propiedad : "N/A");
 
-            
-
             divOrden.innerHTML = `
                 <strong>Orden: ${obtenerValor(orden.numeroOrden)}</strong>
                 <p>Fecha: ${obtenerValor(fechaString)}</p>
@@ -36,12 +34,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 ${orden.envio?.direccion ? `<strong> ${orden.envio.direccion}</strong>` : ""}
                 ${orden.envio?.tipo ? `<strong> ${orden.envio.tipo}</strong>` : ""}
                 
-                
                 <strong>Total: $${obtenerValor(orden.total.toFixed(2))}</strong>
                 <!-- Puedes agregar más detalles de la orden según tus necesidades -->
 
                 <!-- Botón para ver más detalles o acciones adicionales -->
-                <button class="ver-detalles" onclick="verDetalles(${orden.numeroOrden})">Ver Detalles</button>
+                <button class="ver-detalles" onclick="verDetalles(${orden.numeroOrden})"><img src="../imagenes/iconos/lupa/lupa.png" alt="menu" class="icon"></button>
+                
+                <!-- Botón para eliminar la orden individualmente -->
+                <button class="eliminar-orden" onclick="eliminarOrden(${orden.numeroOrden})"><img src="../imagenes/iconos/basura/trash.png" alt="menu" class="icon"></button>
             `;
 
             miCarrito.appendChild(divOrden);
@@ -50,6 +50,35 @@ document.addEventListener("DOMContentLoaded", function () {
         // Si no hay órdenes, puedes mostrar un mensaje o simplemente dejar el contenedor vacío
         miCarrito.innerHTML = "<p>No hay órdenes disponibles.</p>";
     }
+
+    // Calcular y mostrar la información de envíos y retiros
+    const totalEnvios = ordenes.filter(orden => orden.envio?.tipo === "Envío");
+    const totalRetiros = ordenes.filter(orden => orden.envio?.tipo === "Retiro en el Local");
+
+    // Calcular el total de dinero para envíos y retiros
+    const totalDineroEnvios = totalEnvios.reduce((total, orden) => total + orden.total, 0);
+    const totalDineroRetiros = totalRetiros.reduce((total, orden) => total + orden.total, 0);
+
+    // Crear un div para la información de envíos y retiros
+    const divInformacionEnvios = document.createElement("div");
+    divInformacionEnvios.classList.add("info-envios-retiros");
+
+    // Mostrar información de envíos
+    const infoEnvios = document.createElement("div");
+    infoEnvios.innerHTML = `
+        <p>ENVIOS: ${totalEnvios.length} TOTAL: $${totalDineroEnvios.toFixed(2)}</p>
+    `;
+    divInformacionEnvios.appendChild(infoEnvios);
+
+    // Mostrar información de retiros
+    const infoRetiros = document.createElement("div");
+    infoRetiros.innerHTML = `
+        <p>BARRAS: ${totalRetiros.length} TOTAL: $${totalDineroRetiros.toFixed(2)}</p>
+    `;
+    divInformacionEnvios.appendChild(infoRetiros);
+
+    // Agregar el div de información de envíos y retiros al documento
+    miCarrito.appendChild(divInformacionEnvios);
 
     // Crear un div para el botón de borrar órdenes y la información de totales
     const divTotales = document.createElement("div");
@@ -83,29 +112,63 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function eliminarTodasLasOrdenes() {
     Swal.fire({
-        title: "Estas seguro?",
-        text: "totas tus ordenes se eliminaran",
+        title: "¿Estás seguro?",
+        text: "Todas tus órdenes se eliminarán",
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
-        confirmButtonText: "SI",
-        cancelmButtonText: "NO"
-      }).then((result) => {
+        confirmButtonText: "Sí",
+        cancelButtonText: "No"
+    }).then((result) => {
         if (result.isConfirmed) {
             // Limpiar el localStorage
-    localStorage.removeItem("ordenes");
+            localStorage.removeItem("ordenes");
 
-    // Recargar la página para reflejar los cambios
-    location.reload();
-          Swal.fire({
-            title: "Borradas!",
-            text: "todas tus ordenes se eliminaron",
-            icon: "success"
-          });
+            // Recargar la página para reflejar los cambios
+            location.reload();
+
+            Swal.fire({
+                title: "Borradas",
+                text: "Todas tus órdenes se eliminaron",
+                icon: "success"
+            });
         }
-      });
-    
+    });
+}
+
+function eliminarOrden(numeroOrden) {
+    Swal.fire({
+        title: "¿Estás seguro?",
+        text: "Esta orden se eliminará",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sí",
+        cancelButtonText: "No"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Obtener las órdenes del localStorage
+            let ordenesGuardadas = localStorage.getItem("ordenes") || "[]";
+            let ordenes = JSON.parse(ordenesGuardadas);
+
+            // Filtrar las órdenes para eliminar la seleccionada
+            ordenes = ordenes.filter(orden => orden.numeroOrden !== numeroOrden);
+
+            // Actualizar el localStorage con las órdenes restantes
+            localStorage.setItem("ordenes", JSON.stringify(ordenes));
+
+            // Recargar la página para reflejar los cambios
+            location.reload();
+
+            Swal.fire({
+                title: "Eliminada",
+                text: "La orden se eliminó",
+                icon: "success"
+            });
+        }
+    });
 }
 
 function verDetalles(numeroOrden) {

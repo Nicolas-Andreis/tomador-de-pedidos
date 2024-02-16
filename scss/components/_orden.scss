@@ -12,8 +12,9 @@
 .ver-detalles{
     background-color: transparent;
     border: none;
-    border-radius: 1rem;
-    height: 4rem;
+    border-radius: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
     box-shadow: map-get($sombra, normal);
 }
 .totales-container{
@@ -35,4 +36,32 @@
     box-shadow: map-get($sombra, normal);
     padding: 1rem;
     font-weight: bold;
+}
+.eliminar-orden{
+background-color: transparent;
+border-radius: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
+border: none;
+box-shadow: map-get($sombra, normal);
+}
+.ver-detalles img{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.eliminar-orden img{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.info-envios-retiros{
+    border-radius: 1rem;
+    box-shadow: map-get($sombra, normal);
+    padding: 1rem;
+    font-weight: bold;
+    width: 90%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin: 1rem auto;
+    justify-content: space-between;
 }
