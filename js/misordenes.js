@@ -30,13 +30,13 @@ document.addEventListener("DOMContentLoaded", function () {
             
 
             divOrden.innerHTML = `
-                <p>Número de Orden: ${obtenerValor(orden.numeroOrden)}</p>
+                <strong>Orden: ${obtenerValor(orden.numeroOrden)}</strong>
                 <p>Fecha: ${obtenerValor(fechaString)}</p>
-                ${orden.envio?.nombre ? `<p>Nombre del Cliente: ${orden.envio.nombre}</p>` : ""}
-                ${orden.envio?.tipo ? `<p>Tipo de Envío: ${orden.envio.tipo}</p>` : ""}
-                ${orden.envio?.direccion ? `<p>Dirección de Envío: ${orden.envio.direccion}</p>` : ""}
-                ${orden.envio?.telefono ? `<p>Teléfono de Envío: ${orden.envio.telefono}</p>` : ""}
-                <p>Total: $${obtenerValor(orden.total.toFixed(2))}</p>
+                ${orden.envio?.nombre ? `<strong>${orden.envio.nombre}</strong>` : ""}
+                ${orden.envio?.tipo ? `<strong> ${orden.envio.tipo}</strong>` : ""}
+                ${orden.envio?.direccion ? `<strong>Dirección: ${orden.envio.direccion}</strong>` : ""}
+                ${orden.envio?.telefono ? `<strong>Teléfono: ${orden.envio.telefono}</strong>` : ""}
+                <strong>Total: $${obtenerValor(orden.total.toFixed(2))}</strong>
                 <!-- Puedes agregar más detalles de la orden según tus necesidades -->
 
                 <!-- Botón para ver más detalles o acciones adicionales -->
