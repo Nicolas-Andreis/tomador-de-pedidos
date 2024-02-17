@@ -316,7 +316,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     telefono: document.querySelector("#telefono").value,
                     nombre: document.querySelector("#nombre").value,
                     // Agrega el costo del envío según tus necesidades
-                    precio: 470, // ¡Ajusta el costo del envío según tus requerimientos!
+                    precio: 560, // ¡Ajusta el costo del envío según tus requerimientos!
                 }
                 : {
                     tipo: "Retiro en el Local",

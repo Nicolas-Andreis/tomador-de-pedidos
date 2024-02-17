@@ -758,6 +758,13 @@
             "precio": 4060,
             "imagen": "./imagenes/papas/papaspirata.jpg",
             "productType": "Papas"
+        },
+        {
+            "id": 3,
+            "nombre": "porción de pizza",
+            "precio": 1060,
+            "imagen": "./imagenes/papas/papaspirata.jpg",
+            "productType": "Papas"
         }
     ],
     "Postres": [
