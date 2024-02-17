@@ -244,7 +244,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Calcular el costo de envío o el descuento
             if (radioEnvio.checked) {
-                costoEnvio = 470;
+                costoEnvio = 560;
             } else {
                 descuento = 0; // 10% de descuento
             }
