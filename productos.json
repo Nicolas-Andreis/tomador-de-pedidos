@@ -995,6 +995,13 @@
             "precio": 1300,
             "imagen": "./imagenes/cervezas 473/schneider.jpg",
             "productType": "Cervezas"
+        },
+        {
+            "id": 10,
+            "nombre": "vino",
+            "precio": 10000,
+            "imagen": "./imagenes/cervezas 473/schneider.jpg",
+            "productType": "Cervezas"
         }
     ],
     "Helados": [
